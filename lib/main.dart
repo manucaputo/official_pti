@@ -1,116 +1,122 @@
-import 'dart:ui';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyApp(),
-    ));
-
-class MyApp extends StatefulWidget {
-  @override
-  State<MyApp> createState() => _MyAppState();
+void main() {
+  runApp(const MyApp());
 }
 
-class _MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      home: MyHomePage(title: 'MixMath'),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  //int _counter = 0;
+
+  /*
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  */
+
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: Text('Menu'),
-      backgroundColor: Color.fromRGBO(0, 0, 255, 0.6),
+      title: const Text('Menu'),
+      backgroundColor: const Color.fromRGBO(0, 0, 255, 0.6),
     );
+
     return Scaffold(
         appBar: appBar,
-        body: Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  "assets/images/Accueil_TITRE.png",
-                ),
-                fit: BoxFit.fitWidth,
-              ),
-              gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: [
-                  Color.fromRGBO(0, 0, 255, 0.5),
-                  Colors.greenAccent,
-                ],
+
+
+
+        body: Stack(children: <Widget>[
+
+
+
+          Container(
+              decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Color.fromRGBO(0, 0, 255, 0.5),
+                      Colors.greenAccent,
+                    ],
+                  ))),
+
+
+
+          Positioned(
+              width: MediaQuery.of(context).size.width * 1,
+              top: MediaQuery.of(context).size.width * 0.2,
+              child: Container(
+                //margin: EdgeInsets.all(16.0),
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Image.asset('assets/images/Accueil_TITRE.png', scale: 2),
+                    ]),
               )),
-          child: Container(
-            padding: EdgeInsets.fromLTRB(10, 50, 10, 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                RaisedButton(
-                  child: const Text(
-                    'Lancer un duel',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        8.0), // Pour arrondir les angles du bouton
-                  ),
-                  onPressed: () {},
+
+
+
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              RaisedButton(
+                child: const Text(
+                  'Lancer un duel',
                 ),
-                RaisedButton(
-                  child: const Text(
-                    'Mes duels',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        8.0), // Pour arrondir les angles du bouton
-                  ),
-                  onPressed: () {},
+                onPressed: () {},
+              ),
+              RaisedButton(
+                child: const Text(
+                  'Mes duels',
                 ),
-                RaisedButton(
-                  child: const Text(
-                    'Mes résultats résultats',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        8.0), // Pour arrondir les angles du bouton
-                  ),
-                  onPressed: () {},
+                onPressed: () {},
+              ),
+              RaisedButton(
+                child: const Text(
+                  'Mes résultats résultats',
                 ),
-                RaisedButton(
-                  child: const Text(
-                    'Changer de classe',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        8.0), // Pour arrondir les angles du bouton
-                  ),
-                  onPressed: () {},
+                onPressed: () {},
+              ),
+              RaisedButton(
+                child: const Text(
+                  'Changer de classe',
                 ),
-                RaisedButton(
-                  child: const Text(
-                    'Contexte',
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        8.0), // Pour arrondir les angles du bouton
-                  ),
-                  onPressed: () {},
+                onPressed: () {},
+              ),
+              RaisedButton(
+                child: const Text(
+                  'Contexte',
                 ),
-              ],
-            ),
-          ),
-        ));
+                onPressed: () {},
+              ),
+            ],
+          )
+        ]));
   }
 }
