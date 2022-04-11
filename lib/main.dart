@@ -1,9 +1,9 @@
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: MyApp(),
     ));
 
@@ -15,95 +15,102 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Menu'),
-          centerTitle: true,
-          flexibleSpace: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: <Color>[Colors.lightBlue, Colors.lightBlue]),
-            ),
-          ),
-        ),
+    final appBar = AppBar(
+      title: Text('Menu'),
+      backgroundColor: Color.fromRGBO(0, 0, 255, 0.6),
+    );
+    return Scaffold(
+        appBar: appBar,
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  "assets/images/Accueil_TITRE.png",
+                ),
+                fit: BoxFit.fitWidth,
+              ),
               gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Colors.blue,
-              Colors.greenAccent,
-            ],
-          )),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                child: RaisedButton(
-                  child: Text(
-                    'Lancer une partie',
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Color.fromRGBO(0, 0, 255, 0.5),
+                  Colors.greenAccent,
+                ],
+              )),
+          child: Container(
+            padding: EdgeInsets.fromLTRB(10, 50, 10, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RaisedButton(
+                  child: const Text(
+                    'Lancer un duel',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
-                  color: Colors.white,
-                  textColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        8.0), // Pour arrondir les angles du bouton
+                  ),
                   onPressed: () {},
                 ),
-              ),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: RaisedButton(
-                    child: Text(
-                      'Mes duels',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                RaisedButton(
+                  child: const Text(
+                    'Mes duels',
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
-                    color: Colors.white,
-                    textColor: Colors.black,
-                    onPressed: () {},
-                  )),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: RaisedButton(
-                    child: Text(
-                      'Résultats',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        8.0), // Pour arrondir les angles du bouton
+                  ),
+                  onPressed: () {},
+                ),
+                RaisedButton(
+                  child: const Text(
+                    'Mes résultats résultats',
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
-                    color: Colors.white,
-                    textColor: Colors.black,
-                    onPressed: () {},
-                  )),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: RaisedButton(
-                    child: Text(
-                      'Changer de classe',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        8.0), // Pour arrondir les angles du bouton
+                  ),
+                  onPressed: () {},
+                ),
+                RaisedButton(
+                  child: const Text(
+                    'Changer de classe',
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
-                    color: Colors.white,
-                    textColor: Colors.black,
-                    onPressed: () {},
-                  )),
-              Container(
-                  padding: EdgeInsets.all(10),
-                  child: RaisedButton(
-                    child: Text(
-                      'Contexte',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        8.0), // Pour arrondir les angles du bouton
+                  ),
+                  onPressed: () {},
+                ),
+                RaisedButton(
+                  child: const Text(
+                    'Contexte',
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
-                    color: Colors.white,
-                    textColor: Colors.black,
-                    onPressed: () {},
-                  )),
-            ],
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                        8.0), // Pour arrondir les angles du bouton
+                  ),
+                  onPressed: () {},
+                ),
+              ],
+            ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
