@@ -35,7 +35,7 @@ class Result extends StatelessWidget {
           RaisedButton(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
+              children: const [
                 Text(
                   'Back to Menu !',
                   textAlign: TextAlign.center,
