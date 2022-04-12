@@ -92,7 +92,6 @@ class _MyAppState extends State<SecondButton> {
         home: Scaffold(
 
 
-
           appBar: AppBar(
             title: Text('MixMath'),
           ),
