@@ -45,6 +45,7 @@ class Result extends StatelessWidget {
             textColor: Colors.blue,
             //onPressed: resetHandler,
             onPressed: () {
+              resetHandler;
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const MyApp()),
