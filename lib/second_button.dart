@@ -97,7 +97,6 @@ class _MyAppState extends State<SecondButton> {
           ),
           body: ListView.builder(
 
-
             itemCount: _postsJson2.length,
             itemBuilder: (BuildContext context, int index){
               final post = _postsJson2[index];
