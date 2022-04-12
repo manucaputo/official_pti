@@ -76,7 +76,6 @@ class _MyAppState extends State<SecondButton> {
   void initState()
   {
     super.initState();
-
     //getReply();
   }
 
