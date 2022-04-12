@@ -75,14 +75,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
             Positioned(
-                width: MediaQuery.of(context).size.width * 1,
-                top: MediaQuery.of(context).size.width * 0.2,
+                width: MediaQuery.of(context).size.width,
+                top: MediaQuery.of(context).size.width * 0,
                 child: Container(
                   //margin: EdgeInsets.all(16.0),
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
-                        Image.asset('assets/images/Accueil_TITRE.png', scale: 2),
+                        Image.asset('assets/images/Accueil_TITRE.png', scale: 1.5),
                       ]),
                 )),
 
