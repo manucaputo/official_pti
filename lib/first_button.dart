@@ -79,22 +79,38 @@ class _MyAppState extends State<FirstButton> {
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
         home: Scaffold(
 
 
 
           appBar: AppBar(
-            title: Text('MixMath'),
+            title: Text('Duel en cours...'),
+            centerTitle: true,
+            backgroundColor: const Color.fromRGBO(0, 0, 255, 0.6),
           ),
 
 
 
-          body: _questionIndex < _questions.length //if
-              ? Quiz(
-              answerQuestion: _answerQuestion,
-              questionIndex: _questionIndex,
-              questions: _questions)
-              : Result(_totalScore, _resetQuiz),
+          body: Container(
+
+                decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [
+                        Color.fromRGBO(0, 0, 255, 0.5),
+                        Colors.greenAccent,
+                      ],
+                    )),
+
+            child: _questionIndex < _questions.length //if
+                ? Quiz(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions)
+                : Result(_totalScore, _resetQuiz),
+          ),
 
 
         ));

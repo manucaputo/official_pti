@@ -19,19 +19,27 @@ class Quiz extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.center,
 
 
       children: [
-        Question(
-          questions[questionIndex]['questionText'] as String,
+
+
+        Card(
+          child: Question(
+            questions[questionIndex]['questionText'] as String,
+          ),
         ),
+
+
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((answer) {
           // "..."  take a list and pull all the values in that list out of them and add it in a surrounding as individual values
-
           return Answer(
                   () => answerQuestion(answer['score']), answer['text'] as String);
         }).toList()
+
+
       ],
 
 
