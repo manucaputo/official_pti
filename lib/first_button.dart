@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import './quiz.dart';
 import './result.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 // from scratch
 
@@ -15,6 +17,36 @@ class FirstButton extends StatefulWidget {
 class _MyAppState extends State<FirstButton> {
   var _questionIndex = 0;
   var _totalScore = 0;
+
+  final url = "http://192.168.1.100:3000/api/duel";
+  var _postsJson = [];
+  var idDuel;
+
+
+  Map<String, String> headers = { "Content-type": "application/json","Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3NjY5NjMsImV4cCI6MTY4NTc2Njk2M30.P1mIica2XmcowNwLwiss0g6Mhf_eniSjxcN7wFnmTjs"};
+
+
+
+  postDuel() async
+  {
+    try {
+      String json ='{ "idQuestion" : "3" }' ;
+      final response = await http.post(Uri.parse(url),body:json,headers: headers);
+      final jsonData = jsonDecode(response.body) ;
+      print(jsonData["duelId"]);
+      idDuel = jsonData["duelId"];
+      print(idDuel);
+
+    } catch(err){}
+
+  }
+
+  @override
+  void initState()
+  {
+    super.initState();
+    //postDuel();
+  }
 
   void _resetQuiz() {
     setState(() {

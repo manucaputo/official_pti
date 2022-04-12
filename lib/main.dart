@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:official_pti/second_button.dart';
 import 'first_button.dart';
+import 'second_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -105,7 +107,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: const Text(
                     'Mes duels',
                   ),
-                  onPressed: () {},
+                  onPressed: () { Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondButton()),
+                  );},
                 ),
                 RaisedButton(
                   child: const Text(
