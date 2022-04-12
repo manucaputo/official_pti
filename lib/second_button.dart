@@ -104,7 +104,7 @@ class _MyAppState extends State<SecondButton> {
               final post = _postsJson2[index];
               return Row(
                   children : [Text("${post["firstName"]}"),
-                    RaisedButton( child: Text(" ${post["id"]}"),onPressed:(){  Navigator.push(
+                    RaisedButton( child: Text(" ${post["idDuel"]}"),onPressed:(){  Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => FirstButton()),
                     );}),]) ;
