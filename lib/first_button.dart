@@ -3,6 +3,7 @@ import './quiz.dart';
 import './result.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'dart:math';
 
 // from scratch
 
@@ -25,7 +26,8 @@ class FirstButton extends StatefulWidget {
   });
 
   @override
-  State<FirstButton> createState() => _MyAppState(idQuestion); // put _ before teh name of the class means public class --> private class
+  State<FirstButton> createState() => _MyAppState(
+      idQuestion); // put _ before teh name of the class means public class --> private class
 }
 
 class _MyAppState extends State<FirstButton> {
@@ -35,6 +37,7 @@ class _MyAppState extends State<FirstButton> {
   final url = "http://192.168.1.100:3000/api/duel";
   var _postsJson = [];
   var idDuel;
+  List<Map<String, Object>> _questions = [];
 
   Map<String, String> headers = {
     "Content-type": "application/json",
@@ -43,7 +46,6 @@ class _MyAppState extends State<FirstButton> {
   };
 
   _MyAppState(this.idQuestion);
-
 
   postDuel() async {
     try {
@@ -61,7 +63,82 @@ class _MyAppState extends State<FirstButton> {
   void initState() {
     super.initState();
     //postDuel();
-    print(idQuestion);
+    if (idQuestion == 0) {
+      Random rnd;
+      int min = 1;
+      int max = 4;
+      rnd = new Random();
+      idQuestion = min + rnd.nextInt(max - min);
+      print("$idQuestion");
+    }
+
+    if (idQuestion == 1) {
+      _questions = const [
+        // creation of a MAP (key : value)
+        {
+          'questionText': 'x + 2 = 5 ?',
+          'answers': [
+            {'text': '3', 'score': 1},
+            {'text': '2', 'score': 0},
+            {'text': '4', 'score': 0},
+            {'text': '1', 'score': 0}
+          ]
+          // first element list = pos 0
+        },
+        {
+          'questionText': '2x - 5 = 1 ?',
+          'answers': [
+            {'text': '4', 'score': 0},
+            {'text': '3', 'score': 1},
+            {'text': '1', 'score': 0},
+            {'text': '2', 'score': 0}
+          ]
+        },
+        {
+          'questionText': '3 + x = 7 ?',
+          'answers': [
+            {'text': '1', 'score': 0},
+            {'text': '2', 'score': 0},
+            {'text': '4', 'score': 1},
+            {'text': '3', 'score': 0}
+          ]
+        },
+      ];
+    }
+
+    if (idQuestion == 2) {
+      _questions = const [
+        // creation of a MAP (key : value)
+        {
+          'questionText': 'x + 2 = 5 ?',
+          'answers': [
+            {'text': '3', 'score': 1},
+            {'text': '6', 'score': 0},
+            {'text': '4', 'score': 0},
+            {'text': '1', 'score': 0}
+          ]
+          // first element list = pos 0
+        },
+        {
+          'questionText': '2x - 5 = 1 ?',
+          'answers': [
+            {'text': '4', 'score': 0},
+            {'text': '3', 'score': 1},
+            {'text': '1', 'score': 0},
+            {'text': '2', 'score': 0}
+          ]
+        },
+        {
+          'questionText': '3 + x = 7 ?',
+          'answers': [
+            {'text': '1', 'score': 0},
+            {'text': '2', 'score': 0},
+            {'text': '4', 'score': 1},
+            {'text': '3', 'score': 0}
+          ]
+        },
+      ];
+    }
   }
 
   void _resetQuiz() {
@@ -70,38 +147,6 @@ class _MyAppState extends State<FirstButton> {
       _totalScore = 0;
     });
   }
-
-  final _questions = const [
-    // creation of a MAP (key : value)
-    {
-      'questionText': 'x + 2 = 5 ?',
-      'answers': [
-        {'text': '3', 'score': 1},
-        {'text': '2', 'score': 0},
-        {'text': '4', 'score': 0},
-        {'text': '1', 'score': 0}
-      ]
-      // first element list = pos 0
-    },
-    {
-      'questionText': '2x - 5 = 1 ?',
-      'answers': [
-        {'text': '4', 'score': 0},
-        {'text': '3', 'score': 1},
-        {'text': '1', 'score': 0},
-        {'text': '2', 'score': 0}
-      ]
-    },
-    {
-      'questionText': '3 + x = 7 ?',
-      'answers': [
-        {'text': '1', 'score': 0},
-        {'text': '2', 'score': 0},
-        {'text': '4', 'score': 1},
-        {'text': '3', 'score': 0}
-      ]
-    },
-  ];
 
   void _answerQuestion(int score) {
     _totalScore = _totalScore + score;
@@ -125,24 +170,40 @@ class _MyAppState extends State<FirstButton> {
           appBar: AppBar(
             title: Text('Duel en cours...'),
             centerTitle: true,
-            backgroundColor: const Color.fromRGBO(0, 0, 255, 0.6),
+            backgroundColor: const Color.fromRGBO(0, 0, 255, 0.55),
           ),
-          body: Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                Color.fromRGBO(0, 0, 255, 0.5),
-                Colors.greenAccent,
-              ],
-            )),
-            child: _questionIndex < _questions.length //if
-                ? Quiz(
-                    answerQuestion: _answerQuestion,
-                    questionIndex: _questionIndex,
-                    questions: _questions)
-                : Result(_totalScore, _resetQuiz),
+          body: Stack(
+            children: [
+              Positioned(
+                  width: MediaQuery.of(context).size.width,
+                  top: MediaQuery.of(context).size.height * 0,
+                  child: Container(
+                    //margin: EdgeInsets.all(16.0),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Image.asset('assets/images/Dragon_CLASSIQUE.png',
+                              scale: 4),
+                        ]),
+                  )),
+              Container(
+                decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color.fromRGBO(241, 240, 239, 0),
+                    Color.fromRGBO(175, 175, 164, 0.5),
+                  ],
+                )),
+                child: _questionIndex < _questions.length //if
+                    ? Quiz(
+                        answerQuestion: _answerQuestion,
+                        questionIndex: _questionIndex,
+                        questions: _questions)
+                    : Result(_totalScore, _resetQuiz),
+              )
+            ],
           ),
         ));
   }

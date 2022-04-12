@@ -14,10 +14,9 @@ class ThirdButton extends StatefulWidget {
 }
 
 class _MyAppState extends State<ThirdButton> {
-
   final url = "http://192.168.1.100:3000/api/result/my";
   var _postsJson = [];
-  final _postsJson2 =[
+  final _postsJson2 = [
     {
       "firstName": "Mic2",
       "id": 4,
@@ -54,67 +53,54 @@ class _MyAppState extends State<ThirdButton> {
       "idQuestion": 2
     }
   ];
-  Map<String, String> headers = {"Content-type": "application/json", "Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3ODM2NDMsImV4cCI6MTY4NTc4MzY0M30.68QnFxq2lKjGwa5hW16KBTmADSPJuGKRn_omnoTGn04"};
+  Map<String, String> headers = {
+    "Content-type": "application/json",
+    "Authorization":
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3ODM2NDMsImV4cCI6MTY4NTc4MzY0M30.68QnFxq2lKjGwa5hW16KBTmADSPJuGKRn_omnoTGn04"
+  };
 
-  getReply() async
-  {
+  getReply() async {
     try {
-      final response = await http.get(Uri.parse(url),headers: headers);
+      final response = await http.get(Uri.parse(url), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
 
       setState(() {
         _postsJson = jsonData;
         print(_postsJson[0]);
-
       });
-
-
-    } catch(err){}
-
+    } catch (err) {}
   }
 
   @override
-  void initState()
-  {
+  void initState() {
     super.initState();
     getReply();
   }
-
-
-
-
-
-
-
 
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-
-
-          appBar: AppBar(
-            title: Text('MixMath'),
-          ),
-          body: ListView.builder(
-
-            itemCount: _postsJson2.length,
-            itemBuilder: (BuildContext context, int index){
-              final post = _postsJson[index];
-              return Row(
-                  children : [Text("${post["firstName"]}"),
-                    RaisedButton( child: Text(" ${post["idQuestion"]}"),onPressed:(){  Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => FirstButton()),
-                    );}),]) ;
-            },
-
-          ),
-
-
-
-
-
-        ));
+      appBar: AppBar(
+        title: Text('MixMath'),
+      ),
+      body: ListView.builder(
+        itemCount: _postsJson2.length,
+        itemBuilder: (BuildContext context, int index) {
+          final post = _postsJson[index];
+          return Row(children: [
+            Text("${post["firstName"]}"),
+            RaisedButton(
+                child: Text(" ${post["idQuestion"]}"),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => FirstButton()),
+                  );
+                }),
+          ]);
+        },
+      ),
+    ));
   }
 }

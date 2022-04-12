@@ -8,11 +8,9 @@ class Answer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       width: double
           .infinity, // "double" because everything is an object on Flutter
-
 
       child: RaisedButton(
         color: Colors.blue,
@@ -20,8 +18,6 @@ class Answer extends StatelessWidget {
         child: Text(answerText),
         onPressed: selectHandler,
       ),
-
     );
-
   }
 }

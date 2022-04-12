@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final appBar = AppBar(
       title: const Text('Menu'),
-      backgroundColor: const Color.fromRGBO(0, 0, 255, 0.6),
+      backgroundColor: const Color.fromRGBO(0, 0, 255, 0.55),
     );
 
     return Scaffold(
@@ -57,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           colors: [
-            Color.fromRGBO(218, 218, 231, 0.6),
-            Color.fromRGBO(218, 218, 231, 0.6),
+            Color.fromRGBO(241, 240, 239, 1.0),
+            Color.fromRGBO(175, 175, 164, 0.9),
           ],
         ))),
         Positioned(
@@ -81,14 +81,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 'Lancer un duel',
               ),
               onPressed: () {
-                /*
 
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FirstButton()),
+                      MaterialPageRoute(builder: (context) => FirstButton(idQuestion: 0)),
                     );
 
-                     */
+
               },
             ),
             RaisedButton(
@@ -104,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             RaisedButton(
               child: const Text(
-                'Mes résultats résultats',
+                'Mes résultats',
               ),
               onPressed: () {},
             ),
