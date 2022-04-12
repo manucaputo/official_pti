@@ -17,7 +17,7 @@ class _MyAppState extends State<SecondButton> {
 
   final url = "http://192.168.1.100:3000/api/reply/all";
   var _postsJson = [];
-  var _postsJson2 =[
+  final _postsJson2 =[
     {
       "firstName": "Mic2",
       "id": 4,
