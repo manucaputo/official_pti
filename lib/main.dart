@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'first_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,15 +19,18 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
   //int _counter = 0;
 
   /*
@@ -45,78 +49,85 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: const Color.fromRGBO(0, 0, 255, 0.6),
     );
 
-    return Scaffold(
-        appBar: appBar,
+
+
+      return Scaffold(
+          appBar: appBar,
+
+
+          body: Stack(children: <Widget>[
 
 
 
-        body: Stack(children: <Widget>[
+            Container(
+                decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topRight,
+                      end: Alignment.bottomLeft,
+                      colors: [
+                        Color.fromRGBO(0, 0, 255, 0.5),
+                        Colors.greenAccent,
+                      ],
+                    ))),
 
 
 
-          Container(
-              decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topRight,
-                    end: Alignment.bottomLeft,
-                    colors: [
-                      Color.fromRGBO(0, 0, 255, 0.5),
-                      Colors.greenAccent,
-                    ],
-                  ))),
+            Positioned(
+                width: MediaQuery.of(context).size.width * 1,
+                top: MediaQuery.of(context).size.width * 0.2,
+                child: Container(
+                  //margin: EdgeInsets.all(16.0),
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Image.asset('assets/images/Accueil_TITRE.png', scale: 2),
+                      ]),
+                )),
 
 
 
-          Positioned(
-              width: MediaQuery.of(context).size.width * 1,
-              top: MediaQuery.of(context).size.width * 0.2,
-              child: Container(
-                //margin: EdgeInsets.all(16.0),
-                child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Image.asset('assets/images/Accueil_TITRE.png', scale: 2),
-                    ]),
-              )),
-
-
-
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              RaisedButton(
-                child: const Text(
-                  'Lancer un duel',
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                RaisedButton(
+                  child: const Text(
+                    'Lancer un duel',
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FirstButton()),
+                    );
+                  },
                 ),
-                onPressed: () {},
-              ),
-              RaisedButton(
-                child: const Text(
-                  'Mes duels',
+                RaisedButton(
+                  child: const Text(
+                    'Mes duels',
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
-              ),
-              RaisedButton(
-                child: const Text(
-                  'Mes résultats résultats',
+                RaisedButton(
+                  child: const Text(
+                    'Mes résultats résultats',
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
-              ),
-              RaisedButton(
-                child: const Text(
-                  'Changer de classe',
+                RaisedButton(
+                  child: const Text(
+                    'Changer de classe',
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
-              ),
-              RaisedButton(
-                child: const Text(
-                  'Contexte',
+                RaisedButton(
+                  child: const Text(
+                    'Contexte',
+                  ),
+                  onPressed: () {},
                 ),
-                onPressed: () {},
-              ),
-            ],
-          )
-        ]));
+              ],
+            )
+          ]),
+    );
   }
 }
