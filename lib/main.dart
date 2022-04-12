@@ -21,18 +21,15 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-
   const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
-
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   //int _counter = 0;
 
   /*
@@ -51,88 +48,81 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: const Color.fromRGBO(0, 0, 255, 0.6),
     );
 
+    return Scaffold(
+      appBar: appBar,
+      body: Stack(children: <Widget>[
+        Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [
+            Color.fromRGBO(218, 218, 231, 0.6),
+            Color.fromRGBO(218, 218, 231, 0.6),
+          ],
+        ))),
+        Positioned(
+            width: MediaQuery.of(context).size.width,
+            top: MediaQuery.of(context).size.width * 0,
+            child: Container(
+              //margin: EdgeInsets.all(16.0),
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Image.asset('assets/images/Accueil_TITRE.png', scale: 1.5),
+                  ]),
+            )),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            RaisedButton(
+              child: const Text(
+                'Lancer un duel',
+              ),
+              onPressed: () {
+                /*
 
-
-      return Scaffold(
-          appBar: appBar,
-
-
-          body: Stack(children: <Widget>[
-
-
-
-            Container(
-                decoration: const BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [
-                        Color.fromRGBO(0, 0, 255, 0.5),
-                        Colors.greenAccent,
-                      ],
-                    ))),
-
-
-
-            Positioned(
-                width: MediaQuery.of(context).size.width,
-                top: MediaQuery.of(context).size.width * 0,
-                child: Container(
-                  //margin: EdgeInsets.all(16.0),
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: <Widget>[
-                        Image.asset('assets/images/Accueil_TITRE.png', scale: 1.5),
-                      ]),
-                )),
-
-
-
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                RaisedButton(
-                  child: const Text(
-                    'Lancer un duel',
-                  ),
-                  onPressed: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => FirstButton()),
                     );
-                  },
-                ),
-                RaisedButton(
-                  child: const Text(
-                    'Mes duels',
-                  ),
-                  onPressed: () { Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SecondButton()),
-                  );},
-                ),
-                RaisedButton(
-                  child: const Text(
-                    'Mes résultats résultats',
-                  ),
-                  onPressed: () {},
-                ),
-                RaisedButton(
-                  child: const Text(
-                    'Changer de classe',
-                  ),
-                  onPressed: () {},
-                ),
-                RaisedButton(
-                  child: const Text(
-                    'Contexte',
-                  ),
-                  onPressed: () {},
-                ),
-              ],
-            )
-          ]),
+
+                     */
+              },
+            ),
+            RaisedButton(
+              child: const Text(
+                'Mes duels',
+              ),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondButton()),
+                );
+              },
+            ),
+            RaisedButton(
+              child: const Text(
+                'Mes résultats résultats',
+              ),
+              onPressed: () {},
+            ),
+            RaisedButton(
+              child: const Text(
+                'Changer de classe',
+              ),
+              onPressed: () {},
+            ),
+            RaisedButton(
+              child: const Text(
+                'Contexte',
+              ),
+              onPressed: () {},
+            ),
+          ],
+        )
+      ]),
     );
   }
 }
