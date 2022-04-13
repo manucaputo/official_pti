@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:official_pti/resultat.dart';
 import 'dart:convert';
-import 'first_button.dart';
+import 'result.dart';
 
 // from scratch
 
@@ -18,39 +19,54 @@ class _MyAppState extends State<ThirdButton> {
   var _postsJson = [];
   final _postsJson2 = [
     {
-      "firstName": "Mic2",
-      "id": 4,
-      "idDuel": 14,
-      "idAdversaire": 6,
-      "idQuestion": 1
+      "player": {
+        "id": 4,
+        "score": 4,
+        "Q1": "x=1",
+        "Q2": "x=2",
+        "Q3": "x=3",
+        "Q4": "x=4",
+        "Q5": "x=5",
+        "DuelId": 2,
+        "UserId": 4,
+        "idQuestion": 1
+      },
+      "adversaire": {
+        "id": 2,
+        "score": 4,
+        "Q1": "x=1",
+        "Q2": "x=2",
+        "Q3": "x=3",
+        "Q4": "x=4",
+        "Q5": "x=5",
+        "DuelId": 2,
+        "UserId": 1,
+        "idQuestion": 1,
+        "firstName": "Adrien"
+      }
     },
     {
-      "firstName": "Mic",
-      "id": 6,
-      "idDuel": 16,
-      "idAdversaire": 6,
-      "idQuestion": 1
-    },
-    {
-      "firstName": "Adrien",
-      "id": 8,
-      "idDuel": 18,
-      "idAdversaire": 2,
-      "idQuestion": 2
-    },
-    {
-      "firstName": "Adrien",
-      "id": 9,
-      "idDuel": 19,
-      "idAdversaire": 2,
-      "idQuestion": 2
-    },
-    {
-      "firstName": "Adrien",
-      "id": 13,
-      "idDuel": 23,
-      "idAdversaire": 2,
-      "idQuestion": 2
+      "player": {
+        "id": 5,
+        "score": 4,
+        "Q1": "x=1",
+        "Q2": "x=2",
+        "Q3": "x=3",
+        "Q4": "x=4",
+        "Q5": "x=5",
+        "DuelId": 3,
+        "UserId": 4,
+        "idQuestion": 1
+      },
+      "adversaire": {
+        "score": "Pas encore joué",
+        "Q1": "Pas de réponse",
+        "Q2": "Pas de réponse",
+        "Q3": "Pas de réponse",
+        "Q4": "Pas de réponse",
+        "Q5": "Pas de réponse",
+        "firstName": "En attente"
+      }
     }
   ];
   Map<String, String> headers = {
@@ -66,7 +82,7 @@ class _MyAppState extends State<ThirdButton> {
 
       setState(() {
         _postsJson = jsonData;
-        print(_postsJson[0]);
+        print(_postsJson[0]["player"]["id"]);
       });
     } catch (err) {}
   }
@@ -87,17 +103,18 @@ class _MyAppState extends State<ThirdButton> {
       body: ListView.builder(
         itemCount: _postsJson2.length,
         itemBuilder: (BuildContext context, int index) {
-          final post = _postsJson[index];
+          final post = _postsJson2[index];
           return Row(children: [
-            Text("${post["firstName"]}"),
+            Text("${post["adversaire"]!["firstName"]} ${post["player"]!["score"]}"),
             RaisedButton(
-                child: Text(" ${post["idQuestion"]}"),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => FirstButton()),
-                  );
-                }),
+              child: Text("Voir les réponses "),
+
+                onPressed: () { Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          ResultatButton(resultat: post)),
+                );}),
           ]);
         },
       ),
