@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => FirstButton(idQuestion: 0)),
+                      MaterialPageRoute(builder: (context) => FirstButton(idQuestion: 0,idDuel: 0,)),
                     );
 
 

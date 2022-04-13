@@ -98,7 +98,7 @@ class _MyAppState extends State<SecondButton> {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            FirstButton(idQuestion: post["idQuestion"])),
+                            FirstButton(idQuestion: post["idQuestion"],idDuel: post["idDuel"],)),
                   );
                 }),
           ]);

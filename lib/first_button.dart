@@ -11,23 +11,27 @@ import 'dart:math';
 
 void main() {
   var idQuestion;
+  var idDuel;
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: FirstButton(
       idQuestion: idQuestion,
+      idDuel : idDuel
     ),
   ));
 }
 
 class FirstButton extends StatefulWidget {
   var idQuestion;
+  var idDuel;
   FirstButton({
     required this.idQuestion,
+    required this.idDuel
   });
 
   @override
   State<FirstButton> createState() => _MyAppState(
-      idQuestion); // put _ before teh name of the class means public class --> private class
+      idQuestion,idDuel); // put _ before teh name of the class means public class --> private class
 }
 
 class _MyAppState extends State<FirstButton> {
@@ -45,31 +49,36 @@ class _MyAppState extends State<FirstButton> {
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3NjY5NjMsImV4cCI6MTY4NTc2Njk2M30.P1mIica2XmcowNwLwiss0g6Mhf_eniSjxcN7wFnmTjs"
   };
 
-  _MyAppState(this.idQuestion);
+  _MyAppState(this.idQuestion,this.idDuel);
 
   postDuel() async {
     try {
-      String json = '{ "idQuestion" : "3" }';
-      final response =
-          await http.post(Uri.parse(url), body: json, headers: headers);
+     // String idQuestionString = idQuestion.toString();
+      Map<String, int> json = { "idQuestion" : idQuestion } ;
+      String json2= jsonEncode(json);
+
+
+      final response = await http.post(Uri.parse(url), body: json2, headers: headers);
       final jsonData = jsonDecode(response.body);
-      print(jsonData["duelId"]);
       idDuel = jsonData["duelId"];
-      print(idDuel);
-    } catch (err) {}
+      print("nouveau id duel"+"$idDuel");
+    } catch (err) {print(err);}
   }
 
   @override
   void initState() {
     super.initState();
+    print("idduel de base"+"$idDuel");
+    print("idquestion"+"$idQuestion");
+
     //postDuel();
     if (idQuestion == 0) {
       Random rnd;
       int min = 1;
-      int max = 4;
+      int max = 3;
       rnd = new Random();
       idQuestion = min + rnd.nextInt(max - min);
-      print("$idQuestion");
+      print("idquestion"+"$idQuestion");
     }
 
     if (idQuestion == 1) {
@@ -138,6 +147,12 @@ class _MyAppState extends State<FirstButton> {
           ]
         },
       ];
+    }
+
+    if(idDuel == 0)
+    {
+
+      postDuel();
     }
   }
 
