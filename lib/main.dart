@@ -3,6 +3,7 @@ import 'package:official_pti/second_button.dart';
 import 'first_button.dart';
 import 'second_button.dart';
 import 'third_button.dart';
+import 'prof_menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -115,7 +116,10 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text(
                 'Changer de classe',
               ),
-              onPressed: () {},
+              onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfMenu()),
+              );},
             ),
             RaisedButton(
               child: const Text(
