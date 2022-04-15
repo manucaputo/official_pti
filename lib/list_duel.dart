@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:official_pti/resultat.dart';
 import 'dart:convert';
 import 'result_student.dart';
+import 'token.dart';
 
 // from scratch
 
@@ -85,8 +86,7 @@ class _MyAppState extends State<ListDuel> {
   _MyAppState(this.idUser);
   Map<String, String> headers = {
     "Content-type": "application/json",
-    "Authorization":
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3ODM2NDMsImV4cCI6MTY4NTc4MzY0M30.68QnFxq2lKjGwa5hW16KBTmADSPJuGKRn_omnoTGn04"
+    "Authorization": Token.token
   };
 
 

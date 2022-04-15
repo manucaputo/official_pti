@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'first_button.dart';
+import 'third_button.dart'  ;
+
+
 
 void main() {
   var resultat;
@@ -25,6 +27,7 @@ class ResultatButton extends StatefulWidget {
 
 class _MyAppState extends State<ResultatButton> {
   var resultat;
+
   _MyAppState(this.resultat);
   final url = "http://192.168.1.100:3000/api/result/my";
   var _postsJson = [];
@@ -57,11 +60,18 @@ class _MyAppState extends State<ResultatButton> {
       }
     };
 
+
+
+
+
   @override
   void initState() {
     super.initState();
 
     print(resultat);
+    
+
+
   }
 
   @override // It already exists but we override with our own method --> To make the code more clear

@@ -4,6 +4,7 @@ import './result.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:math';
+import 'token.dart';
 
 // from scratch
 
@@ -46,7 +47,7 @@ class _MyAppState extends State<FirstButton> {
   Map<String, String> headers = {
     "Content-type": "application/json",
     "Authorization":
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3NjY5NjMsImV4cCI6MTY4NTc2Njk2M30.P1mIica2XmcowNwLwiss0g6Mhf_eniSjxcN7wFnmTjs"
+        Token.token
   };
 
   _MyAppState(this.idQuestion,this.idDuel);

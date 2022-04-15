@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'list_student.dart';
+import 'token.dart';
 
 // from scratch
 
@@ -42,8 +43,7 @@ class _MyAppState extends State<ListClass> {
   ];
   Map<String, String> headers = {
     "Content-type": "application/json",
-    "Authorization":
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0OTk2NjU2MywiZXhwIjoxNjg1OTY2NTYzfQ.yMGgtgmHKDU83BUQP_TJYX4ONtzMohbJXTBiPeyJI98"
+    "Authorization": Token.token
   };
 
   getClass() async {

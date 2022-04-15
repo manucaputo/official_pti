@@ -4,6 +4,7 @@ import 'package:official_pti/list_duel.dart';
 import 'dart:convert';
 import 'first_button.dart';
 import 'list_duel.dart';
+import 'token.dart';
 // from scratch
 
 void main() {
@@ -59,8 +60,7 @@ class _MyAppState extends State<ListStudent> {
   _MyAppState(this.idClass);
   Map<String, String> headers = {
     "Content-type": "application/json",
-    "Authorization":
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsImlzQWRtaW4iOnRydWUsImlhdCI6MTY0OTk2NjU2MywiZXhwIjoxNjg1OTY2NTYzfQ.yMGgtgmHKDU83BUQP_TJYX4ONtzMohbJXTBiPeyJI98"
+    "Authorization": Token.token
   };
 
   getStudent() async {

@@ -1,46 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:official_pti/create_class.dart';
-import 'package:official_pti/resultat.dart';
-import 'dart:convert';
-import 'result.dart';
-import 'list_class.dart';
-import 'create_class.dart';
+import 'package:http/http.dart';
+import 'package:official_pti/second_button.dart';
+import 'first_button.dart';
+import 'second_button.dart';
+import 'third_button.dart';
+import 'prof_menu.dart';
+import 'main.dart';
+import 'token.dart';
 
 // from scratch
+void main() => runApp(StudentMenu()); // for functions who had only one argument
 
-void main() => runApp(ProfMenu()); // for functions who had only one argument
+class StudentMenu extends StatefulWidget {
 
-class ProfMenu extends StatefulWidget {
   @override
-  State<ProfMenu> createState() =>
+  State<StudentMenu> createState() =>
       _MyAppState(); // put _ before teh name of the class means public class --> private class
 }
 
-class _MyAppState extends State<ProfMenu> {
+class _MyAppState extends State<StudentMenu> {
   final url = "http://192.168.1.100:3000/api/result/my";
   var _postsJson = [];
-
-  Map<String, String> headers = {
-    "Content-type": "application/json",
-    "Authorization":
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3ODM2NDMsImV4cCI6MTY4NTc4MzY0M30.68QnFxq2lKjGwa5hW16KBTmADSPJuGKRn_omnoTGn04"
-  };
-
-  var items = [
-    'Equation',
-    'Intégrale',
-    'Dérivée',
-
-  ];
-
-  var dropdownValue = 'Equation';
+  var token;
 
 
 
   @override
   void initState() {
     super.initState();
+    print("c'est bon");
+    print(Token.token);
+
+
 
   }
 
@@ -81,36 +72,49 @@ class _MyAppState extends State<ProfMenu> {
           children: [
             RaisedButton(
               child: const Text(
-                'Mes classes',
+                'Lancer un duel',
               ),
-              onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ListClass()),
-              );},
+              onPressed: () {
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FirstButton(idQuestion: 0,idDuel: 0,)),
+                );
+
+
+              },
             ),
             RaisedButton(
               child: const Text(
-                'Créer une classe',
+                'Mes duels',
               ),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          CreateClass()),
+                  MaterialPageRoute(builder: (context) => SecondButton()),
                 );
-
               },
             ),
-            DropdownButton(
-              value: dropdownValue,
-              icon: Icon(Icons.keyboard_arrow_down),
-              items: items.map((items) {
-                return DropdownMenuItem(value: items, child: Text(items));
-              }).toList(), onChanged: (String? value) { setState(() {
-              dropdownValue = value!;
-            }); },
-
+            RaisedButton(
+              child: const Text(
+                'Mes résultats',
+              ),
+              onPressed: () { Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ThirdButton()),
+              );},
+            ),
+            RaisedButton(
+              child: const Text(
+                'Changer de classe',
+              ),
+              onPressed: () {},
+            ),
+            RaisedButton(
+              child: const Text(
+                'Contexte',
+              ),
+              onPressed: () {},
             ),
           ],
         )

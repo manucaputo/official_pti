@@ -1,22 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:official_pti/resultat.dart';
+import 'package:official_pti/token.dart';
 import 'dart:convert';
 import 'result.dart';
 
 // from scratch
 
 void main() => runApp(ThirdButton()); // for functions who had only one argument
-
 class ThirdButton extends StatefulWidget {
+
+
+
+
   @override
   State<ThirdButton> createState() =>
       _MyAppState(); // put _ before teh name of the class means public class --> private class
+
+
 }
+
+
 
 class _MyAppState extends State<ThirdButton> {
   final url = "http://192.168.1.100:3000/api/result/my";
   var _postsJson = [];
+  var test="coucou";
+
+
+
+  _MyAppState();
+
+
+
+
+
   final _postsJson2 = [
     {
       "player": {
@@ -72,10 +90,10 @@ class _MyAppState extends State<ThirdButton> {
   Map<String, String> headers = {
     "Content-type": "application/json",
     "Authorization":
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3ODM2NDMsImV4cCI6MTY4NTc4MzY0M30.68QnFxq2lKjGwa5hW16KBTmADSPJuGKRn_omnoTGn04"
+        Token.token
   };
 
-  getReply() async {
+   getReply() async {
     try {
       final response = await http.get(Uri.parse(url), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
@@ -85,12 +103,16 @@ class _MyAppState extends State<ThirdButton> {
         print(_postsJson[0]["player"]["id"]);
       });
     } catch (err) {}
+
   }
+
+
 
   @override
   void initState() {
     super.initState();
     getReply();
+
   }
 
   @override // It already exists but we override with our own method --> To make the code more clear

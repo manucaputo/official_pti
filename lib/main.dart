@@ -4,6 +4,13 @@ import 'first_button.dart';
 import 'second_button.dart';
 import 'third_button.dart';
 import 'prof_menu.dart';
+import 'Student_menu.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'token.dart' ;
+
+
+
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +18,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
+
 
   // This widget is the root of your application.
   @override
@@ -27,21 +36,69 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
 
+
+
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //int _counter = 0;
+  var emailController = TextEditingController();
+  var passController = TextEditingController();
 
-  /*
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  var url = "http://192.168.1.100:3000/api/users/login";
+  Map<String, String> headers = {
+    "Content-type": "application/json",
+  };
+  var _postsJson;
+  @override
+  void initState() {
+    super.initState();
+    print(Token.token);
+
+
   }
 
-  */
+  Future<void> postConnexion() async {
+    try {
+      print(emailController.text);
+      print(passController.text);
+      Map<String, String> json = {"email":emailController.text.toString(),"password":passController.text.toString()};
+      String json2= jsonEncode(json);
+
+
+      final response = await http.post(Uri.parse(url),headers:headers,body:json2);
+      final jsonData = jsonDecode(response.body);
+      print(jsonData);
+
+      if(response.statusCode==201)
+        {Token.setToken(jsonData["token"]);
+          if(jsonData["isAdmin"]==false) {
+
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      StudentMenu()),
+            );
+          }
+          if(jsonData["isAdmin"]==true) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) =>
+                      ProfMenu()),
+            );
+          }
+
+        }
+
+      else{
+       ScaffoldMessenger.of(context)
+           .showSnackBar(SnackBar(content: Text("Il manque des champs")));
+    }
+    } catch (err) {print(err);}
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,84 +109,34 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: appBar,
-      body: Stack(children: <Widget>[
-        Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          colors: [
-            Color.fromRGBO(241, 240, 239, 1.0),
-            Color.fromRGBO(175, 175, 164, 0.9),
-          ],
-        ))),
-        Positioned(
-            width: MediaQuery.of(context).size.width,
-            top: MediaQuery.of(context).size.width * 0,
-            child: Container(
-              //margin: EdgeInsets.all(16.0),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Image.asset('assets/images/Accueil_TITRE.png', scale: 1.5),
-                  ]),
-            )),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            RaisedButton(
-              child: const Text(
-                'Lancer un duel',
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+          child :SafeArea(child:Center
+            (child:Column(
+            mainAxisAlignment:  MainAxisAlignment.center,
+            children: [
+              TextFormField(
+                controller: emailController,
+                decoration: const InputDecoration(
+                    labelText: "Email",
+                    border:  OutlineInputBorder(),
+                    suffixIcon:  Icon(Icons.email)),
               ),
-              onPressed: () {
+              SizedBox(height: 15,),
+              TextFormField(
+                controller: passController,
+                obscureText: true,
+                decoration: const InputDecoration(
+                    labelText: "Password",
+                    border:  OutlineInputBorder(),
+                    suffixIcon:  Icon(Icons.email)),
+              ),
+              SizedBox(
+                height:45
+              ),
+              OutlinedButton.icon(onPressed: () {postConnexion();}, icon: Icon(Icons.login,size:18), label: Text("Login")),
 
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => FirstButton(idQuestion: 0,idDuel: 0,)),
-                    );
-
-
-              },
-            ),
-            RaisedButton(
-              child: const Text(
-                'Mes duels',
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SecondButton()),
-                );
-              },
-            ),
-            RaisedButton(
-              child: const Text(
-                'Mes résultats',
-              ),
-              onPressed: () { Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ThirdButton()),
-              );},
-            ),
-            RaisedButton(
-              child: const Text(
-                'Changer de classe',
-              ),
-              onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ProfMenu()),
-              );},
-            ),
-            RaisedButton(
-              child: const Text(
-                'Contexte',
-              ),
-              onPressed: () {},
-            ),
-          ],
-        )
-      ]),
+            ],))))
     );
   }
 }
