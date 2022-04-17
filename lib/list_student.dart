@@ -36,24 +36,38 @@ class _MyAppState extends State<ListStudent> {
   final _postsJson2 = [
     {
       "id": 1,
-      "name": "classe1",
-      "password": "1234",
-      "createdAt": "2022-03-20T21:46:44.000Z",
-      "updatedAt": "2022-03-20T21:46:44.000Z"
+      "firstName": "Adrien",
+      "name": "Dubois",
+      "email": "181887@umons.ac.be",
+      "isAdmin": false
     },
     {
       "id": 2,
-      "name": "classe2",
-      "password": "1234",
-      "createdAt": "2022-04-06T09:49:12.000Z",
-      "updatedAt": "2022-04-06T09:49:12.000Z"
+      "firstName": "Adrien",
+      "name": "Dubois",
+      "email": "1818872@umons.ac.be",
+      "isAdmin": false
     },
     {
       "id": 3,
-      "name": "classe3",
-      "password": "1234",
-      "createdAt": "2022-04-06T10:53:32.000Z",
-      "updatedAt": "2022-04-06T10:53:32.000Z"
+      "firstName": "Adrien",
+      "name": "Dubois",
+      "email": "1818873@umons.ac.be",
+      "isAdmin": true
+    },
+    {
+      "id": 4,
+      "firstName": "Seph",
+      "name": "CSN",
+      "email": "Seph@umons.ac.be",
+      "isAdmin": false
+    },
+    {
+      "id": 6,
+      "firstName": "Mic",
+      "name": "CSN",
+      "email": "Mic@umons.ac.be",
+      "isAdmin": false
     }
   ];
 
@@ -90,9 +104,9 @@ class _MyAppState extends State<ListStudent> {
             title: Text('MixMath'),
           ),
           body: ListView.builder(
-            itemCount: _postsJson.length,
+            itemCount: _postsJson2.length,
             itemBuilder: (BuildContext context, int index) {
-              final post = _postsJson[index];
+              final post = _postsJson2[index];
 
               return Row(children: [
                 Text("${post["firstName"]} " + "${post["name"]}"),

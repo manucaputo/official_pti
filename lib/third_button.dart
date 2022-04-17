@@ -114,20 +114,24 @@ class _MyAppState extends State<ThirdButton> {
     getReply();
 
   }
+  var a=2;
 
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: Text('MixMath'),
+        title: const Text('MixMath'),
       ),
       body: ListView.builder(
         itemCount: _postsJson2.length,
         itemBuilder: (BuildContext context, int index) {
           final post = _postsJson2[index];
+
           return Row(children: [
             Text("${post["adversaire"]!["firstName"]} ${post["player"]!["score"]}"),
+           
+
             RaisedButton(
               child: Text("Voir les réponses "),
 

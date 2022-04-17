@@ -8,6 +8,7 @@ import 'Student_menu.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'token.dart' ;
+import 'signup.dart';
 
 
 
@@ -46,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var emailController = TextEditingController();
   var passController = TextEditingController();
 
-  var url = "http://192.168.1.100:3000/api/users/login";
+  var url = "http://192.168.0.235:3000/api/users/login";
   Map<String, String> headers = {
     "Content-type": "application/json",
   };
@@ -135,6 +136,37 @@ class _MyHomePageState extends State<MyHomePage> {
                 height:45
               ),
               OutlinedButton.icon(onPressed: () {postConnexion();}, icon: Icon(Icons.login,size:18), label: Text("Login")),
+              SizedBox(
+                  height:45
+              ),
+              OutlinedButton.icon(onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        SignUp()),
+              );
+              }, icon: Icon(Icons.login,size:18), label: Text("S'enregistrer")),
+      RaisedButton(
+        child: const Text(
+          'Menu éléves',
+        ),
+        onPressed: () {Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => StudentMenu()),
+        );},
+      ),
+      RaisedButton(
+      child: const Text(
+      'Menu prof',
+    ),
+    onPressed: () {
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    builder: (context) =>
+    ProfMenu()),
+    );})
+
 
             ],))))
     );
