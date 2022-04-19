@@ -1,31 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:official_pti/second_button.dart';
-import 'first_button.dart';
-import 'second_button.dart';
-import 'third_button.dart';
-import 'prof_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'first_button.dart';
 import 'token.dart';
+import 'Student_menu.dart';
 
 // from scratch
 
-void main() =>
-    runApp(CreateClass()); // for functions who had only one argument
+void main() => runApp(JoinClass()); // for functions who had only one argument
 
-class CreateClass extends StatefulWidget {
+class JoinClass extends StatefulWidget {
   @override
-  State<CreateClass> createState() =>
+  State<JoinClass> createState() =>
       _MyAppState(); // put _ before teh name of the class means public class --> private class
 }
 
-class _MyAppState extends State<CreateClass> {
+class _MyAppState extends State<JoinClass> {
   var nameController = TextEditingController();
   var passController = TextEditingController();
 
-  var url = "http://192.168.1.100:3000/api/class/register";
+  var url = "http://192.168.1.100:3000/api/class/join";
   Map<String, String> headers = {
     "Content-type": "application/json",
     "Authorization": Token.token
@@ -39,7 +34,7 @@ class _MyAppState extends State<CreateClass> {
 
   }
 
-  Future<void> postlClass() async {
+  Future<void> joinClass() async {
     try {
       print(nameController.text);
       print(passController.text);
@@ -57,12 +52,9 @@ class _MyAppState extends State<CreateClass> {
           context,
           MaterialPageRoute(
               builder: (context) =>
-                  ProfMenu()),
+                  StudentMenu()),
         );
-
-
       }
-
       else{
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text("Il manque des champs")));
@@ -88,25 +80,25 @@ class _MyAppState extends State<CreateClass> {
                 TextFormField(
                   controller: nameController,
                   decoration: const InputDecoration(
-                      labelText: "Nom",
-                      border:  OutlineInputBorder(),),
+                    labelText: "Nom",
+                    border:  OutlineInputBorder(),),
                 ),
                 SizedBox(height: 15,),
                 TextFormField(
                   controller: passController,
                   obscureText: true,
                   decoration: const InputDecoration(
-                      labelText: "Password",
-                      border:  OutlineInputBorder(),),
+                    labelText: "Password",
+                    border:  OutlineInputBorder(),),
                 ),
                 SizedBox(
                     height:45
                 ),
                 RaisedButton(
                   child: const Text(
-                    'AJouter',
+                    'Rejoindre',
                   ),
-                  onPressed: () {postlClass();},)
+                  onPressed: () {joinClass();},)
 
               ],))))
     );

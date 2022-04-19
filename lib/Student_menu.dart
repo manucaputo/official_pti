@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:official_pti/second_button.dart';
 import 'first_button.dart';
 import 'second_button.dart';
 import 'third_button.dart';
-import 'prof_menu.dart';
 import 'main.dart';
 import 'token.dart';
+import 'join_class.dart';
 
 // from scratch
 void main() => runApp(StudentMenu()); // for functions who had only one argument
@@ -28,11 +27,6 @@ class _MyAppState extends State<StudentMenu> {
   @override
   void initState() {
     super.initState();
-    print("c'est bon");
-    print(Token.token);
-
-
-
   }
 
   @override
@@ -108,7 +102,10 @@ class _MyAppState extends State<StudentMenu> {
               child: const Text(
                 'Changer de classe',
               ),
-              onPressed: () {},
+              onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => JoinClass()),
+              );},
             ),
             RaisedButton(
               child: const Text(
