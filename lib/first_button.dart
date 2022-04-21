@@ -188,28 +188,14 @@ class _MyAppState extends State<FirstButton> {
             centerTitle: true,
             backgroundColor: const Color.fromRGBO(0, 0, 255, 0.55),
           ),
-          body: Stack(
-            children: [
-              Positioned(
-                  width: MediaQuery.of(context).size.width,
-                  top: MediaQuery.of(context).size.height * 0,
-                  child: Container(
-                    //margin: EdgeInsets.all(16.0),
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Image.asset('assets/images/Dragon_CLASSIQUE.png',
-                              scale: 4),
-                        ]),
-                  )),
-              Container(
+          body: Container(
                 decoration: const BoxDecoration(
                     gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
                     Color.fromRGBO(241, 240, 239, 0),
-                    Color.fromRGBO(175, 175, 164, 0.5),
+                    Color.fromRGBO(175, 175, 164, 0),
                   ],
                 )),
                 child: _questionIndex < _questions.length //if
@@ -218,9 +204,8 @@ class _MyAppState extends State<FirstButton> {
                         questionIndex: _questionIndex,
                         questions: _questions)
                     : Result(_totalScore, _resetQuiz),
-              )
-            ],
+              ),
           ),
-        ));
+        );
   }
 }

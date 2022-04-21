@@ -1,6 +1,11 @@
+//import 'dart:html';
+//import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:official_pti/Student_menu.dart';
 import 'package:official_pti/main.dart';
+import '../helpers/custom_routes.dart';
 import 'main.dart';
+
 
 class Result extends StatelessWidget {
   final int resultScore;
@@ -22,6 +27,7 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Center(
       //else
       child: Column(
@@ -46,11 +52,14 @@ class Result extends StatelessWidget {
             //onPressed: resetHandler,
             onPressed: () {
               resetHandler;
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const MyApp()),
-              );
-            },
+              //Navigator.push(
+               // context,
+                //MaterialPageRoute(builder: (context) => StudentMenu()),
+             // );
+              Navigator.of(context).pushReplacement(
+                  CustomRoute(builder: (ctx) => StudentMenu(),
+                  ));
+            }
           )
         ],
       ),

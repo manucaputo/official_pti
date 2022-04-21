@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:official_pti/second_button.dart';
 import 'first_button.dart';
+import 'helpers/custom_routes.dart';
 import 'second_button.dart';
 import 'third_button.dart';
 import 'main.dart';
@@ -70,10 +71,18 @@ class _MyAppState extends State<StudentMenu> {
               ),
               onPressed: () {
 
+                /*
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => FirstButton(idQuestion: 0,idDuel: 0,)),
                 );
+
+                 */
+
+                Navigator.of(context).pushReplacement(
+                    CustomRoute(builder: (ctx) => FirstButton(idQuestion: 0, idDuel: 0),
+                    ));
 
 
               },
@@ -83,10 +92,17 @@ class _MyAppState extends State<StudentMenu> {
                 'Mes duels',
               ),
               onPressed: () {
+                /*
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => SecondButton()),
                 );
+
+                 */
+
+
+
               },
             ),
             RaisedButton(
