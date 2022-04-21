@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:official_pti/list_duel.dart';
+import 'package:official_pti/lists/list_duel.dart';
 import 'dart:convert';
-import 'first_button.dart';
+import '../buttons/first_button.dart';
 import 'list_duel.dart';
-import 'token.dart';
+import '../connexion/token.dart';
 // from scratch
 
 void main() {

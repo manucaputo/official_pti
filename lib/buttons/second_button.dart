@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'first_button.dart';
-import 'token.dart';
+import 'package:official_pti/buttons/first_button.dart';
+import '../connexion/token.dart';
 
 // from scratch
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:official_pti/second_button.dart';
+import 'package:official_pti/buttons/second_button.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'token.dart';
-import 'Student_menu.dart';
+import '../connexion/token.dart';
+import '../menus/Student_menu.dart';
 
 // from scratch
 

@@ -1,10 +1,10 @@
 //import 'dart:html';
 //import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:official_pti/Student_menu.dart';
+import 'package:official_pti/menus/Student_menu.dart';
 import 'package:official_pti/main.dart';
-import '../helpers/custom_routes.dart';
-import 'main.dart';
+import '../../helpers/custom_routes.dart';
+import '../main.dart';
 
 
 class Result extends StatelessWidget {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import './quiz.dart';
-import './result.dart';
+import '../quizz/quiz.dart';
+import '../quizz/result.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:math';
-import 'token.dart';
+import '../connexion/token.dart';
 
 // from scratch
 

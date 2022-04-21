@@ -1,33 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:official_pti/second_button.dart';
-import 'first_button.dart';
-import 'helpers/custom_routes.dart';
-import 'second_button.dart';
-import 'third_button.dart';
-import 'main.dart';
-import 'token.dart';
-import 'join_class.dart';
+import 'package:http/http.dart' as http;
+import 'package:official_pti/classes/create_class.dart';
+import 'package:official_pti/Resultats/resultat.dart';
+import 'dart:convert';
+import '../quizz/result.dart';
+import '../lists/list_class.dart';
+import '../classes/create_class.dart';
 
 // from scratch
-void main() => runApp(StudentMenu()); // for functions who had only one argument
 
-class StudentMenu extends StatefulWidget {
+void main() => runApp(ProfMenu()); // for functions who had only one argument
 
+class ProfMenu extends StatefulWidget {
   @override
-  State<StudentMenu> createState() =>
+  State<ProfMenu> createState() =>
       _MyAppState(); // put _ before teh name of the class means public class --> private class
 }
 
-class _MyAppState extends State<StudentMenu> {
+class _MyAppState extends State<ProfMenu> {
   final url = "http://192.168.1.100:3000/api/result/my";
   var _postsJson = [];
-  var token;
+
+  Map<String, String> headers = {
+    "Content-type": "application/json",
+    "Authorization":
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3ODM2NDMsImV4cCI6MTY4NTc4MzY0M30.68QnFxq2lKjGwa5hW16KBTmADSPJuGKRn_omnoTGn04"
+  };
+
+  var items = [
+    'Equation',
+    'Intégrale',
+    'Dérivée',
+
+  ];
+
+  var dropdownValue = 'Equation';
 
 
 
   @override
   void initState() {
     super.initState();
+
   }
 
   @override
@@ -67,67 +81,36 @@ class _MyAppState extends State<StudentMenu> {
           children: [
             RaisedButton(
               child: const Text(
-                'Lancer un duel',
-              ),
-              onPressed: () {
-
-                /*
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => FirstButton(idQuestion: 0,idDuel: 0,)),
-                );
-
-                 */
-
-                Navigator.of(context).pushReplacement(
-                    CustomRoute(builder: (ctx) => FirstButton(idQuestion: 0, idDuel: 0),
-                    ));
-
-
-              },
-            ),
-            RaisedButton(
-              child: const Text(
-                'Mes duels',
-              ),
-              onPressed: () {
-                /*
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => SecondButton()),
-                );
-
-                 */
-
-
-
-              },
-            ),
-            RaisedButton(
-              child: const Text(
-                'Mes résultats',
-              ),
-              onPressed: () { Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ThirdButton()),
-              );},
-            ),
-            RaisedButton(
-              child: const Text(
-                'Changer de classe',
+                'Mes classes',
               ),
               onPressed: () {Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => JoinClass()),
+                MaterialPageRoute(builder: (context) => ListClass()),
               );},
             ),
             RaisedButton(
               child: const Text(
-                'Contexte',
+                'Créer une classe',
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          CreateClass()),
+                );
+
+              },
+            ),
+            DropdownButton(
+              value: dropdownValue,
+              icon: Icon(Icons.keyboard_arrow_down),
+              items: items.map((items) {
+                return DropdownMenuItem(value: items, child: Text(items));
+              }).toList(), onChanged: (String? value) { setState(() {
+              dropdownValue = value!;
+            }); },
+
             ),
           ],
         )

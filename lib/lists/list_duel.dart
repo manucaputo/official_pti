@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:official_pti/resultat.dart';
+import 'package:official_pti/Resultats/resultat.dart';
 import 'dart:convert';
-import 'result_student.dart';
-import 'token.dart';
+import '../Resultats/result_student.dart';
+import '../connexion/token.dart';
 
 // from scratch
 

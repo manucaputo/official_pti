@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:official_pti/second_button.dart';
-import 'first_button.dart';
-import 'second_button.dart';
-import 'third_button.dart';
-import 'prof_menu.dart';
+import 'package:official_pti/buttons/second_button.dart';
+import '../buttons/first_button.dart';
+import '../buttons/second_button.dart';
+import '../buttons/third_button.dart';
+import '../menus/prof_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'first_button.dart';
-import 'token.dart';
+import '../buttons/first_button.dart';
+import '../connexion/token.dart';
 
 // from scratch
 
