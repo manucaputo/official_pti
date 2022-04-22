@@ -37,7 +37,159 @@ class _MyAppState extends State<StudentMenu> {
         appBar: appBar,
         backgroundColor: Colors.white,
 
-        /* body: SingleChildScrollView(
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.center,
+
+                children: [
+
+                  Image.asset('assets/images/Accueil_TITRE.png',
+                      scale: 2),
+
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
+                    child: ElevatedButton(
+                      child: const Text('Lancer un duel',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(200, 65),
+                        maximumSize: const Size(200, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).pushReplacement(CustomRoute(
+                          builder: (ctx) => FirstButton(idQuestion: 0, idDuel: 0),
+                        ));
+                      },
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                    child: ElevatedButton(
+                      child: const Text('Mes duels',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(200, 65),
+                        maximumSize: const Size(200, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SecondButton()),
+                        );
+                      },
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                    child: ElevatedButton(
+                      child: const Text('Mes résultats',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(200, 65),
+                        maximumSize: const Size(200, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ThirdButton()),
+                        );
+                      },
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                    child: ElevatedButton(
+                      child: const Text('Changer de classe',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(200, 65),
+                        maximumSize: const Size(200, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => JoinClass()),
+                        );
+                      },
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 0),
+                    child: ElevatedButton(
+                      child: const Text('Contexte',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(200, 65),
+                        maximumSize: const Size(200, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                ]),
+          ),
+        ));
+  }
+}
+
+
+/* body: SingleChildScrollView(
           padding: EdgeInsets.all(5.0),
 
             child: Column(
@@ -317,151 +469,3 @@ class _MyAppState extends State<StudentMenu> {
 
          */
 
-        body: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              /* SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: Image.asset('assets/images/Accueil_TITRE.png', scale: 2.5),
-            ),
-
-            */
-
-              Container(
-                margin: const EdgeInsets.fromLTRB(15.0, 0, 15.0, 0),
-                child: ElevatedButton(
-                  child: const Text('Lancer un duel',
-                      style: TextStyle(
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          fontStyle: FontStyle.italic)),
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(200, 65),
-                    maximumSize: const Size(200, 65),
-                    primary: const Color.fromRGBO(221, 229, 221, 1.0),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                        side: const BorderSide(
-                          width: 5.0,
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                        )),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pushReplacement(CustomRoute(
-                      builder: (ctx) => FirstButton(idQuestion: 0, idDuel: 0),
-                    ));
-                  },
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
-                child: ElevatedButton(
-                  child: const Text('Mes duels',
-                      style: TextStyle(
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          fontStyle: FontStyle.italic)),
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(200, 65),
-                    maximumSize: const Size(200, 65),
-                    primary: const Color.fromRGBO(221, 229, 221, 1.0),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                        side: const BorderSide(
-                          width: 5.0,
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                        )),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SecondButton()),
-                    );
-                  },
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
-                child: ElevatedButton(
-                  child: const Text('Mes résultats',
-                      style: TextStyle(
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          fontStyle: FontStyle.italic)),
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(200, 65),
-                    maximumSize: const Size(200, 65),
-                    primary: const Color.fromRGBO(221, 229, 221, 1.0),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                        side: const BorderSide(
-                          width: 5.0,
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                        )),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => ThirdButton()),
-                    );
-                  },
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
-                child: ElevatedButton(
-                  child: const Text('Changer de classe',
-                      style: TextStyle(
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          fontStyle: FontStyle.italic)),
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(200, 65),
-                    maximumSize: const Size(200, 65),
-                    primary: const Color.fromRGBO(221, 229, 221, 1.0),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                        side: const BorderSide(
-                          width: 5.0,
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                        )),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => JoinClass()),
-                    );
-                  },
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 0),
-                child: ElevatedButton(
-                  child: const Text('Contexte',
-                      style: TextStyle(
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          fontStyle: FontStyle.italic)),
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(200, 65),
-                    maximumSize: const Size(200, 65),
-                    primary: const Color.fromRGBO(221, 229, 221, 1.0),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15.0),
-                        side: const BorderSide(
-                          width: 5.0,
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                        )),
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-            ]));
-  }
-}
