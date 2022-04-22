@@ -40,7 +40,7 @@ class _MyAppState extends State<StudentMenu> {
         body: Center(
           child: SingleChildScrollView(
             child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
 
                 children: [
@@ -49,6 +49,7 @@ class _MyAppState extends State<StudentMenu> {
                       scale: 2),
 
                   Container(
+
                     margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
                     child: ElevatedButton(
                       child: const Text('Lancer un duel',
@@ -58,8 +59,8 @@ class _MyAppState extends State<StudentMenu> {
                               fontSize: 20,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(200, 65),
-                        maximumSize: const Size(200, 65),
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
                         primary: const Color.fromRGBO(221, 229, 221, 1.0),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
@@ -85,8 +86,8 @@ class _MyAppState extends State<StudentMenu> {
                               fontSize: 20,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(200, 65),
-                        maximumSize: const Size(200, 65),
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
                         primary: const Color.fromRGBO(221, 229, 221, 1.0),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
@@ -113,8 +114,8 @@ class _MyAppState extends State<StudentMenu> {
                               fontSize: 20,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(200, 65),
-                        maximumSize: const Size(200, 65),
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
                         primary: const Color.fromRGBO(221, 229, 221, 1.0),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
@@ -141,8 +142,8 @@ class _MyAppState extends State<StudentMenu> {
                               fontSize: 20,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(200, 65),
-                        maximumSize: const Size(200, 65),
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
                         primary: const Color.fromRGBO(221, 229, 221, 1.0),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
@@ -169,8 +170,8 @@ class _MyAppState extends State<StudentMenu> {
                               fontSize: 20,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(200, 65),
-                        maximumSize: const Size(200, 65),
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
                         primary: const Color.fromRGBO(221, 229, 221, 1.0),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15.0),
@@ -180,6 +181,31 @@ class _MyAppState extends State<StudentMenu> {
                             )),
                       ),
                       onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 0),
+                    child: ElevatedButton(
+                      child: const Text('Déconnexion',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+
+                      },
                     ),
                   ),
                 ]),

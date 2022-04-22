@@ -20,7 +20,7 @@ class _MyAppState extends State<JoinClass> {
   var nameController = TextEditingController();
   var passController = TextEditingController();
 
-  var url = "http://192.168.1.100:3000/api/class/join";
+  var url = "/class/join";
   Map<String, String> headers = {
     "Content-type": "application/json",
     "Authorization": Token.token
@@ -42,7 +42,7 @@ class _MyAppState extends State<JoinClass> {
       String json2= jsonEncode(json);
 
 
-      final response = await http.post(Uri.parse(url),headers:headers,body:json2);
+      final response = await http.post(Uri.parse(Token.url+url),headers:headers,body:json2);
       final jsonData = jsonDecode(response.body);
       print(jsonData);
 

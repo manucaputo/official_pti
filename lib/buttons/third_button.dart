@@ -23,7 +23,7 @@ class ThirdButton extends StatefulWidget {
 
 
 class _MyAppState extends State<ThirdButton> {
-  final url = "http://192.168.1.100:3000/api/result/my";
+  final url = "/result/my";
   var _postsJson = [];
   var test="coucou";
 
@@ -95,7 +95,7 @@ class _MyAppState extends State<ThirdButton> {
 
    getReply() async {
     try {
-      final response = await http.get(Uri.parse(url), headers: headers);
+      final response = await http.get(Uri.parse(Token.url+url), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
 
       setState(() {

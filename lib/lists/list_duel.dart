@@ -29,7 +29,7 @@ class ListDuel  extends StatefulWidget {
 
 class _MyAppState extends State<ListDuel> {
   var idUser;
-  final url = "http://192.168.1.100:3000/api/result/student";
+  final url = "/result/student";
   var _postsJson = [];
   final _postsJson2 = [
     {
@@ -94,7 +94,7 @@ class _MyAppState extends State<ListDuel> {
   getReply() async {
     try {
 
-      final response = await http.get(Uri.parse(url+idUser.toString()), headers: headers);
+      final response = await http.get(Uri.parse(Token.url+url+idUser.toString()), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
 
       setState(() {

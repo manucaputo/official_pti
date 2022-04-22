@@ -30,7 +30,7 @@ class ListStudent extends StatefulWidget {
 
 class _MyAppState extends State<ListStudent> {
   var idClass;
-  final url = "http://192.168.1.100:3000/api/users/allClass/";
+  final url = "/users/allClass/";
 
   var _postsJson = [];
   final _postsJson2 = [
@@ -79,7 +79,7 @@ class _MyAppState extends State<ListStudent> {
 
   getStudent() async {
     try {
-      final response = await http.get(Uri.parse(url+idClass.toString()), headers: headers);
+      final response = await http.get(Uri.parse(Token.url+url+idClass.toString()), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
 
       setState(() {

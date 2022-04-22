@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var emailController = TextEditingController();
   var passController = TextEditingController();
 
-  var url = "http://192.168.1.100:3000/api/users/login";
+  var url = "/users/login";
   Map<String, String> headers = {
     "Content-type": "application/json",
   };
@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
       String json2 = jsonEncode(json);
 
       final response =
-          await http.post(Uri.parse(url), headers: headers, body: json2);
+          await http.post(Uri.parse(Token.url+url), headers: headers, body: json2);
       final jsonData = jsonDecode(response.body);
       print(jsonData);
 

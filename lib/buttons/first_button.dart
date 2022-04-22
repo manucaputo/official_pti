@@ -39,7 +39,7 @@ class _MyAppState extends State<FirstButton> {
   var _questionIndex = 0;
   var _totalScore = 0;
   var idQuestion;
-  final url = "http://192.168.1.100:3000/api/duel";
+  final url = "/duel";
   var _postsJson = [];
   var idDuel;
   List<Map<String, Object>> _questions = [];
@@ -54,12 +54,11 @@ class _MyAppState extends State<FirstButton> {
 
   postDuel() async {
     try {
-     // String idQuestionString = idQuestion.toString();
       Map<String, int> json = { "idQuestion" : idQuestion } ;
       String json2= jsonEncode(json);
 
 
-      final response = await http.post(Uri.parse(url), body: json2, headers: headers);
+      final response = await http.post(Uri.parse(Token.url+url), body: json2, headers: headers);
       final jsonData = jsonDecode(response.body);
       idDuel = jsonData["duelId"];
       print("nouveau id duel"+"$idDuel");

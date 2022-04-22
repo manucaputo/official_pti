@@ -16,7 +16,7 @@ class SecondButton extends StatefulWidget {
 }
 
 class _MyAppState extends State<SecondButton> {
-  final url = "http://192.168.1.100:3000/api/reply/all";
+  final url = "/reply/all";
   var _postsJson = [];
   final _postsJson2 = [
     {
@@ -62,7 +62,7 @@ class _MyAppState extends State<SecondButton> {
 
   getReply() async {
     try {
-      final response = await http.get(Uri.parse(url), headers: headers);
+      final response = await http.get(Uri.parse(Token.url+url), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
 
       setState(() {
