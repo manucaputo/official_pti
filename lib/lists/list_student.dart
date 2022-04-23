@@ -72,6 +72,7 @@ class _MyAppState extends State<ListStudent> {
   ];
 
   _MyAppState(this.idClass);
+
   Map<String, String> headers = {
     "Content-type": "application/json",
     "Authorization": Token.token
@@ -79,12 +80,12 @@ class _MyAppState extends State<ListStudent> {
 
   getStudent() async {
     try {
-      final response = await http.get(Uri.parse(Token.url+url+idClass.toString()), headers: headers);
+      final response = await http.get(
+          Uri.parse(Token.url + url + idClass.toString()), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
 
       setState(() {
         _postsJson = jsonData;
-
       });
     } catch (err) {}
   }
@@ -93,9 +94,101 @@ class _MyAppState extends State<ListStudent> {
   void initState() {
     super.initState();
     getStudent();
-
   }
 
+  @override
+  Widget build(BuildContext context) {
+    final appBar = AppBar(
+      title: const Text('Mes élèves'),
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+    );
+
+
+    return Scaffold(
+        appBar: appBar,
+        backgroundColor: Colors.white,
+
+        body: ListView.builder(
+            itemCount: _postsJson2.length,
+            itemBuilder: (BuildContext context, int index) {
+              final post = _postsJson2[index];
+              var index_2 = index + 1;
+
+              return Card(
+
+                margin: const EdgeInsets.symmetric(
+                    vertical: 15, horizontal: 10),
+                child: ListTile(
+                  tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                  leading: CircleAvatar(
+                    backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+                    radius: 30,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: FittedBox(
+                        child: Text(
+                          "$index_2",
+                          style: const TextStyle(fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                  title: Text(
+                      ("${post["firstName"]} " + "${post["name"]}")
+                  ),
+                  trailing: Wrap(
+                    spacing: 0, // space between two icons
+                    children: <Widget>[
+                      IconButton(
+                          icon: const Icon(Icons.delete, size: 32,),
+
+                          color: Theme
+                              .of(context)
+                              .errorColor,
+                          onPressed: () {} // icon-2
+                      ),
+                      ElevatedButton(
+                        child: const Text('Résultats',
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 0, 0, 0.6),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                                fontStyle: FontStyle.italic)),
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(100, 55),
+                          maximumSize: const Size(100, 55),
+                          primary: const Color.fromRGBO(255, 255, 255, 1.0),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                              side: const BorderSide(
+                                width: 5.0,
+                                color: Color.fromRGBO(13, 78, 5, 0.6),
+                              )),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    ListDuel(idUser: post["id"])),
+                          );
+
+                        },
+                      ),
+
+                    ],
+                  ),
+                ),
+
+
+              );
+            }
+        ));
+  }
+}
+/*
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -126,3 +219,4 @@ class _MyAppState extends State<ListStudent> {
         ));
   }
 }
+*/

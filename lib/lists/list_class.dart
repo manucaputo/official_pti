@@ -64,7 +64,6 @@ class _MyAppState extends State<ListClass> {
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
 
 
@@ -117,7 +116,8 @@ class _MyAppState extends State<ListClass> {
                       ),
                       IconButton(
                           icon: const Icon(Icons.person_search_rounded, size: 32,),
-                          color: Colors.green,
+                          color: const Color.fromRGBO(
+                              0, 0, 0, 0.7490196078431373),
                           onPressed: () {Navigator.push(
                             context,
                             MaterialPageRoute(
