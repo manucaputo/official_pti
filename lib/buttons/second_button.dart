@@ -6,6 +6,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import '../connexion/token.dart';
+import 'first_button.dart';
 
 
 
@@ -167,6 +168,12 @@ class _MyAppState extends State<SecondButton> {
                         icon: const Icon(Icons.check, size: 32,),
                         color: Colors.green,
                         onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    FirstButton(idQuestion: post["idQuestion"],idDuel: post["idDuel"],)),
+                          );
                         }),
                    ],
                 ),
