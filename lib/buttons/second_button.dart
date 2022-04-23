@@ -27,62 +27,85 @@ class _MyAppState extends State<SecondButton> {
 
   final _postsJson2 = [
     {
-      "firstName": "Mic2",
-      "id": 4,
-      "idDuel": 14,
-      "idAdversaire": 6,
-      "idQuestion": 1
+      "firstName": "Seph",
+      "id": 1,
+      "idDuel": 11,
+      "idAdversaire": 4,
+      "idQuestion": 1,
+      "date": "2022-04-04T15:12:28.000Z"
     },
     {
       "firstName": "Mic",
-      "id": 6,
-      "idDuel": 16,
+      "id": 2,
+      "idDuel": 12,
       "idAdversaire": 6,
-      "idQuestion": 1
+      "idQuestion": 1,
+      "date": "2022-04-05T10:29:24.000Z"
     },
     {
-      "firstName": "Adrien",
-      "id": 8,
-      "idDuel": 18,
-      "idAdversaire": 2,
-      "idQuestion": 2
+      "firstName": "Mic",
+      "id": 5,
+      "idDuel": 15,
+      "idAdversaire": 6,
+      "idQuestion": 1,
+      "date": "2022-04-05T10:30:20.000Z"
     },
     {
-      "firstName": "Adrien",
-      "id": 9,
-      "idDuel": 19,
-      "idAdversaire": 2,
-      "idQuestion": 2
+      "firstName": "Mic",
+      "id": 7,
+      "idDuel": 17,
+      "idAdversaire": 6,
+      "idQuestion": 1,
+      "date": "2022-04-05T10:32:08.000Z"
     },
     {
-      "firstName": "Adrien",
-      "id": 13,
-      "idDuel": 23,
-      "idAdversaire": 2,
-      "idQuestion": 2
+      "firstName": "Seph",
+      "id": 15,
+      "idDuel": 25,
+      "idAdversaire": 4,
+      "idQuestion": 0,
+      "date": "2022-04-12T13:45:55.000Z"
     },
     {
-      "firstName": "Adrien",
-      "id": 13,
-      "idDuel": 23,
-      "idAdversaire": 2,
-      "idQuestion": 2
+      "firstName": "Seph",
+      "id": 20,
+      "idDuel": 30,
+      "idAdversaire": 4,
+      "idQuestion": 0,
+      "date": "2022-04-12T13:55:22.000Z"
     },
     {
-      "firstName": "Adrien",
-      "id": 13,
-      "idDuel": 23,
-      "idAdversaire": 2,
-      "idQuestion": 2
+      "firstName": "Seph",
+      "id": 21,
+      "idDuel": 31,
+      "idAdversaire": 4,
+      "idQuestion": 0,
+      "date": "2022-04-12T13:56:14.000Z"
     },
     {
-      "firstName": "Adrien",
-      "id": 13,
-      "idDuel": 23,
-      "idAdversaire": 2,
-      "idQuestion": 2
+      "firstName": "Seph",
+      "id": 23,
+      "idDuel": 33,
+      "idAdversaire": 4,
+      "idQuestion": 3,
+      "date": "2022-04-12T14:07:41.000Z"
     },
-
+    {
+      "firstName": "Seph",
+      "id": 28,
+      "idDuel": 38,
+      "idAdversaire": 4,
+      "idQuestion": 3,
+      "date": "2022-04-12T14:10:45.000Z"
+    },
+    {
+      "firstName": "Seph",
+      "id": 29,
+      "idDuel": 39,
+      "idAdversaire": 4,
+      "idQuestion": 3,
+      "date": "2022-04-12T14:11:18.000Z"
+    }
   ];
   Map<String, String> headers = {
     "Content-type": "application/json",
@@ -150,8 +173,8 @@ class _MyAppState extends State<SecondButton> {
                 title: Text(
                     ("${post["firstName"]}")
                 ),
-                  subtitle: const Text(
-                    'Date du jour'
+                  subtitle: Text(
+                    'Date du jour '+'${post["date"].toString().substring(8,10)}'+'${post["date"].toString().substring(4,8)}'+'${post["date"].toString().substring(0,4)}'
             ),
 
                   trailing: Wrap(

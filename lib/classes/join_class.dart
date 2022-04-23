@@ -29,8 +29,6 @@ class _MyAppState extends State<JoinClass> {
   @override
   void initState() {
     super.initState();
-    print(Token.token);
-
 
   }
 
