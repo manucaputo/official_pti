@@ -48,60 +48,114 @@ class _MyAppState extends State<ProfMenu> {
   Widget build(BuildContext context) {
     final appBar = AppBar(
       title: const Text('Menu'),
-      backgroundColor: const Color.fromRGBO(0, 0, 255, 0.55),
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
-
     return Scaffold(
       appBar: appBar,
-      body: Stack(children: <Widget>[
-        Container(
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color.fromRGBO(241, 240, 239, 1.0),
-                    Color.fromRGBO(175, 175, 164, 0.9),
-                  ],
-                ))),
-        Positioned(
-            width: MediaQuery.of(context).size.width,
-            top: MediaQuery.of(context).size.width * 0,
-            child: Container(
-              //margin: EdgeInsets.all(16.0),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Image.asset('assets/images/Accueil_TITRE.png', scale: 1.5),
-                  ]),
-            )),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            RaisedButton(
-              child: const Text(
-                'Mes classes',
-              ),
-              onPressed: () {Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ListClass()),
-              );},
-            ),
-            RaisedButton(
-              child: const Text(
-                'Créer une classe',
-              ),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          CreateClass()),
-                );
+      backgroundColor: Colors.white,
 
-              },
-            ),
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+
+                children: [
+
+                  Image.asset('assets/images/Accueil_TITRE.png',
+                      scale: 2),
+
+                  Container(
+
+                    margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
+                    child: ElevatedButton(
+                      child: const Text('Mes classes',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ListClass()),
+                        );
+
+                      },
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                    child: ElevatedButton(
+                      child: const Text('Créer une classe',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  CreateClass()),
+                        );
+
+                      },
+                    ),
+                  ),
+
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 0),
+                    child: ElevatedButton(
+                      child: const Text('Déconnexion',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+
+                      },
+                    ),
+                  ),
+                ]),
+          ),
+        ));
+      /*
             DropdownButton(
               value: dropdownValue,
               icon: Icon(Icons.keyboard_arrow_down),
@@ -110,11 +164,7 @@ class _MyAppState extends State<ProfMenu> {
               }).toList(), onChanged: (String? value) { setState(() {
               dropdownValue = value!;
             }); },
-
             ),
-          ],
-        )
-      ]),
-    );
+    */
   }
 }
