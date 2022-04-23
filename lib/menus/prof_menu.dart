@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:official_pti/classes/create_class.dart';
 import 'package:official_pti/Resultats/resultat.dart';
 import 'dart:convert';
+import '../main.dart';
 import '../quizz/result.dart';
 import '../lists/list_class.dart';
 import '../classes/create_class.dart';
@@ -148,7 +149,10 @@ class _MyAppState extends State<ProfMenu> {
                             )),
                       ),
                       onPressed: () {
-
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const MyApp()),
+                        );
                       },
                     ),
                   ),

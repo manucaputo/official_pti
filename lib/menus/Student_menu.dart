@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:official_pti/main.dart';
 import '../buttons/first_button.dart';
 import '../buttons/second_button.dart';
 import '../helpers/custom_routes.dart';
@@ -204,7 +205,10 @@ class _MyAppState extends State<StudentMenu> {
                             )),
                       ),
                       onPressed: () {
-
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const MyApp()),
+                        );
                       },
                     ),
                   ),
