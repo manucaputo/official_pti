@@ -72,7 +72,7 @@ class _MyAppState extends State<StudentMenu> {
                       ),
                       onPressed: () {
                         Navigator.of(context).pushReplacement(CustomRoute(
-                          builder: (ctx) => FirstButton(idQuestion: 0, idDuel: 0,),
+                          builder: (ctx) => FirstButton(idQuestion: 0, idDuel: 0),
                         ));
                       },
                     ),
