@@ -1,9 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:official_pti/buttons/second_button.dart';
-import 'buttons/first_button.dart';
-import 'buttons/second_button.dart';
-import 'buttons/third_button.dart';
 import 'helpers/custom_routes.dart';
 import 'menus/prof_menu.dart';
 import 'menus/Student_menu.dart';
@@ -63,8 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
       };
       String json2 = jsonEncode(json);
 
-      final response =
-          await http.post(Uri.parse(Token.url+url), headers: headers, body: json2);
+      final response = await http.post(Uri.parse(Token.url + url),
+          headers: headers, body: json2);
       final jsonData = jsonDecode(response.body);
       print(jsonData);
 
@@ -102,8 +98,8 @@ class _MyHomePageState extends State<MyHomePage> {
           ));
         }
       } else {
-        ScaffoldMessenger.of(context)
-            .showSnackBar(const SnackBar(content: const Text("Il manque des champs")));
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: const Text("Il manque des champs")));
       }
     } catch (err) {
       print(err);
@@ -114,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final appBar = AppBar(
       title: const Text('Menu'),
-        backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 
     return Scaffold(
@@ -127,21 +123,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                      Container(
-                        margin: const EdgeInsets.fromLTRB(0,20,0,0),
-                        child: CircleAvatar(
-                        backgroundColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                    radius: 70,
-                  child: Image.asset('assets/images/logo.png',
-                        scale: 10)),
-                      ),
-
                   Container(
-                    margin: const EdgeInsets.fromLTRB(0,20,0,0),
+                    margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                    child: CircleAvatar(
+                        backgroundColor:
+                            const Color.fromRGBO(221, 229, 221, 1.0),
+                        radius: 70,
+                        child: Image.asset('assets/images/logo.png', scale: 9)),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                     child: TextFormField(
                       controller: emailController,
                       decoration: const InputDecoration(
-                        
                           labelText: "Email",
                           border: OutlineInputBorder(),
                           suffixIcon: Icon(Icons.email)),
@@ -163,8 +157,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {
                         postConnexion();
                       },
-                      icon: const Icon(Icons.login, size: 18, color: Color.fromRGBO(13, 78, 5, 0.75),),
-                      label: const Text("Login", style: TextStyle(color: Color.fromRGBO(13, 78, 5, 0.75),),)),
+                      icon: const Icon(
+                        Icons.login,
+                        size: 18,
+                        color: Color.fromRGBO(13, 78, 5, 0.75),
+                      ),
+                      label: const Text(
+                        "Login",
+                        style: TextStyle(
+                          color: Color.fromRGBO(13, 78, 5, 0.75),
+                        ),
+                      )),
                   const SizedBox(height: 45),
                   OutlinedButton.icon(
                       onPressed: () {
@@ -173,8 +176,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           MaterialPageRoute(builder: (context) => SignUp()),
                         );
                       },
-                      icon: const Icon(Icons.login, size: 18,color: Color.fromRGBO(13, 78, 5, 0.75)),
-                      label: const Text("S'enregistrer", style: TextStyle(color: Color.fromRGBO(13, 78, 5, 0.75),),)),
+                      icon: const Icon(Icons.login,
+                          size: 18, color: Color.fromRGBO(13, 78, 5, 0.75)),
+                      label: const Text(
+                        "S'enregistrer",
+                        style: TextStyle(
+                          color: Color.fromRGBO(13, 78, 5, 0.75),
+                        ),
+                      )),
                   RaisedButton(
                     child: const Text(
                       'Menu éléves',
@@ -189,9 +198,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
                        */
 
-                      Navigator.of(context).pushReplacement(
-                          CustomRoute(builder: (ctx) => StudentMenu(),
-                          ));
+                      Navigator.of(context).pushReplacement(CustomRoute(
+                        builder: (ctx) => StudentMenu(),
+                      ));
                     },
                   ),
                   RaisedButton(
@@ -209,9 +218,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
                          */
 
-                        Navigator.of(context).pushReplacement(
-                            CustomRoute(builder: (ctx) => ProfMenu(),
-                            ));
+                        Navigator.of(context).pushReplacement(CustomRoute(
+                          builder: (ctx) => ProfMenu(),
+                        ));
                       })
                 ],
               )))),
