@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:math';
 import '../connexion/token.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 // from scratch
 
@@ -167,13 +168,6 @@ class _MyAppState extends State<FirstButton> {
     _totalScore = _totalScore + score;
     _response.add(text);
 
-    if (score == 1) {
-/*
-      list.add(?);
-
- */
-
-    }
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
@@ -186,16 +180,35 @@ class _MyAppState extends State<FirstButton> {
     }
   }
 
+
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
+    final appBar = AppBar(
+    title: DefaultTextStyle(
+      style: const TextStyle(
+        fontSize: 26.0,
+        fontWeight: FontWeight.bold,
+      ),
+      child: AnimatedTextKit(
+        animatedTexts: [
+          FadeAnimatedText('Bonne chance !'),
+          FadeAnimatedText('MixMath !'),
+        ],
+        totalRepeatCount: 3,
+
+      ),
+
+    ),
+      centerTitle: true,
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+    );
+
+
     return MaterialApp(
+
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Duel en cours...'),
-          centerTitle: true,
-          backgroundColor: const Color.fromRGBO(0, 0, 255, 0.55),
-        ),
+        appBar: appBar,
         body: Container(
           decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -217,3 +230,43 @@ class _MyAppState extends State<FirstButton> {
     );
   }
 }
+
+//title: const Text('Duel en cours...'),
+/*title: AnimatedTextKit(animatedTexts: [
+        TypewriterAnimatedText(
+          'MixMath Battle...',
+          textAlign: TextAlign.center,
+          textStyle: const TextStyle(
+            fontSize: 28.0,
+            fontWeight: FontWeight.bold,
+          ),
+          speed: const Duration(milliseconds: 200),
+        ),
+      ],
+
+
+        repeatForever: true,
+        pause: const Duration(milliseconds: 10),
+      ),
+      centerTitle: true,
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+    );
+
+       */
+/*
+      title: DefaultTextStyle(
+        style: const TextStyle(
+          fontSize: 28.0,
+        ),
+        child: AnimatedTextKit(
+          animatedTexts: [
+            WavyAnimatedText('MixMath...'),
+            ],
+          repeatForever: true,
+        ),
+      ),
+      centerTitle: true,
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+    );
+
+ */

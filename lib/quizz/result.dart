@@ -24,9 +24,10 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
+
     return Center(
       //else
+
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
