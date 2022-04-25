@@ -33,6 +33,7 @@ class FirstButton extends StatefulWidget {
 class _MyAppState extends State<FirstButton> {
   var _questionIndex = 0;
   var _totalScore = 0;
+  var _response = [];
   var idQuestion;
   var _postsJson = [];
   var idDuel;
@@ -157,12 +158,14 @@ class _MyAppState extends State<FirstButton> {
       _questionIndex = 0;
       _totalScore = 0;
       list = [];
+      _response = [];
     });
   }
 
-  void _answerQuestion(int score){
+  void _answerQuestion(int score, String text){
 
     _totalScore = _totalScore + score;
+    _response.add(text);
 
     if (score == 1) {
 /*
@@ -179,6 +182,7 @@ class _MyAppState extends State<FirstButton> {
       print("We have more questions !");
     } else {
       print("No more questions !");
+      print(_response);
     }
   }
 
