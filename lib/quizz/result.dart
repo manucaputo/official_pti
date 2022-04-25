@@ -16,11 +16,8 @@ class Result extends StatelessWidget {
   String get resultPhrase {
     var resultText;
 
-    if (resultScore == 3) {
       resultText = 'Résultat : $resultScore';
-    } else if (resultScore < 3) {
       resultText = 'Résultat : $resultScore';
-    }
 
     return resultText;
   }

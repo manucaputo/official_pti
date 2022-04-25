@@ -25,6 +25,8 @@ void main() {
 class FirstButton extends StatefulWidget {
   var idQuestion;
   var idDuel;
+
+
   FirstButton({
     required this.idQuestion,
     required this.idDuel
@@ -42,6 +44,8 @@ class _MyAppState extends State<FirstButton> {
   final url = "/duel";
   var _postsJson = [];
   var idDuel;
+  List<String> list = [];
+
   List<Map<String, Object>> _questions = [];
 
   Map<String, String> headers = {
@@ -151,7 +155,6 @@ class _MyAppState extends State<FirstButton> {
 
     if(idDuel == 0)
     {
-
       postDuel();
     }
   }
@@ -165,7 +168,12 @@ class _MyAppState extends State<FirstButton> {
 
   void _answerQuestion(int score) {
     _totalScore = _totalScore + score;
+    if (score == 1) {
+      /*
+      list.add('$random_string2');
+       */
 
+    }
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
@@ -183,7 +191,7 @@ class _MyAppState extends State<FirstButton> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            title: Text('Duel en cours...'),
+            title: const Text('Duel en cours...'),
             centerTitle: true,
             backgroundColor: const Color.fromRGBO(0, 0, 255, 0.55),
           ),
