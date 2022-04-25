@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:official_pti/buttons/second_button.dart';
 import 'buttons/first_button.dart';
@@ -102,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }
       } else {
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Il manque des champs")));
+            .showSnackBar(const SnackBar(content: const Text("Il manque des champs")));
       }
     } catch (err) {
       print(err);
@@ -113,92 +114,107 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     final appBar = AppBar(
       title: const Text('Menu'),
-      backgroundColor: const Color.fromRGBO(0, 0, 255, 0.55),
+        backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 
     return Scaffold(
         appBar: appBar,
-        body: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: SafeArea(
-                child: Center(
-                    child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextFormField(
-                  controller: emailController,
-                  decoration: const InputDecoration(
-                      labelText: "Email",
-                      border: OutlineInputBorder(),
-                      suffixIcon: Icon(Icons.email)),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                TextFormField(
-                  controller: passController,
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                      labelText: "Password",
-                      border: OutlineInputBorder(),
-                      suffixIcon: Icon(Icons.email)),
-                ),
-                SizedBox(height: 45),
-                OutlinedButton.icon(
-                    onPressed: () {
-                      postConnexion();
-                    },
-                    icon: Icon(Icons.login, size: 18),
-                    label: Text("Login")),
-                SizedBox(height: 45),
-                OutlinedButton.icon(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignUp()),
-                      );
-                    },
-                    icon: Icon(Icons.login, size: 18),
-                    label: Text("S'enregistrer")),
-                RaisedButton(
-                  child: const Text(
-                    'Menu éléves',
+        body: SingleChildScrollView(
+          child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: SafeArea(
+                  child: Center(
+                      child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(0,20,0,0),
+                        child: CircleAvatar(
+                        backgroundColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                    radius: 70,
+                  child: Image.asset('assets/images/logo.png',
+                        scale: 10)),
+                      ),
+
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(0,20,0,0),
+                    child: TextFormField(
+                      controller: emailController,
+                      decoration: const InputDecoration(
+                        
+                          labelText: "Email",
+                          border: OutlineInputBorder(),
+                          suffixIcon: Icon(Icons.email)),
+                    ),
                   ),
-                  onPressed: () {
-                    /*
-
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => StudentMenu()),
-                    );
-
-                     */
-
-                    Navigator.of(context).pushReplacement(
-                        CustomRoute(builder: (ctx) => StudentMenu(),
-                        ));
-                  },
-                ),
-                RaisedButton(
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  TextFormField(
+                    controller: passController,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                        labelText: "Password",
+                        border: OutlineInputBorder(),
+                        suffixIcon: Icon(Icons.email)),
+                  ),
+                  const SizedBox(height: 45),
+                  OutlinedButton.icon(
+                      onPressed: () {
+                        postConnexion();
+                      },
+                      icon: const Icon(Icons.login, size: 18, color: Color.fromRGBO(13, 78, 5, 0.75),),
+                      label: const Text("Login", style: TextStyle(color: Color.fromRGBO(13, 78, 5, 0.75),),)),
+                  const SizedBox(height: 45),
+                  OutlinedButton.icon(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUp()),
+                        );
+                      },
+                      icon: const Icon(Icons.login, size: 18,color: Color.fromRGBO(13, 78, 5, 0.75)),
+                      label: const Text("S'enregistrer", style: TextStyle(color: Color.fromRGBO(13, 78, 5, 0.75),),)),
+                  RaisedButton(
                     child: const Text(
-                      'Menu prof',
+                      'Menu éléves',
                     ),
                     onPressed: () {
                       /*
 
-
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ProfMenu()),
+                        MaterialPageRoute(builder: (context) => StudentMenu()),
                       );
 
                        */
 
                       Navigator.of(context).pushReplacement(
-                          CustomRoute(builder: (ctx) => ProfMenu(),
+                          CustomRoute(builder: (ctx) => StudentMenu(),
                           ));
-                    })
-              ],
-            )))));
+                    },
+                  ),
+                  RaisedButton(
+                      child: const Text(
+                        'Menu prof',
+                      ),
+                      onPressed: () {
+                        /*
+
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ProfMenu()),
+                        );
+
+                         */
+
+                        Navigator.of(context).pushReplacement(
+                            CustomRoute(builder: (ctx) => ProfMenu(),
+                            ));
+                      })
+                ],
+              )))),
+        ));
   }
 }

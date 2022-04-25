@@ -68,6 +68,7 @@ flutter:
   assets:
      - assets/Accueil_TITRE.png
      - assets/Dragon_CLASSIQUE.png
+     - assets/logo.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
