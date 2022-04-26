@@ -1,10 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:http/http.dart' as http;
-
 import 'dart:convert';
-
 import '../connexion/token.dart';
 import 'first_button.dart';
 
@@ -173,9 +169,9 @@ class _MyAppState extends State<SecondButton> {
                   ),
                   title: Text(("${post["firstName"]}")),
                   subtitle: Text('Date : ' +
-                      '${post["date"].toString().substring(8, 10)}' +
-                      '${post["date"].toString().substring(4, 8)}' +
-                      '${post["date"].toString().substring(0, 4)}'),
+                      post["date"].toString().substring(8, 10) +
+                      post["date"].toString().substring(4, 8) +
+                      post["date"].toString().substring(0, 4)),
                   trailing: Wrap(
                     spacing: 0, // space between two icons
                     children: <Widget>[

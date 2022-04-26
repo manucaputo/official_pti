@@ -75,7 +75,7 @@ class _MyAppState extends State<FirstButton> {
     if (idQuestion == 0) {
       Random rnd;
       int min = 1;
-      int max = 3;
+      int max = 4;
       rnd = new Random();
       idQuestion = min + rnd.nextInt(max - min);
       print("idquestion" + "$idQuestion");
@@ -85,67 +85,214 @@ class _MyAppState extends State<FirstButton> {
       _questions = const [
         // creation of a MAP (key : value)
         {
-          'questionText': 'x + 2 = 5 ?',
+          'questionText': '5x + 8 = 0 ?',
           'answers': [
-            {'text': '3', 'score': 1},
-            {'text': '2', 'score': 0},
-            {'text': '4', 'score': 0},
-            {'text': '1', 'score': 0}
+            {'text': 'x = 5/8', 'score': 0},
+            {'text': 'x = - 8/5', 'score': 1},
+            {'text': 'x = - 5/8', 'score': 0},
+            {'text': 'x = 8/5', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
           ]
           // first element list = pos 0
         },
+
         {
-          'questionText': '2x - 5 = 1 ?',
+          'questionText': '(x + 3)(x + 5) = (x + 1)(x + 9) ?',
           'answers': [
-            {'text': '4', 'score': 0},
-            {'text': '3', 'score': 1},
-            {'text': '1', 'score': 0},
-            {'text': '2', 'score': 0}
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'x = 4', 'score': 0},
+            {'text': 'x = 6', 'score': 0},
+            {'text': 'x = ℝ', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 1},
+            {'text': 'x = - 3', 'score': 0},
+          ]
+        },
+
+        {
+          'questionText': '2x + 3 = 3x − 5 ?',
+          'answers': [
+            {'text': 'x = 4', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'x = - 4', 'score': 0},
+            {'text': 'x = 2', 'score': 0},
+            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
+            {'text': 'x = 8', 'score': 1},
+
           ]
         },
         {
-          'questionText': '3 + x = 7 ?',
+          'questionText': '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
-            {'text': '1', 'score': 0},
-            {'text': '2', 'score': 0},
-            {'text': '4', 'score': 1},
-            {'text': '3', 'score': 0}
+
+            {'text': '32 - 24x = 48 - 3x', 'score': 0},
+            {'text': '-21x = 35', 'score': 1},
+            {'text': '-24x + 33 = -3x + 68', 'score': 1},
+            {'text': '24x -33 = 3x + 68', 'score': 0},
+            {'text': '-24x + 33 = - 3x - 68', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
           ]
         },
+
+
+
+
+        {
+          'questionText': '3 (x + 1) – (x – 9) + (x + 3) = (x + 4) + (x + 2) – (11 – x) ?',
+          'answers': [
+            {'text': 'x = ∅', 'score': 1},
+            {'text': 'x = 5', 'score': 0},
+            {'text': 'x = -5', 'score': 0},
+            {'text': 'x = ℝ', 'score': 0},
+            {'text': '18', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
+          ]
+        },
+
       ];
     }
+
+
 
     if (idQuestion == 2) {
       _questions = const [
         // creation of a MAP (key : value)
         {
-          'questionText': 'x + 2 = 5 ?',
+          'questionText': '5x + 8 = 0 ?',
           'answers': [
-            {'text': '3', 'score': 1},
-            {'text': '6', 'score': 0},
-            {'text': '4', 'score': 0},
-            {'text': '1', 'score': 0}
+            {'text': 'x = 5/8', 'score': 0},
+            {'text': 'x = - 8/5', 'score': 1},
+            {'text': 'x = - 5/8', 'score': 0},
+            {'text': 'x = 8/5', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
           ]
           // first element list = pos 0
         },
+
         {
-          'questionText': '2x - 5 = 1 ?',
+          'questionText': '(x + 3)(x + 5) = (x + 1)(x + 9) ?',
           'answers': [
-            {'text': '4', 'score': 0},
-            {'text': '3', 'score': 1},
-            {'text': '1', 'score': 0},
-            {'text': '2', 'score': 0}
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'x = 4', 'score': 0},
+            {'text': 'x = 6', 'score': 0},
+            {'text': 'x = ℝ', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 1},
+            {'text': 'x = - 3', 'score': 0},
+          ]
+        },
+
+        {
+          'questionText': '2x + 3 = 3x − 5 ?',
+          'answers': [
+            {'text': 'x = 4', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'x = - 4', 'score': 0},
+            {'text': 'x = 2', 'score': 0},
+            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
+            {'text': 'x = 8', 'score': 1},
+
           ]
         },
         {
-          'questionText': '3 + x = 7 ?',
+          'questionText': '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
-            {'text': '1', 'score': 0},
-            {'text': '2', 'score': 0},
-            {'text': '4', 'score': 1},
-            {'text': '3', 'score': 0}
+
+            {'text': '32 - 24x = 48 - 3x', 'score': 0},
+            {'text': '-21x = 35', 'score': 1},
+            {'text': '-24x + 33 = -3x + 68', 'score': 1},
+            {'text': '24x -33 = 3x + 68', 'score': 0},
+            {'text': '-24x + 33 = - 3x - 68', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
           ]
         },
+
+
+
+
+        {
+          'questionText': '3 (x + 1) – (x – 9) + (x + 3) = (x + 4) + (x + 2) – (11 – x) ?',
+          'answers': [
+            {'text': 'x = ∅', 'score': 1},
+            {'text': 'x = 5', 'score': 0},
+            {'text': 'x = -5', 'score': 0},
+            {'text': 'x = ℝ', 'score': 0},
+            {'text': '18', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
+          ]
+        },
+
+      ];
+    }
+
+    if (idQuestion == 3) {
+      _questions = const [
+        // creation of a MAP (key : value)
+        {
+          'questionText': '5x + 8 = 0 ?',
+          'answers': [
+            {'text': 'x = 5/8', 'score': 0},
+            {'text': 'x = - 8/5', 'score': 1},
+            {'text': 'x = - 5/8', 'score': 0},
+            {'text': 'x = 8/5', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
+          ]
+          // first element list = pos 0
+        },
+
+        {
+          'questionText': '(x + 3)(x + 5) = (x + 1)(x + 9) ?',
+          'answers': [
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'x = 4', 'score': 0},
+            {'text': 'x = 6', 'score': 0},
+            {'text': 'x = ℝ', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 1},
+            {'text': 'x = - 3', 'score': 0},
+          ]
+        },
+
+        {
+          'questionText': '2x + 3 = 3x − 5 ?',
+          'answers': [
+            {'text': 'x = 4', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'x = - 4', 'score': 0},
+            {'text': 'x = 2', 'score': 0},
+            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
+            {'text': 'x = 8', 'score': 1},
+
+          ]
+        },
+        {
+          'questionText': '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+          'answers': [
+
+            {'text': '32 - 24x = 48 - 3x', 'score': 0},
+            {'text': '-21x = 35', 'score': 1},
+            {'text': '-24x + 33 = -3x + 68', 'score': 1},
+            {'text': '24x -33 = 3x + 68', 'score': 0},
+            {'text': '-24x + 33 = - 3x - 68', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
+          ]
+        },
+
+
+
+
+        {
+          'questionText': '3 (x + 1) – (x – 9) + (x + 3) = (x + 4) + (x + 2) – (11 – x) ?',
+          'answers': [
+            {'text': 'x = ∅', 'score': 1},
+            {'text': 'x = 5', 'score': 0},
+            {'text': 'x = -5', 'score': 0},
+            {'text': 'x = ℝ', 'score': 0},
+            {'text': '18', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
+          ]
+        },
+
       ];
     }
 
@@ -163,8 +310,7 @@ class _MyAppState extends State<FirstButton> {
     });
   }
 
-  void _answerQuestion(int score, String text){
-
+  void _answerQuestion(int score, String text) {
     _totalScore = _totalScore + score;
     _response.add(text);
 
@@ -180,51 +326,57 @@ class _MyAppState extends State<FirstButton> {
     }
   }
 
-
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
+
+
     final appBar = AppBar(
-    title: DefaultTextStyle(
-      style: const TextStyle(
-        fontSize: 26.0,
-        fontWeight: FontWeight.bold,
-      ),
-      child: AnimatedTextKit(
-        animatedTexts: [
-          FadeAnimatedText('Bonne chance !'),
-          FadeAnimatedText('MixMath !'),
-        ],
-        totalRepeatCount: 3,
 
+      title: DefaultTextStyle(
+        style: const TextStyle(
+          fontSize: 26.0,
+          fontWeight: FontWeight.bold,
+        ),
+        child: AnimatedTextKit(
+          animatedTexts: [
+            FadeAnimatedText(
+              'Bonne chance !',
+              duration: const Duration(seconds: 2),
+            ),
+            FadeAnimatedText(
+              'MixMath !',
+              duration: const Duration(
+                seconds: 1,
+              ),
+            ),
+          ],
+          repeatForever: true,
+        ),
       ),
-
-    ),
       centerTitle: true,
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 
 
-    return MaterialApp(
 
+
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+
       home: Scaffold(
         appBar: appBar,
-        body: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color.fromRGBO(241, 240, 239, 0),
-              Color.fromRGBO(175, 175, 164, 0),
-            ],
-          )),
-          child: _questionIndex < _questions.length //if
-              ? Quiz(
-                  answerQuestion: _answerQuestion,
-                  questionIndex: _questionIndex,
-                  questions: _questions)
-              : Result(_totalScore, _resetQuiz),
+        backgroundColor: Colors.white,
+
+        body: SingleChildScrollView(
+          child: Container(
+
+            child: _questionIndex < _questions.length //if
+                ? Quiz(
+                    answerQuestion: _answerQuestion,
+                    questionIndex: _questionIndex,
+                    questions: _questions)
+                : Result(_totalScore, _resetQuiz),
+          ),
         ),
       ),
     );
@@ -268,5 +420,31 @@ class _MyAppState extends State<FirstButton> {
       centerTitle: true,
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
+
+    title: AnimatedTextKit(animatedTexts: [
+        TypewriterAnimatedText(
+          'Bonne chance !',
+          textAlign: TextAlign.center,
+          textStyle: const TextStyle(
+            fontSize: 28.0,
+            fontWeight: FontWeight.bold,
+          ),
+          speed: const Duration(milliseconds: 200),
+        ),
+        TypewriterAnimatedText(
+          'MixMath !',
+          textAlign: TextAlign.center,
+          textStyle: const TextStyle(
+            fontSize: 28.0,
+            fontWeight: FontWeight.bold,
+          ),
+          speed: const Duration(milliseconds: 200),
+        ),
+      ],
+
+
+        repeatForever: true,
+        pause: const Duration(milliseconds: 10),
+      ),
 
  */
