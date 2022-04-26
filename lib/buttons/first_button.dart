@@ -98,7 +98,7 @@ class _MyAppState extends State<FirstButton> {
         },
 
         {
-          'questionText': '(x + 3)(x + 5) = (x + 1)(x + 9) ?',
+          'questionText': '(x + 3)(x + 5) \n=\n(x + 1)(x + 9) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 0},
             {'text': 'x = 4', 'score': 0},
@@ -171,7 +171,7 @@ class _MyAppState extends State<FirstButton> {
         },
 
         {
-          'questionText': '(x + 3)(x + 5) = (x + 1)(x + 9) ?',
+          'questionText': 'x + 3)(x + 5) \n=\n(x + 1)(x + 9) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 0},
             {'text': 'x = 4', 'score': 0},
@@ -242,7 +242,7 @@ class _MyAppState extends State<FirstButton> {
         },
 
         {
-          'questionText': '(x + 3)(x + 5) = (x + 1)(x + 9) ?',
+          'questionText': 'x + 3)(x + 5) \n=\n(x + 1)(x + 9) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 0},
             {'text': 'x = 4', 'score': 0},
