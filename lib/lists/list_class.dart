@@ -17,6 +17,7 @@ class ListClass extends StatefulWidget {
 
 class _MyAppState extends State<ListClass> {
   final url = "/class/all";
+  final urlDelete = "/class/delete/";
   var _postsJson = [];
   final _postsJson2 = [
     {
@@ -55,6 +56,21 @@ class _MyAppState extends State<ListClass> {
         _postsJson = jsonData;
       });
     } catch (err) {}
+  }
+
+  deleteClassBackend(var id) async
+  {
+    try{
+      final response = await http.delete(Uri.parse(Token.url+urlDelete+id.toString()));
+    }
+    catch(err){print(err);}
+  }
+
+  void deleteClass(var id) {
+    setState(() {
+      _postsJson2.removeWhere((element) => element["id"] == id);
+      //_postsJson.removeWhere((element) => element["idDuel"] == idDuel);
+    });
   }
 
   @override
@@ -111,7 +127,8 @@ class _MyAppState extends State<ListClass> {
                           icon: const Icon(Icons.delete, size: 32,),
 
                           color: Theme.of(context).errorColor,
-                          onPressed: () {
+                          onPressed: () { deleteClass(post["id"]);
+                          //deleteClassBackend(post["id"]);
                           }// icon-2
                       ),
                       IconButton(
