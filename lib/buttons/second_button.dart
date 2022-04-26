@@ -17,6 +17,7 @@ class SecondButton extends StatefulWidget {
 
 class _MyAppState extends State<SecondButton> {
   final url = "/reply/all";
+  final urlDelete = "/reply/delete/";
   var _postsJson = [];
 
   final _postsJson2 = [
@@ -118,16 +119,25 @@ class _MyAppState extends State<SecondButton> {
     } catch (err) {}
   }
 
+  deleteReply(var id) async
+  {
+    try{
+      final response = await http.delete(Uri.parse(Token.url+urlDelete+id.toString()),headers: headers);
+    }
+    catch(err){print(err);}
+  }
+
   void deleteDuel(var idDuel) {
     setState(() {
       _postsJson2.removeWhere((element) => element["idDuel"] == idDuel);
+      //_postsJson.removeWhere((element) => element["idDuel"] == idDuel);
     });
   }
 
   @override
   void initState() {
     super.initState();
-    //getReply();
+    getReply();
   }
 
   @override
@@ -141,9 +151,9 @@ class _MyAppState extends State<SecondButton> {
         appBar: appBar,
         backgroundColor: Colors.white,
         body: ListView.builder(
-            itemCount: _postsJson2.length,
+            itemCount: _postsJson.length,
             itemBuilder: (BuildContext context, int index) {
-              final post = _postsJson2[index];
+              final post = _postsJson[index];
               var index_2 = index + 1;
 
               return Card(
@@ -181,7 +191,10 @@ class _MyAppState extends State<SecondButton> {
                           size: 32,
                         ),
                         color: Theme.of(context).errorColor,
-                        onPressed: () => deleteDuel(post["idDuel"]),
+                        onPressed: () =>{
+                          deleteDuel(post["idDuel"]),
+                          //deleteReply(post["id"])
+                         },
                       ),
                       IconButton(
                           icon: const Icon(
