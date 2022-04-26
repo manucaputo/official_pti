@@ -37,27 +37,25 @@ class _MyAppState extends State<StudentMenu> {
     return Scaffold(
         appBar: appBar,
         backgroundColor: Colors.white,
-
         body: Center(
           child: SingleChildScrollView(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
-
                 children: [
-
-                  Image.asset('assets/images/Accueil_TITRE.png',
-                      scale: 2),
-
                   Container(
-
+                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 50),
+                    child: Image.asset('assets/images/Accueil_TITRE.png',
+                        scale: 2),
+                  ),
+                  Container(
                     margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
                     child: ElevatedButton(
                       child: const Text('Lancer un duel',
                           style: TextStyle(
                               color: Color.fromRGBO(13, 78, 5, 0.6),
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 23,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(800, 65),
@@ -72,7 +70,8 @@ class _MyAppState extends State<StudentMenu> {
                       ),
                       onPressed: () {
                         Navigator.of(context).pushReplacement(CustomRoute(
-                          builder: (ctx) => FirstButton(idQuestion: 0, idDuel: 0),
+                          builder: (ctx) =>
+                              FirstButton(idQuestion: 0, idDuel: 0),
                         ));
                       },
                     ),
@@ -84,7 +83,7 @@ class _MyAppState extends State<StudentMenu> {
                           style: TextStyle(
                               color: Color.fromRGBO(13, 78, 5, 0.6),
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 23,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(800, 65),
@@ -100,7 +99,8 @@ class _MyAppState extends State<StudentMenu> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SecondButton()),
+                          MaterialPageRoute(
+                              builder: (context) => SecondButton()),
                         );
                       },
                     ),
@@ -112,7 +112,7 @@ class _MyAppState extends State<StudentMenu> {
                           style: TextStyle(
                               color: Color.fromRGBO(13, 78, 5, 0.6),
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 23,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(800, 65),
@@ -128,7 +128,8 @@ class _MyAppState extends State<StudentMenu> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => ThirdButton()),
+                          MaterialPageRoute(
+                              builder: (context) => ThirdButton()),
                         );
                       },
                     ),
@@ -140,7 +141,7 @@ class _MyAppState extends State<StudentMenu> {
                           style: TextStyle(
                               color: Color.fromRGBO(13, 78, 5, 0.6),
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 23,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(800, 65),
@@ -168,7 +169,7 @@ class _MyAppState extends State<StudentMenu> {
                           style: TextStyle(
                               color: Color.fromRGBO(13, 78, 5, 0.6),
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 23,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(800, 65),
@@ -191,7 +192,7 @@ class _MyAppState extends State<StudentMenu> {
                           style: TextStyle(
                               color: Color.fromRGBO(13, 78, 5, 0.6),
                               fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                              fontSize: 23,
                               fontStyle: FontStyle.italic)),
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(800, 65),
@@ -207,7 +208,8 @@ class _MyAppState extends State<StudentMenu> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const MyApp()),
+                          MaterialPageRoute(
+                              builder: (context) => const MyApp()),
                         );
                       },
                     ),
@@ -217,7 +219,6 @@ class _MyAppState extends State<StudentMenu> {
         ));
   }
 }
-
 
 /* body: SingleChildScrollView(
           padding: EdgeInsets.all(5.0),
@@ -368,7 +369,7 @@ class _MyAppState extends State<StudentMenu> {
   }
   */
 
-        /*
+/*
         body: SingleChildScrollView(
             padding: const EdgeInsets.all(5),
             child: Column(
@@ -498,4 +499,3 @@ class _MyAppState extends State<StudentMenu> {
 }
 
          */
-

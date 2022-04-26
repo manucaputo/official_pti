@@ -68,6 +68,7 @@ class _MyAppState extends State<FirstButton> {
   @override
   void initState() {
     super.initState();
+
     print("idduel de base" + "$idDuel");
     print("idquestion" + "$idQuestion");
 
@@ -118,13 +119,12 @@ class _MyAppState extends State<FirstButton> {
             {'text': 'x = 2', 'score': 0},
             {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
             {'text': 'x = 8', 'score': 1},
-
           ]
         },
         {
-          'questionText': '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+          'questionText':
+              '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
-
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
             {'text': '-24x + 33 = -3x + 68', 'score': 1},
@@ -134,11 +134,9 @@ class _MyAppState extends State<FirstButton> {
           ]
         },
 
-
-
-
         {
-          'questionText': '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
+          'questionText':
+              '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -148,11 +146,8 @@ class _MyAppState extends State<FirstButton> {
             {'text': 'Aucune des propositions', 'score': 0},
           ]
         },
-
       ];
     }
-
-
 
     if (idQuestion == 2) {
       _questions = const [
@@ -171,7 +166,7 @@ class _MyAppState extends State<FirstButton> {
         },
 
         {
-          'questionText': 'x + 3)(x + 5) \n=\n(x + 1)(x + 9) ?',
+          'questionText': '(x + 3)(x + 5) \n=\n(x + 1)(x + 9) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 0},
             {'text': 'x = 4', 'score': 0},
@@ -191,13 +186,12 @@ class _MyAppState extends State<FirstButton> {
             {'text': 'x = 2', 'score': 0},
             {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
             {'text': 'x = 8', 'score': 1},
-
           ]
         },
         {
-          'questionText': '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+          'questionText':
+              '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
-
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
             {'text': '-24x + 33 = -3x + 68', 'score': 1},
@@ -207,11 +201,9 @@ class _MyAppState extends State<FirstButton> {
           ]
         },
 
-
-
-
         {
-          'questionText': '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
+          'questionText':
+              '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -221,7 +213,6 @@ class _MyAppState extends State<FirstButton> {
             {'text': 'Aucune des propositions', 'score': 0},
           ]
         },
-
       ];
     }
 
@@ -242,7 +233,7 @@ class _MyAppState extends State<FirstButton> {
         },
 
         {
-          'questionText': 'x + 3)(x + 5) \n=\n(x + 1)(x + 9) ?',
+          'questionText': '(x + 3)(x + 5) \n=\n(x + 1)(x + 9) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 0},
             {'text': 'x = 4', 'score': 0},
@@ -262,13 +253,12 @@ class _MyAppState extends State<FirstButton> {
             {'text': 'x = 2', 'score': 0},
             {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
             {'text': 'x = 8', 'score': 1},
-
           ]
         },
         {
-          'questionText': '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+          'questionText':
+              '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
-
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
             {'text': '-24x + 33 = -3x + 68', 'score': 1},
@@ -278,11 +268,9 @@ class _MyAppState extends State<FirstButton> {
           ]
         },
 
-
-
-
         {
-          'questionText': '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
+          'questionText':
+              '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -292,7 +280,6 @@ class _MyAppState extends State<FirstButton> {
             {'text': 'Aucune des propositions', 'score': 0},
           ]
         },
-
       ];
     }
 
@@ -328,25 +315,24 @@ class _MyAppState extends State<FirstButton> {
 
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
-
-
     final appBar = AppBar(
-
       title: DefaultTextStyle(
         style: const TextStyle(
           fontSize: 26.0,
+          color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
         child: AnimatedTextKit(
           animatedTexts: [
             FadeAnimatedText(
               'Bonne chance !',
-              duration: const Duration(seconds: 2),
+              duration: const Duration(seconds: 1),
             ),
             FadeAnimatedText(
-              'MixMath !',
+              'Voyons si tu as bien compris la matière...',
+              textAlign: TextAlign.center,
               duration: const Duration(
-                seconds: 1,
+                seconds: 2,
               ),
             ),
           ],
@@ -357,25 +343,21 @@ class _MyAppState extends State<FirstButton> {
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 
-
-
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       home: Scaffold(
         appBar: appBar,
         backgroundColor: Colors.white,
-
-        body: SingleChildScrollView(
-          child: Container(
-
-            child: _questionIndex < _questions.length //if
-                ? Quiz(
-                    answerQuestion: _answerQuestion,
-                    questionIndex: _questionIndex,
-                    questions: _questions)
-                : Result(_totalScore, _resetQuiz),
+        body: Center(
+          child: SingleChildScrollView(
+            child: Container(
+              child: _questionIndex < _questions.length //if
+                  ? Quiz(
+                      answerQuestion: _answerQuestion,
+                      questionIndex: _questionIndex,
+                      questions: _questions)
+                  : Result(_totalScore, _resetQuiz),
+            ),
           ),
         ),
       ),

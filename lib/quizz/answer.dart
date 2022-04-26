@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Answer extends StatelessWidget {
   final VoidCallback selectHandler;
@@ -8,15 +9,31 @@ class Answer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double
-          .infinity, // "double" because everything is an object on Flutter
-
-      child: RaisedButton(
-        color: Colors.blue,
-        textColor: Colors.white,
-        child: Text(answerText,maxLines: 1,),
-        onPressed: selectHandler,
+    return SingleChildScrollView(
+      child: Container(
+        margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
+        child: ElevatedButton(
+          child: Text(answerText,
+              maxLines: 1,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 23,
+                  fontStyle: FontStyle.italic)),
+          style: ElevatedButton.styleFrom(
+            minimumSize: const Size(800, 65),
+            maximumSize: const Size(800, 65),
+            primary: Color.fromRGBO(221, 229, 221, 1.0),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                side: const BorderSide(
+                  width: 5.0,
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                )),
+          ),
+          onPressed: selectHandler,
+        ),
       ),
     );
   }

@@ -14,22 +14,32 @@ class Quiz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        /*Card(
+          margin:
+          const EdgeInsets.symmetric(vertical: 15, horizontal: 0),
 
+         */
+        //color: const Color.fromRGBO(13, 78, 5, 0.6),
         Card(
+          shape: const ContinuousRectangleBorder(
+              side: BorderSide(
+            width: 3,
+            color: Color.fromRGBO(13, 78, 5, 0.6),
+          )),
           child: Question(
             questions[questionIndex]['questionText'] as String,
           ),
         ),
+
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((answer) {
           // "..."  take a list and pull all the values in that list out of them and add it in a surrounding as individual values
-          return Answer(
-              () => answerQuestion(answer['score'],answer['text']), answer['text'] as String);
+          return Answer(() => answerQuestion(answer['score'], answer['text']),
+              answer['text'] as String);
         }).toList()
       ],
     );
