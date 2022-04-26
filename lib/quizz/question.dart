@@ -11,15 +11,14 @@ class Question extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+    final screenWidth = MediaQuery.of(context).size.width;
     return Container(
       width: double.infinity,
       margin: EdgeInsets.all(10), //margin in all directions
-
         child: Text(
           questionText,
-          maxLines: 1,
-          style: const TextStyle(fontSize: 26),
+          //maxLines: 1,
+          style:  TextStyle(fontSize: screenWidth*0.065,),
           textAlign: TextAlign.center,
         ),
 
