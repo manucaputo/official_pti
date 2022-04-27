@@ -16,27 +16,27 @@ class Quiz extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            margin: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-            child: Image.asset('assets/images/Accueil_TITRE.png',
-                scale: 3),
+            margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+            child: Image.asset('assets/images/Accueil_TITRE.png', scale: 2.5),
           ),
-
-          Card(
-            margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 10),
-            shape: const ContinuousRectangleBorder(
-                side: BorderSide(
-              width: 3,
-              color: Color.fromRGBO(13, 78, 5, 0.6),
-            )),
-            child: Question(
-              questions[questionIndex]['questionText'] as String,
+          SizedBox(
+            width: double.infinity,
+            child: Card(
+              margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 10),
+              shape: const ContinuousRectangleBorder(
+                  side: BorderSide(
+                width: 3,
+                color: Color.fromRGBO(13, 78, 5, 0.6),
+              )),
+              child: Question(
+                questions[questionIndex]['questionText'] as String,
+              ),
             ),
           ),
-
           ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
               .map((answer) {
             // "..."  take a list and pull all the values in that list out of them and add it in a surrounding as individual values
