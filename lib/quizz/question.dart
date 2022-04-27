@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class Question extends StatelessWidget {
   final String
-      questionText; // "final" means that the initial value will never change after passing in the constr
+  questionText; // "final" means that the initial value will never change after passing in the constr
 
   Question(this.questionText);
 

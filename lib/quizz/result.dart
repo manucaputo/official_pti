@@ -28,75 +28,19 @@ class Result extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        reverse: true,
         child: Center(
             child:
-                Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
             margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
             child: CircleAvatar(
                 backgroundColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                radius: 70,
+                radius: 50,
                 child: Image.asset('assets/images/logo.png', scale: 10)),
           ),
           Container(
-            margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-            child: Text(
-              'Score : ' '$resultScore' '/5',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-          ),
-          Container(
-              margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-              child: const Text(
-                'Réponses sélectionnées',
-                style: TextStyle(
-                  decoration: TextDecoration.underline,
-                  fontStyle: FontStyle.italic,
-                  fontSize: 22,
-                ),
-              )),
-          ListView.builder(
-              shrinkWrap: true,
-              itemCount: response.length,
-              itemBuilder: (BuildContext context, int index) {
-                var index_2 = index + 1;
-
-                return Card(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                  child: ListTile(
-                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                    leading: CircleAvatar(
-                      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
-                      radius: 30,
-                      child: Padding(
-                        padding: EdgeInsets.all(15),
-                        child: FittedBox(
-                          child: Text(
-                            'Q ' '$index_2',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                        ),
-                      ),
-                    ),
-                    title: Text(
-                      response[index],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    //subtitle: Text(''),
-                  ),
-                );
-              }),
-          Container(
-            margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 0),
+            margin: const EdgeInsets.fromLTRB(15.0, 10, 15, 10),
             child: ElevatedButton(
                 child: const Text('Menu',
                     style: TextStyle(
@@ -125,7 +69,65 @@ class Result extends StatelessWidget {
                     builder: (ctx) => StudentMenu(),
                   ));
                 }),
-          )
+          ),
+          Container(
+            margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+            child: Text(
+              'Score : ' '$resultScore' '/5',
+              style: const TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ),
+          Container(
+              margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: const Text(
+                'Réponses sélectionnées',
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  fontStyle: FontStyle.italic,
+                  fontSize: 22,
+                ),
+              )),
+          ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: response.length,
+              itemBuilder: (BuildContext context, int index) {
+                var index_2 = index + 1;
+
+                return Card(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+                  child: ListTile(
+                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                    leading: CircleAvatar(
+                      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+                      radius: 30,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: FittedBox(
+                          child: Text(
+                            'Q ' '$index_2',
+                            style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: Text(
+                      response[index],
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    //subtitle: Text(''),
+                  ),
+                );
+              }),
         ])),
       ),
     );

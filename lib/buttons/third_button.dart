@@ -90,10 +90,10 @@ class _MyAppState extends State<ThirdButton> {
   Map<String, String> headers = {
     "Content-type": "application/json",
     "Authorization":
-        Token.token
+    Token.token
   };
 
-   getReply() async {
+  getReply() async {
     try {
       final response = await http.get(Uri.parse(Token.url+url), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
@@ -120,30 +120,30 @@ class _MyAppState extends State<ThirdButton> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: const Text('MixMath'),
-      ),
-      body: ListView.builder(
-        itemCount: _postsJson2.length,
-        itemBuilder: (BuildContext context, int index) {
-          final post = _postsJson2[index];
+          appBar: AppBar(
+            title: const Text('MixMath'),
+          ),
+          body: ListView.builder(
+            itemCount: _postsJson2.length,
+            itemBuilder: (BuildContext context, int index) {
+              final post = _postsJson2[index];
 
-          return Row(children: [
-            Text("${post["adversaire"]!["firstName"]} ${post["player"]!["score"]}"),
-           
+              return Row(children: [
+                Text("${post["adversaire"]!["firstName"]} ${post["player"]!["score"]}"),
 
-            RaisedButton(
-              child: Text("Voir les réponses "),
 
-                onPressed: () { Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          ResultatButton(resultat: post)),
-                );}),
-          ]);
-        },
-      ),
-    ));
+                RaisedButton(
+                    child: Text("Voir les réponses "),
+
+                    onPressed: () { Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              ResultatButton(resultat: post)),
+                    );}),
+              ]);
+            },
+          ),
+        ));
   }
 }
