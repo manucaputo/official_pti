@@ -8,19 +8,55 @@ import 'package:official_pti/menus/Student_menu.dart';
 import 'package:official_pti/main.dart';
 import '../../helpers/custom_routes.dart';
 import '../main.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import '../connexion/token.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
   final VoidCallback resetHandler;
   var response;
+  var idDuel;
+  String url = "/player/create";
 
-  Result(this.resultScore, this.resetHandler, this.response);
+  Result(this.resultScore, this.resetHandler, this.response, this.idDuel);
 
   String get resultPhrase {
     var resultText;
 
     resultText = 'Score : $resultScore' '/5';
     return resultText;
+  }
+
+  Map<String, String> headers = {
+    "Content-type": "application/json",
+    "Authorization": Token.token
+  };
+  @override
+
+
+  postPlayer() async {
+    try {
+
+      Map<String,String> json = {
+        "score": resultScore.toString(),
+        "Q1":response[0].toString(),
+        "Q2":response[1].toString(),
+        "Q3":response[2].toString(),
+        "Q4":response[3].toString(),
+        "Q5":response[4].toString(),
+        "duelId" : idDuel.toString()};
+      String json2 = jsonEncode(json);
+      print(json2);
+
+      final response2 = await http.post(Uri.parse(Token.url + url),
+          body: json2, headers: headers);
+      final jsonData = jsonDecode(response.body);
+
+    } catch (err) {
+      print(err);
+    }
+
   }
 
   @override
@@ -61,6 +97,7 @@ class Result extends StatelessWidget {
                 ),
                 onPressed: () {
                   resetHandler;
+                  postPlayer();
                   //Navigator.push(
                   // context,
                   //MaterialPageRoute(builder: (context) => StudentMenu()),
