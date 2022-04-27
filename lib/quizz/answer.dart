@@ -9,9 +9,8 @@ class Answer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Container(
+
+      return Container(
         margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 10),
         child: ElevatedButton(
           child: Text(answerText,
@@ -35,7 +34,7 @@ class Answer extends StatelessWidget {
           ),
           onPressed: selectHandler,
         ),
-      ),
+
     );
   }
 }
