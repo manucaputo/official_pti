@@ -11,7 +11,7 @@ class Answer extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
+        margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 10),
         child: ElevatedButton(
           child: Text(answerText,
               maxLines: 1,
@@ -24,7 +24,7 @@ class Answer extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             minimumSize: const Size(800, 65),
             maximumSize: const Size(800, 65),
-            primary: Color.fromRGBO(221, 229, 221, 1.0),
+            primary: const Color.fromRGBO(221, 229, 221, 1.0),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
                 side: const BorderSide(

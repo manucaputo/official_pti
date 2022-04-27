@@ -123,7 +123,7 @@ class _MyAppState extends State<FirstButton> {
         },
         {
           'questionText':
-              '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+              '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
@@ -190,7 +190,7 @@ class _MyAppState extends State<FirstButton> {
         },
         {
           'questionText':
-              '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+              '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
@@ -257,7 +257,7 @@ class _MyAppState extends State<FirstButton> {
         },
         {
           'questionText':
-              '8(4 − 3x) + 1 = 53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+              '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
@@ -349,15 +349,13 @@ class _MyAppState extends State<FirstButton> {
         appBar: appBar,
         backgroundColor: Colors.white,
         body: Center(
-          child: SingleChildScrollView(
-            child: Container(
-              child: _questionIndex < _questions.length //if
-                  ? Quiz(
-                      answerQuestion: _answerQuestion,
-                      questionIndex: _questionIndex,
-                      questions: _questions)
-                  : Result(_totalScore, _resetQuiz),
-            ),
+          child: Container(
+            child: _questionIndex < _questions.length //if
+                ? Quiz(
+                    answerQuestion: _answerQuestion,
+                    questionIndex: _questionIndex,
+                    questions: _questions)
+                : Result(_totalScore, _resetQuiz),
           ),
         ),
       ),
