@@ -153,9 +153,9 @@ class _MyAppState extends State<SecondButton> {
         appBar: appBar,
         backgroundColor: Colors.white,
         body: ListView.builder(
-            itemCount: _postsJson.length,
+            itemCount: _postsJson2.length,
             itemBuilder: (BuildContext context, int index) {
-              final post = _postsJson[index];
+              final post = _postsJson2[index];
               var index_2 = index + 1;
 
               return Card(
