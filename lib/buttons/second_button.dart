@@ -100,7 +100,23 @@ class _MyAppState extends State<SecondButton> {
       "idAdversaire": 4,
       "idQuestion": 3,
       "date": "2022-04-12T14:11:18.000Z"
-    }
+    },
+    {
+      "firstName": "Seph",
+      "id": 29,
+      "idDuel": 39,
+      "idAdversaire": 4,
+      "idQuestion": 3,
+      "date": "2022-04-12T14:11:18.000Z"
+    },
+    {
+      "firstName": "Seph",
+      "id": 29,
+      "idDuel": 39,
+      "idAdversaire": 4,
+      "idQuestion": 3,
+      "date": "2022-04-12T14:11:18.000Z"
+    },
   ];
   Map<String, String> headers = {
     "Content-type": "application/json",

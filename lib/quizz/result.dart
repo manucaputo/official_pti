@@ -33,7 +33,7 @@ class Result extends StatelessWidget {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
-            margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+            margin: const EdgeInsets.fromLTRB(0, 50, 0, 0),
             child: CircleAvatar(
                 backgroundColor: const Color.fromRGBO(221, 229, 221, 1.0),
                 radius: 50,
