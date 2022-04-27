@@ -109,7 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: const Text('Bienvenue sur MixMath',),
+      title: const Text(
+        'Bienvenue sur MixMath',
+      ),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 

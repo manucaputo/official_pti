@@ -119,12 +119,14 @@ class _MyAppState extends State<SecondButton> {
     } catch (err) {}
   }
 
-  deleteReply(var id) async
-  {
-    try{
-      final response = await http.delete(Uri.parse(Token.url+urlDelete+id.toString()),headers: headers);
+  deleteReply(var id) async {
+    try {
+      final response = await http.delete(
+          Uri.parse(Token.url + urlDelete + id.toString()),
+          headers: headers);
+    } catch (err) {
+      print(err);
     }
-    catch(err){print(err);}
   }
 
   void deleteDuel(var idDuel) {
@@ -191,10 +193,10 @@ class _MyAppState extends State<SecondButton> {
                           size: 32,
                         ),
                         color: Theme.of(context).errorColor,
-                        onPressed: () =>{
+                        onPressed: () => {
                           deleteDuel(post["idDuel"]),
                           //deleteReply(post["id"])
-                         },
+                        },
                       ),
                       IconButton(
                           icon: const Icon(
