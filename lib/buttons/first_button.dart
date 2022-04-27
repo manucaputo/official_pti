@@ -318,22 +318,23 @@ class _MyAppState extends State<FirstButton> {
     final appBar = AppBar(
       title: DefaultTextStyle(
         style: const TextStyle(
-          fontSize: 26.0,
-          color: Colors.white,
-          fontWeight: FontWeight.bold,
-        ),
+            fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),
         child: AnimatedTextKit(
           animatedTexts: [
+            FadeAnimatedText(
+              'Il est temps de tester tes connaissances...',
+              textAlign: TextAlign.center,
+              duration: const Duration(
+                seconds: 2,
+              ),
+            ),
             FadeAnimatedText(
               'Bonne chance !',
               duration: const Duration(seconds: 1),
             ),
             FadeAnimatedText(
-              'Voyons si tu as bien compris la matière...',
-              textAlign: TextAlign.center,
-              duration: const Duration(
-                seconds: 2,
-              ),
+              'Donne tout !',
+              duration: const Duration(seconds: 2),
             ),
           ],
           repeatForever: true,

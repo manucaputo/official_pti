@@ -46,7 +46,7 @@ class _MyAppState extends State<StudentMenu> {
                   Container(
                     margin: const EdgeInsets.fromLTRB(0, 0, 0, 50),
                     child: Image.asset('assets/images/Accueil_TITRE.png',
-                        scale: 2),
+                        scale: 2.3),
                   ),
                   Container(
                     margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
