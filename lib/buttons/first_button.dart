@@ -356,7 +356,7 @@ class _MyAppState extends State<FirstButton> {
                     answerQuestion: _answerQuestion,
                     questionIndex: _questionIndex,
                     questions: _questions)
-                : Result(_totalScore, _resetQuiz),
+                : Result(_totalScore, _resetQuiz,_response),
           ),
         ),
       ),
