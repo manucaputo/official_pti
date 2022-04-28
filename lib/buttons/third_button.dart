@@ -65,13 +65,13 @@ class _MyAppState extends State<ThirdButton> {
         "idQuestion": 1
       },
       "adversaire": {
-        "score": "/",
+        "score": "...",
         "Q1": "Pas de réponse",
         "Q2": "Pas de réponse",
         "Q3": "Pas de réponse",
         "Q4": "Pas de réponse",
         "Q5": "Pas de réponse",
-        "firstName": "En attente"
+        "firstName": "Emmanuel"
       }
     }
   ];
@@ -128,12 +128,11 @@ class _MyAppState extends State<ThirdButton> {
                       Expanded(
                           child: Column(children: [
                         Container(
-                          margin: const EdgeInsets.fromLTRB(15, 20, 15, 0),
+                          margin: const EdgeInsets.fromLTRB(15, 20, 15, 10),
                           child: ElevatedButton(
-                            child: Text(
-                                "${post["adversaire"]!["firstName"]}",
+                            child: const Text("Détails",
                                 textAlign: TextAlign.center,
-                                style: const TextStyle(
+                                style: TextStyle(
                                     decoration: TextDecoration.underline,
                                     color: Color.fromRGBO(13, 78, 5, 0.6),
                                     fontWeight: FontWeight.bold,
@@ -165,14 +164,16 @@ class _MyAppState extends State<ThirdButton> {
                         child: Column(
                           children: [
                             Container(
-                                margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                                child: Text(
-                                  "Score personnel : ${post["player"]!["score"]}",
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 17,
-                                  ),
-                                )),
+                              margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                              child: Text(
+                                "Mon score\n\n${post["player"]!["score"]}/5",
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -182,10 +183,11 @@ class _MyAppState extends State<ThirdButton> {
                           child: Column(
                             children: [
                               Text(
-                                "Score de l'adversaire: ${post["adversaire"]!["score"]}",
+                                "Score de ${post["adversaire"]!["firstName"]}\n\n${post["adversaire"]!["score"]}/5",
+                                textAlign: TextAlign.center,
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 17,
+                                  fontSize: 18,
                                 ),
                               ),
                             ],
