@@ -76,19 +76,109 @@ class _MyAppState extends State<ResultatButton> {
 
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
+    final appBar = AppBar(
+      title: const Text('Mes duels'),
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+    );
+
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(
-            title: Text('MixMath'),
-          ),
+          appBar: appBar,
+          backgroundColor: Colors.white,
           body: ListView.builder(
             itemCount: _postsJson2.length,
             itemBuilder: (BuildContext context, int index) {
               final post = _postsJson2[index];
-              return Row(children: [
 
+              return Card(
+                margin:
+                const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                          child: Column(children: [
+                            Container(
+                              margin: const EdgeInsets.fromLTRB(15, 20, 15, 0),
+                              child: ElevatedButton(
+                                child: Text(
+                                    "${post["adversaire"]!["firstName"]}",
+                                    textAlign: TextAlign.center,
+                                    style: const TextStyle(
+                                        decoration: TextDecoration.underline,
+                                        color: Color.fromRGBO(13, 78, 5, 0.6),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        fontStyle: FontStyle.italic)),
+                                style: ElevatedButton.styleFrom(
+                                  minimumSize: const Size(600, 65),
+                                  maximumSize: const Size(600, 65),
+                                  primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      side: const BorderSide(
+                                        width: 5.0,
+                                        color: Color.fromRGBO(13, 78, 5, 0.6),
+                                      )),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ResultatButton(resultat: post)),
+                                  );
+                                },
+                              ),
+                            )
+                          ])),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Container(
+                                margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                child: Text(
+                                  "Score personnel : ${post["player"]!["score"]}",
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 17,
+                                  ),
+                                )),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Score de l'adversaire: ${post["adversaire"]!["score"]}",
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 17,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
 
-              ]);
+/*
+                          RaisedButton(
+                              child: Text("Voir les réponses "),
+
+                              onPressed: () { Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ResultatButton(resultat: post)),
+                              );}),
+
+ */
+                    ]),
+              );
             },
           ),
         ));

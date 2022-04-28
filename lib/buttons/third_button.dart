@@ -75,6 +75,7 @@ class _MyAppState extends State<ThirdButton> {
       }
     }
   ];
+
   Map<String, String> headers = {
     "Content-type": "application/json",
     "Authorization": Token.token
@@ -127,10 +128,10 @@ class _MyAppState extends State<ThirdButton> {
                       Expanded(
                           child: Column(children: [
                         Container(
-                          margin: const EdgeInsets.fromLTRB(15, 20, 0, 0),
+                          margin: const EdgeInsets.fromLTRB(15, 20, 15, 0),
                           child: ElevatedButton(
                             child: Text(
-                                "VS :\n ${post["adversaire"]!["firstName"]}",
+                                "${post["adversaire"]!["firstName"]}",
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                     decoration: TextDecoration.underline,
@@ -139,8 +140,8 @@ class _MyAppState extends State<ThirdButton> {
                                     fontSize: 20,
                                     fontStyle: FontStyle.italic)),
                             style: ElevatedButton.styleFrom(
-                              minimumSize: const Size(800, 65),
-                              maximumSize: const Size(800, 65),
+                              minimumSize: const Size(600, 65),
+                              maximumSize: const Size(600, 65),
                               primary: const Color.fromRGBO(221, 229, 221, 1.0),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(15.0),
