@@ -226,6 +226,7 @@ class _MyAppState extends State<SecondButton> {
                           ),
                           color: Colors.green,
                           onPressed: () {
+                          //  deleteReply(post["id"]);
                             Navigator.push(
                               context,
                               MaterialPageRoute(
