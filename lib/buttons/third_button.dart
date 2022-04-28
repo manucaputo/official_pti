@@ -130,7 +130,7 @@ class _MyAppState extends State<ThirdButton> {
                           margin: const EdgeInsets.fromLTRB(15, 20, 0, 0),
                           child: ElevatedButton(
                             child: Text(
-                                "Adversaire :\n ${post["adversaire"]!["firstName"]}",
+                                "VS :\n ${post["adversaire"]!["firstName"]}",
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                     decoration: TextDecoration.underline,

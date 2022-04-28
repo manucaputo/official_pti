@@ -123,7 +123,7 @@ class _MyAppState extends State<FirstButton> {
         },
         {
           'questionText':
-          '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+              '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
@@ -136,7 +136,7 @@ class _MyAppState extends State<FirstButton> {
 
         {
           'questionText':
-          '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
+              '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -190,7 +190,7 @@ class _MyAppState extends State<FirstButton> {
         },
         {
           'questionText':
-          '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+              '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
@@ -203,7 +203,7 @@ class _MyAppState extends State<FirstButton> {
 
         {
           'questionText':
-          '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
+              '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -257,7 +257,7 @@ class _MyAppState extends State<FirstButton> {
         },
         {
           'questionText':
-          '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+              '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
@@ -270,7 +270,7 @@ class _MyAppState extends State<FirstButton> {
 
         {
           'questionText':
-          '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
+              '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -353,10 +353,10 @@ class _MyAppState extends State<FirstButton> {
           child: Container(
             child: _questionIndex < _questions.length //if
                 ? Quiz(
-                answerQuestion: _answerQuestion,
-                questionIndex: _questionIndex,
-                questions: _questions)
-                : Result(_totalScore, _resetQuiz,_response),
+                    answerQuestion: _answerQuestion,
+                    questionIndex: _questionIndex,
+                    questions: _questions)
+                : Result(_totalScore, _resetQuiz, _response),
           ),
         ),
       ),

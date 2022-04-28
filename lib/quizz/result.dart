@@ -33,11 +33,11 @@ class Result extends StatelessWidget {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Container(
-            margin: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+            margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
             child: CircleAvatar(
                 backgroundColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                radius: 50,
-                child: Image.asset('assets/images/logo.png', scale: 10)),
+                radius: 80,
+                child: Image.asset('assets/images/logo.png', scale: 6)),
           ),
           Container(
             margin: const EdgeInsets.fromLTRB(15.0, 10, 15, 10),
@@ -121,7 +121,7 @@ class Result extends StatelessWidget {
                     ),
                     title: Text(
                       response[index],
-                      textAlign: TextAlign.center,
+                      textAlign: TextAlign.start,
                       style: TextStyle(fontSize: 18),
                     ),
                     //subtitle: Text(''),

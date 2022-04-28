@@ -41,10 +41,10 @@ class _MyAppState extends State<StudentMenu> {
           child: SingleChildScrollView(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 50),
+                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: Image.asset('assets/images/Accueil_TITRE.png',
                         scale: 2.3),
                   ),

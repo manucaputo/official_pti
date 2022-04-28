@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -126,7 +128,7 @@ class _MyAppState extends State<SecondButton> {
   getReply() async {
     try {
       final response =
-      await http.get(Uri.parse(Token.url + url), headers: headers);
+          await http.get(Uri.parse(Token.url + url), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
 
       setState(() {
@@ -176,7 +178,7 @@ class _MyAppState extends State<SecondButton> {
 
               return Card(
                 margin:
-                const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                 child: ListTile(
                   tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
                   leading: CircleAvatar(
@@ -195,7 +197,10 @@ class _MyAppState extends State<SecondButton> {
                       ),
                     ),
                   ),
-                  title: Text(("${post["firstName"]}")),
+                  title: Text(
+                    "${post["firstName"]}",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                  ),
                   subtitle: Text('Date : ' +
                       post["date"].toString().substring(8, 10) +
                       post["date"].toString().substring(4, 8) +
@@ -225,9 +230,9 @@ class _MyAppState extends State<SecondButton> {
                               context,
                               MaterialPageRoute(
                                   builder: (context) => FirstButton(
-                                    idQuestion: post["idQuestion"],
-                                    idDuel: post["idDuel"],
-                                  )),
+                                        idQuestion: post["idQuestion"],
+                                        idDuel: post["idDuel"],
+                                      )),
                             );
                           }),
                     ],
