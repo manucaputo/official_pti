@@ -75,8 +75,8 @@ class _MyAppState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: const Text('Menu'),
-      backgroundColor: const Color.fromRGBO(0, 0, 255, 0.55),
+      title: const Text('Enregistrez vous '),
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 
     return Scaffold(
@@ -89,31 +89,45 @@ class _MyAppState extends State<SignUp> {
               children: [
                 TextFormField(
                   controller: nameController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: "Nom",
-                    border:  OutlineInputBorder(),),
+                    border:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30)
+                    ),
+                    suffixIcon: Icon(Icons.account_circle_sharp),
+                  ),
                 ),
                 SizedBox(height: 15,),
                 TextFormField(
                   controller: firstNameController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: "Prénom",
-                    border:  OutlineInputBorder(),),
+                    border:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30)
+                    ),
+                    suffixIcon: Icon(Icons.account_circle_sharp),
+                  ),
                 ),
                 SizedBox(height: 15,),
                 TextFormField(
                   controller: emailController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: "Email",
-                    border:  OutlineInputBorder(),),
+                    border:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30)
+                    ),
+                    suffixIcon: Icon(Icons.email),),
                 ),
                 SizedBox(height: 15,),
                 TextFormField(
                   controller: passController,
                   obscureText: true,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     labelText: "Password",
-                    border:  OutlineInputBorder(),),
+                    border:  OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30)
+                    ),
+                    suffixIcon: Icon(Icons.lock),),
                 ),
                 SizedBox(
                   height: 15,

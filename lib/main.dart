@@ -108,16 +108,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final appBar = AppBar(
+    /*final appBar = AppBar(
       title: const Text(
         'Bienvenue sur MixMath',
       ),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
-    );
+    );*/
 
     return Scaffold(
-        appBar: appBar,
-        body: SingleChildScrollView(
+        //appBar: appBar,
+        body:
+        SingleChildScrollView(
           child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: SafeArea(
@@ -134,13 +135,38 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Image.asset('assets/images/logo.png', scale: 6)),
                   ),
                   Container(
+                    child: Column(
+                      children: const [
+                        Text(
+                          "Hello",
+                          style:TextStyle(
+                            fontSize: 70,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        Text(
+                          "Sign into your account",
+                          style:TextStyle(
+                              fontSize: 20,
+                              color:Colors.grey
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
                     margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                     child: TextFormField(
                       controller: emailController,
-                      decoration: const InputDecoration(
+                      keyboardType: TextInputType.emailAddress,
+                      decoration: InputDecoration(
                           labelText: "Email",
-                          border: OutlineInputBorder(),
-                          suffixIcon: Icon(Icons.email)),
+                          suffixIcon: Icon(Icons.email),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30)
+                          )
+                         ),
+                          
                     ),
                   ),
                   const SizedBox(
@@ -149,20 +175,35 @@ class _MyHomePageState extends State<MyHomePage> {
                   TextFormField(
                     controller: passController,
                     obscureText: true,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                         labelText: "Password",
-                        border: OutlineInputBorder(),
-                        suffixIcon: Icon(Icons.email)),
+                        suffixIcon: Icon(Icons.lock),
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30)
+                        )),
+
                   ),
                   const SizedBox(height: 45),
+
                   OutlinedButton.icon(
                       onPressed: () {
                         postConnexion();
                       },
+
+                      style: OutlinedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                              side: const BorderSide(
+                                width: 1.0,
+                                color: Color.fromRGBO(13, 78, 5, 0.6),
+                              ))
+
+                      ),
                       icon: const Icon(
                         Icons.login,
-                        size: 18,
+                        size: 35,
                         color: Color.fromRGBO(13, 78, 5, 0.75),
+
                       ),
                       label: const Text(
                         "Login",
@@ -178,17 +219,27 @@ class _MyHomePageState extends State<MyHomePage> {
                           MaterialPageRoute(builder: (context) => SignUp()),
                         );
                       },
+                      style: OutlinedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                              side: const BorderSide(
+                                width: 1.0,
+                                color: Color.fromRGBO(13, 78, 5, 0.6),
+                              ))
+
+                      ),
                       icon: const Icon(Icons.login,
-                          size: 18, color: Color.fromRGBO(13, 78, 5, 0.75)),
+                          size: 35,
+                          color: Color.fromRGBO(13, 78, 5, 0.75)),
                       label: const Text(
-                        "S'enregistrer",
+                        "Sign Up",
                         style: TextStyle(
                           color: Color.fromRGBO(13, 78, 5, 0.75),
                         ),
                       )),
                   RaisedButton(
                     child: const Text(
-                      'Menu éléves',
+                      'Menu élèves',
                     ),
                     onPressed: () {
                       /*

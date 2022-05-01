@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:official_pti/main.dart';
 import '../buttons/first_button.dart';
 import '../buttons/second_button.dart';
+import '../contexte/contexte.dart';
 import '../helpers/custom_routes.dart';
 import '../buttons/third_button.dart';
 import '../classes/join_class.dart';
@@ -182,7 +183,13 @@ class _MyAppState extends State<StudentMenu> {
                               color: Color.fromRGBO(13, 78, 5, 0.6),
                             )),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Contexte()),
+                        );
+                      },
                     ),
                   ),
                   Container(
