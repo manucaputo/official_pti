@@ -73,7 +73,7 @@ flutter:
      - assets/Accueil_TITRE.png
      - assets/Dragon_CLASSIQUE.png
      - assets/logo.png
-     - images/fond-OK.jpg
+     - assets/fond-OK.jpg
      - assets/fond.jpg
 
 

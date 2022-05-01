@@ -17,13 +17,10 @@ class _MyAppState extends State<Contexte>{
   Widget build(BuildContext context) {
 
     return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/logo-OK.jpg'),
-          fit : BoxFit.cover,
-        ),
-      ),
-    );
+
+        child:  Image.asset('assets/images/fond-OK.jpg'),
+      );
+
 
     /*
     return Scaffold(

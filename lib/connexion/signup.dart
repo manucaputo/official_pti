@@ -81,58 +81,134 @@ class _MyAppState extends State<SignUp> {
 
     return Scaffold(
         appBar: appBar,
-        body: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child :SafeArea(child:Center
-              (child:Column(
-              mainAxisAlignment:  MainAxisAlignment.center,
+        body: SingleChildScrollView(
+           child:  Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+                 mainAxisAlignment: MainAxisAlignment.center,
+
               children: [
-                TextFormField(
+                Container(
+                  margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
+                child:TextFormField(
                   controller: nameController,
                   decoration: InputDecoration(
                     labelText: "Nom",
-                    border:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30)
+                    labelStyle: TextStyle(
+                        color: Color.fromRGBO(0, 12, 0, 0.6),
+                        fontSize: 20),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          color :Color.fromRGBO(13, 78, 5, 0.6),
+                          width: 3.5,
+                        )
                     ),
-                    suffixIcon: Icon(Icons.account_circle_sharp),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+
+                          width: 0.5,)
+                    ),
+                    suffixIcon: Icon(
+                        Icons.account_circle_sharp,
+                      color: Color.fromRGBO(0, 0, 0, 0.6),),
                   ),
-                ),
-                SizedBox(height: 15,),
-                TextFormField(
+                ),),
+
+                Container(
+                  margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
+                  child : TextFormField(
                   controller: firstNameController,
                   decoration: InputDecoration(
                     labelText: "Prénom",
-                    border:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30)
+                    labelStyle: TextStyle(
+                        color: Color.fromRGBO(0, 12, 0, 0.6),
+                        fontSize: 20),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          color :Color.fromRGBO(13, 78, 5, 0.6),
+                          width: 3.5,
+                        )
                     ),
-                    suffixIcon: Icon(Icons.account_circle_sharp),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+
+                          width: 0.5,)
+                    ),
+                    suffixIcon: Icon(
+                        Icons.account_circle_sharp,
+                      color: Color.fromRGBO(0, 0, 0, 0.6),),
                   ),
-                ),
-                SizedBox(height: 15,),
-                TextFormField(
+                ),),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
+                  child:TextFormField(
                   controller: emailController,
                   decoration: InputDecoration(
                     labelText: "Email",
-                    border:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30)
+                    labelStyle: TextStyle(
+                        color: Color.fromRGBO(0, 12, 0, 0.6),
+                        fontSize: 20),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          color :Color.fromRGBO(13, 78, 5, 0.6),
+                          width: 3.5,
+                        )
                     ),
-                    suffixIcon: Icon(Icons.email),),
-                ),
-                SizedBox(height: 15,),
-                TextFormField(
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+
+                          width: 0.5,)
+                    ),
+                    suffixIcon: Icon(
+                        Icons.email,
+                      color: Color.fromRGBO(0, 0, 0, 0.6),),),
+                ),),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
+                  child:TextFormField(
                   controller: passController,
                   obscureText: true,
                   decoration: InputDecoration(
                     labelText: "Password",
-                    border:  OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30)
+                    labelStyle: TextStyle(
+                        color: Color.fromRGBO(0, 12, 0, 0.6),
+                        fontSize: 20),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          color :Color.fromRGBO(13, 78, 5, 0.6),
+                          width: 3.5,
+                        )
                     ),
-                    suffixIcon: Icon(Icons.lock),),
-                ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+
+                          width: 0.5,)
+                    ),
+                    suffixIcon: Icon(
+                        Icons.lock,
+                      color: Color.fromRGBO(0, 0, 0, 0.6),),),
+                ),),
                 SizedBox(
-                  height: 15,
+                    height:45
                 ),
+                Text("Choisi ton statut",
+                    style:TextStyle(
+                    fontSize: 40,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline,
+
+                        )),
+
                 Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
 
                   children:[
                 Radio(
@@ -144,9 +220,14 @@ class _MyAppState extends State<SignUp> {
                       });
                     }),
                     SizedBox( height: 10,),
-                    Text("Professeur"),]),
-                Row(
-                  children:[
+                    Text(
+                        "Professeur",
+                    style: const TextStyle(
+                        color: Color.fromRGBO(0, 12, 0, 0.6),
+                        fontSize: 30),),
+
+
+
                 Radio(
                     value: false,
                     groupValue: _value,
@@ -157,17 +238,45 @@ class _MyAppState extends State<SignUp> {
 
                     }),
                 SizedBox( height: 10,),
-                Text("Etudiant"),]),
+                Text("Etudiant",
+                    style: const TextStyle(
+                    color: Color.fromRGBO(0, 12, 0, 0.6),
+        fontSize: 30),),]),
                 SizedBox(
                     height:45
                 ),
-                RaisedButton(
-                  child: const Text(
-                    'Enregistrer',
-                  ),
-                  onPressed: () {postlClass();},)
+                Container(
 
-              ],))))
-    );
+                  margin: const EdgeInsets.fromLTRB(35.0, 20, 35.0, 0),
+                  child: ElevatedButton(
+                    child : const Text('Enregistrer',
+                        style: TextStyle(
+                            color: Color.fromRGBO(221, 229, 221, 1.0),
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            fontStyle: FontStyle.italic)),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(800, 55),
+                      maximumSize: const Size(800, 55),
+                      primary: const Color.fromRGBO(13, 78, 5, 0.75),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                          side: const BorderSide(
+                            width: 1.0,
+                            color: Color.fromRGBO(13, 78, 5, 0.6),
+                          )),
+
+
+                    ),
+                    onPressed: () {
+                      postlClass();
+
+                    },
+                  ),
+                ),
+
+
+              ],)));
+
   }
 }

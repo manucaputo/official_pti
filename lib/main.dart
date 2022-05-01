@@ -108,23 +108,21 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    /*final appBar = AppBar(
+    final appBar = AppBar(
       title: const Text(
         'Bienvenue sur MixMath',
       ),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
-    );*/
+    );
 
     return Scaffold(
-        //appBar: appBar,
+        appBar: appBar,
         body:
         SingleChildScrollView(
-          child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: SafeArea(
-                  child: Center(
-                      child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+          child:  Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+
                 children: [
                   Container(
                     margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
@@ -138,33 +136,46 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       children: const [
                         Text(
-                          "Hello",
+                          "Bienvenu",
                           style:TextStyle(
-                            fontSize: 70,
+                            fontSize: 60,
                             fontWeight: FontWeight.bold
                           ),
                         ),
-                        Text(
-                          "Sign into your account",
-                          style:TextStyle(
-                              fontSize: 20,
-                              color:Colors.grey
-                          ),
-                        )
                       ],
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                    margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
                     child: TextFormField(
                       controller: emailController,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           labelText: "Email",
-                          suffixIcon: Icon(Icons.email),
+                          labelStyle: TextStyle(
+                              color: Color.fromRGBO(0, 12, 0, 0.6),
+                              fontSize: 20),
+                          suffixIcon: Icon(
+                            Icons.email,
+                            color: Color.fromRGBO(0, 0, 0, 0.6),),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30)
-                          )
+                          ),
+                        focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          color :Color.fromRGBO(13, 78, 5, 0.6),
+                          width: 3.5,
+
+
+                        )
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+
+                          width: 0.5,)
+                    ),
                          ),
                           
                     ),
@@ -172,19 +183,111 @@ class _MyHomePageState extends State<MyHomePage> {
                   const SizedBox(
                     height: 15,
                   ),
-                  TextFormField(
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
+                  child :TextFormField(
+
                     controller: passController,
                     obscureText: true,
                     decoration: InputDecoration(
-                        labelText: "Password",
-                        suffixIcon: Icon(Icons.lock),
+                        labelText: "Mot de passe",
+                      labelStyle: TextStyle(
+                          color: Color.fromRGBO(0, 12, 0, 0.6),
+                          fontSize: 20),
+                        suffixIcon: Icon(
+                            Icons.lock,
+                            color: Color.fromRGBO(0, 0, 0, 0.6),
+                        ),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30)
-                        )),
+                        ),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
+                          color :Color.fromRGBO(13, 78, 5, 0.6),
+                          width: 3.5,
+                        )
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(
 
+                          width: 0.5,)
+                    ),)
+
+
+
+                  ),),
+                  const SizedBox(height: 30),
+
+                  Container(
+
+                    margin: const EdgeInsets.fromLTRB(35.0, 20, 35.0, 0),
+                    child: ElevatedButton.icon(
+                      icon: const Icon(
+                        Icons.login,
+                        size: 35,
+                        color: Color.fromRGBO(221, 229, 221, 1.0),
+
+                      ),
+                      label : const Text('Connexion',
+                          style: TextStyle(
+                              color: Color.fromRGBO(221, 229, 221, 1.0),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(800, 55),
+                        maximumSize: const Size(800, 55),
+                        primary: const Color.fromRGBO(13, 78, 5, 0.75),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30.0),
+                              side: const BorderSide(
+                                width: 1.0,
+                                color: Color.fromRGBO(13, 78, 5, 0.6),
+                              )),
+
+
+                      ),
+                      onPressed: () {
+                        postConnexion();
+
+                      },
+                    ),
                   ),
-                  const SizedBox(height: 45),
+                  Container(
 
+                    margin: const EdgeInsets.fromLTRB(35.0, 20, 35.0, 0),
+                    child: ElevatedButton(
+                      child : const Text('Créer un nouveau compte',
+                          style: TextStyle(
+                              color: Color.fromRGBO(221, 229, 221, 1.0),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(800, 55),
+                        maximumSize: const Size(800, 55),
+                        primary: const Color.fromRGBO(13, 78, 5, 0.75),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0),
+                            side: const BorderSide(
+                              width: 1.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+
+
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUp()),
+                        );
+
+                      },
+                    ),
+                  ),
+/*
                   OutlinedButton.icon(
                       onPressed: () {
                         postConnexion();
@@ -211,7 +314,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           color: Color.fromRGBO(13, 78, 5, 0.75),
                         ),
                       )),
-                  const SizedBox(height: 45),
+                  const SizedBox(height: 10),
                   OutlinedButton.icon(
                       onPressed: () {
                         Navigator.push(
@@ -236,7 +339,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: TextStyle(
                           color: Color.fromRGBO(13, 78, 5, 0.75),
                         ),
-                      )),
+                      )),*/
                   RaisedButton(
                     child: const Text(
                       'Menu élèves',
@@ -276,7 +379,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         ));
                       })
                 ],
-              )))),
-        ));
+              )));
   }
 }
