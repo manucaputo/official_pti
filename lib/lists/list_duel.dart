@@ -9,26 +9,31 @@ import '../connexion/token.dart';
 
 void main() {
   var idUser;
+  var firstName;
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: ListDuel(
-        idUser : idUser
+        idUser : idUser,
+        firstName: firstName
     ),
   ));
 }
 
 class ListDuel  extends StatefulWidget {
   var idUser;
+  var firstName;
   ListDuel({
     required this.idUser,
+    required this.firstName,
   });
   @override
   State<ListDuel> createState() =>
-      _MyAppState(idUser); // put _ before teh name of the class means public class --> private class
+      _MyAppState(idUser,firstName); // put _ before teh name of the class means public class --> private class
 }
 
 class _MyAppState extends State<ListDuel> {
   var idUser;
+  var firstName;
   final url = "/result/student";
   var _postsJson = [];
   final _postsJson2 = [
@@ -83,7 +88,7 @@ class _MyAppState extends State<ListDuel> {
       }
     }
   ];
-  _MyAppState(this.idUser);
+  _MyAppState(this.idUser,this.firstName);
   Map<String, String> headers = {
     "Content-type": "application/json",
     "Authorization": Token.token
@@ -109,7 +114,118 @@ class _MyAppState extends State<ListDuel> {
     super.initState();
     getReply();
   }
+  @override // It already exists but we override with our own method --> To make the code more clear
+  Widget build(BuildContext context) {
+    final appBar = AppBar(
+      title:  Text(firstName),
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+    );
 
+    return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: appBar,
+          backgroundColor: Colors.white,
+          body: ListView.builder(
+            itemCount: _postsJson2.length,
+            itemBuilder: (BuildContext context, int index) {
+              final post = _postsJson2[index];
+
+              return Card(
+                margin:
+                const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Expanded(
+                          child: Column(children: [
+                            Container(
+                              margin: const EdgeInsets.fromLTRB(15, 20, 15, 10),
+                              child: ElevatedButton(
+                                child: const Text("Détails",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        decoration: TextDecoration.underline,
+                                        color: Color.fromRGBO(13, 78, 5, 0.6),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        fontStyle: FontStyle.italic)),
+                                style: ElevatedButton.styleFrom(
+                                  minimumSize: const Size(600, 65),
+                                  maximumSize: const Size(600, 65),
+                                  primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(15.0),
+                                      side: const BorderSide(
+                                        width: 5.0,
+                                        color: Color.fromRGBO(13, 78, 5, 0.6),
+                                      )),
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ResultStudent(resultat: post)),
+                                  );
+                                },
+                              ),
+                            )
+                          ])),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                              child: Text(
+                                "Mon score\n\n${post["player"]!["score"]}/5",
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Score de ${post["adversaire"]!["firstName"]}\n\n${post["adversaire"]!["score"]}/5",
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+
+/*
+                          RaisedButton(
+                              child: Text("Voir les réponses "),
+
+                              onPressed: () { Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        ResultatButton(resultat: post)),
+                              );}),
+
+ */
+                    ]),
+              );
+            },
+          ),
+        ));
+  }
+/*
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -136,5 +252,5 @@ class _MyAppState extends State<ListDuel> {
             },
           ),
         ));
-  }
+  }*/
 }

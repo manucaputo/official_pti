@@ -172,7 +172,7 @@ class _MyAppState extends State<ListStudent> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) =>
-                                    ListDuel(idUser: post["id"])),
+                                    ListDuel(idUser: post["id"], firstName: post["firstName"],)),
                           );
 
                         },
