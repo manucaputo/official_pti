@@ -47,6 +47,29 @@ class _MyAppState extends State<ListClass> {
     "Authorization": Token.token
   };
 
+  var items = [
+    'Equation',
+    'Intégrale',
+    'Dérivée',
+
+  ];
+
+  var dropdownValue =  [
+    'Equation',
+    'Intégrale',
+    'Dérivée',
+    'Equation',
+    'Intégrale',
+    'Dérivée',
+    'Equation',
+    'Intégrale',
+    'Dérivée',
+    'Equation',
+    'Intégrale',
+    'Dérivée',
+
+  ];
+
   getClass() async {
     try {
       final response = await http.get(Uri.parse(Token.url+url), headers: headers);
@@ -120,9 +143,17 @@ class _MyAppState extends State<ListClass> {
                   title: Text(
                       ("${post["name"]}")
                   ),
+
                   trailing: Wrap(
                     spacing: 0, // space between two icons
                     children: <Widget>[
+                      DropdownButton(value: dropdownValue[index],
+                        icon: Icon(Icons.keyboard_arrow_down),
+                        items: items.map((items) {
+                          return DropdownMenuItem(value: items, child: Text(items));
+                        }).toList(), onChanged: (String? value) { setState(() {
+                          dropdownValue[index] = value!;
+                        }); },),
                       IconButton(
                           icon: const Icon(Icons.delete, size: 32,),
 
@@ -146,6 +177,7 @@ class _MyAppState extends State<ListClass> {
                     ],
                   ),
                 ),
+
 
 
               );

@@ -119,6 +119,7 @@ class _MyAppState extends State<ListDuel> {
     final appBar = AppBar(
       title:  Text(firstName),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+
     );
 
     return MaterialApp(

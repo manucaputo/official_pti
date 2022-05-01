@@ -108,6 +108,8 @@ class _MyAppState extends State<ListStudent> {
         appBar: appBar,
         backgroundColor: Colors.white,
 
+
+
         body: ListView.builder(
             itemCount: _postsJson2.length,
             itemBuilder: (BuildContext context, int index) {
