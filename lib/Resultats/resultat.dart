@@ -1,11 +1,9 @@
 import 'dart:ui';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
-import 'package:http/http.dart';
 import 'dart:convert';
-import '../buttons/third_button.dart';
 import '../connexion/token.dart';
 
 void main() {
@@ -36,7 +34,7 @@ class _MyAppState extends State<ResultatButton> {
   final url = "http://192.168.1.100:3000/api/result/my";
   var _postsJson = [];
   var answersDuel = [];
-  late MediaQueryData queryData;
+  //late MediaQueryData queryData;
   List<Map<String, Object>> questions = [];
   final _postsJson2 = {
     "player": {
@@ -96,19 +94,19 @@ class _MyAppState extends State<ResultatButton> {
   Widget build(BuildContext context) {
     final post = _postsJson2;
 
-    if (_postsJson2["adversaire"]!["idQuestion"] == 1) {
+    if (_postsJson2["player"]!["idQuestion"] == 1) {
       answersDuel = ["1", "2", "3", "4", "5"];
     }
 
-    if (_postsJson2["adversaire"]!["idQuestion"] == 2) {
+    if (_postsJson2["player"]!["idQuestion"] == 2) {
       answersDuel = ["6", "7", "8", "9", "10"];
     }
 
-    if (_postsJson2["adversaire"]!["idQuestion"] == 3) {
+    if (_postsJson2["player"]!["idQuestion"] == 3) {
       answersDuel = ["11", "12", "13", "14", "15"];
     }
 
-    if (_postsJson2["adversaire"]!["idQuestion"] == 1) {
+    if (_postsJson2["player"]!["idQuestion"] == 1) {
       questions = const [
         // creation of a MAP (key : value)
         {
@@ -162,7 +160,7 @@ class _MyAppState extends State<ResultatButton> {
 
         {
           'questionText':
-              '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
+              '3 (x + 1) – (x – 9) + (x + 3) \n=(x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -229,7 +227,7 @@ class _MyAppState extends State<ResultatButton> {
 
         {
           'questionText':
-              '3 (x + 1) – (x – 9) + (x + 3) = (x + 4) + (x + 2) – (11 – x) ?',
+              '3 (x + 1) – (x – 9) + (x + 3) \n= (x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -296,7 +294,7 @@ class _MyAppState extends State<ResultatButton> {
 
         {
           'questionText':
-              '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
+              '3 (x + 1) – (x – 9) + (x + 3) =\n(x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -309,7 +307,7 @@ class _MyAppState extends State<ResultatButton> {
       ];
     }
 
-    queryData = MediaQuery.of(context);
+    //queryData = MediaQuery.of(context);
 
     final appBar = AppBar(
       title: const Text('Détails des questions/réponses'),
@@ -321,473 +319,323 @@ class _MyAppState extends State<ResultatButton> {
         home: Scaffold(
             appBar: appBar,
             backgroundColor: Colors.white,
-            body: Column(
-              children: [
-                Card(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: ListTile(
-                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                    leading: const CircleAvatar(
-                      backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                      radius: 26,
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: FittedBox(
-                          child: Text(
-                            "Q1",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  const Padding(padding: EdgeInsets.fromLTRB(0, 15.0, 0, 0)),
+                  Card(
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
+                    child: ListTile(
+                      tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                      leading: const CircleAvatar(
+                        backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
+                        radius: 26,
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: FittedBox(
+                            child: Text(
+                              "Q1",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
+                      title: Text(
+                        questions[0]['questionText'] as String,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
                     ),
-                    title: Text(
-                      questions[0]['questionText'] as String,
-                      textAlign: TextAlign.center,
-                      style:
-                          const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-
                   ),
-                ),
-                Card(
-                  margin:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: ListTile(
-                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                    leading: const CircleAvatar(
-                      backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                      radius: 26,
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: FittedBox(
-                          child: Text(
-                            "Q2",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
+                  Card(
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
+                    child: ListTile(
+                      tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                      leading: const CircleAvatar(
+                        backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
+                        radius: 26,
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: FittedBox(
+                            child: Text(
+                              "Q2",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
+                      title: Text(
+                        questions[1]['questionText'] as String,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
                     ),
-                    title: Text(
-                      questions[1]['questionText'] as String,
-                      textAlign: TextAlign.center,
-                      style:
-                      const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-
                   ),
-                ),
-                Card(
-                  margin:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: ListTile(
-                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                    leading: const CircleAvatar(
-                      backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                      radius: 26,
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: FittedBox(
-                          child: Text(
-                            "Q3",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
+                  Card(
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
+                    child: ListTile(
+                      tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                      leading: const CircleAvatar(
+                        backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
+                        radius: 26,
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: FittedBox(
+                            child: Text(
+                              "Q3",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
+                      title: Text(
+                        questions[2]['questionText'] as String,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
                     ),
-                    title: Text(
-                      questions[2]['questionText'] as String,
-                      textAlign: TextAlign.center,
-                      style:
-                      const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-
                   ),
-                ),
-                Card(
-                  margin:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: ListTile(
-                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                    leading: const CircleAvatar(
-                      backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                      radius: 26,
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: FittedBox(
-                          child: Text(
-                            "Q4",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
+                  Card(
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
+                    child: ListTile(
+                      tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                      leading: const CircleAvatar(
+                        backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
+                        radius: 26,
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: FittedBox(
+                            child: Text(
+                              "Q4",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
+                      title: Text(
+                        questions[3]['questionText'] as String,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
                     ),
-                    title: Text(
-                      questions[3]['questionText'] as String,
-                      textAlign: TextAlign.center,
-                      style:
-                      const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-
                   ),
-                ),
-                Card(
-                  margin:
-                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                  child: ListTile(
-                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                    leading: const CircleAvatar(
-                      backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                      radius: 26,
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: FittedBox(
-                          child: Text(
-                            "Q5",
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
+                  Card(
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
+                    child: ListTile(
+                      tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                      leading: const CircleAvatar(
+                        backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
+                        radius: 26,
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: FittedBox(
+                            child: Text(
+                              "Q5",
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
+                      title: Text(
+                        questions[4]['questionText'] as String,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
+                      ),
                     ),
-                    title: Text(
-                      questions[4]['questionText'] as String,
-                      textAlign: TextAlign.center,
-                      style:
-                      const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                    ),
-
                   ),
-                ),
-              ],
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    child: Table(
+                      defaultVerticalAlignment:
+                          TableCellVerticalAlignment.middle,
+                      //defaultColumnWidth: FixedColumnWidth(120.0),
+                      border: TableBorder.all(
+                          color: Colors.black,
+                          style: BorderStyle.solid,
+                          width: 3),
+                      children: [
+                        TableRow(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(children: const [
+                              Text('Réponses correctes',
+                                  style: TextStyle(
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.center)
+                            ]),
+                          ),
+                          Column(children: const [
+                            Text(
+                              'Mes réponses',
+                              style: TextStyle(
+                                  fontSize: 20.0, fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            )
+                          ]),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(children: [
+                              Text(
+                                'Réponses de '
+                                '${post["adversaire"]!["firstName"]}',
+                                style: const TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold),
+                                textAlign: TextAlign.center,
+                              )
+                            ]),
+                          ),
+                        ]),
+                        TableRow(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Column(children: [
+                              Text(
+                                answersDuel[0],
+                                style: const TextStyle(fontSize: 22),
+                              )
+                            ]),
+                          ),
+                          Column(children: [
+                            Text(
+                              '${post["player"]!["Q1"]}',
+                              style: const TextStyle(
+                                  fontSize: 22, fontStyle: FontStyle.italic),
+                            )
+                          ]),
+                          Column(children: [
+                            Text(
+                              '${post["adversaire"]!["Q1"]}',
+                              style: const TextStyle(
+                                  fontSize: 22, fontStyle: FontStyle.italic),
+                            )
+                          ]),
+                        ]),
+                        TableRow(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Column(children: [
+                              Text(
+                                answersDuel[1],
+                                style: const TextStyle(fontSize: 22),
+                              )
+                            ]),
+                          ),
+                          Column(children: [
+                            Text(
+                              '${post["player"]!["Q2"]}',
+                              style: const TextStyle(
+                                  fontSize: 22, fontStyle: FontStyle.italic),
+                            ),
+                          ]),
+                          Column(children: [
+                            Text(
+                              '${post["adversaire"]!["Q2"]}',
+                              style: const TextStyle(
+                                  fontSize: 22, fontStyle: FontStyle.italic),
+                            )
+                          ]),
+                        ]),
+                        TableRow(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Column(children: [
+                              Text(
+                                answersDuel[2],
+                                style: const TextStyle(fontSize: 22),
+                              )
+                            ]),
+                          ),
+                          Column(children: [
+                            Text('${post["player"]!["Q3"]}',
+                                style: const TextStyle(
+                                    fontSize: 22, fontStyle: FontStyle.italic))
+                          ]),
+                          Column(children: [
+                            Text(
+                              '${post["adversaire"]!["Q3"]}',
+                              style: const TextStyle(
+                                  fontSize: 22, fontStyle: FontStyle.italic),
+                            )
+                          ]),
+                        ]),
+                        TableRow(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Column(children: [
+                              Text(
+                                answersDuel[3],
+                                style: const TextStyle(fontSize: 22),
+                              )
+                            ]),
+                          ),
+                          Column(children: [
+                            Text('${post["player"]!["Q4"]}',
+                                style: const TextStyle(
+                                    fontSize: 22, fontStyle: FontStyle.italic))
+                          ]),
+                          Column(children: [
+                            Text(
+                              '${post["adversaire"]!["Q4"]}',
+                              style: const TextStyle(
+                                  fontSize: 22, fontStyle: FontStyle.italic),
+                            )
+                          ]),
+                        ]),
+                        TableRow(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Column(children: [
+                              Text(
+                                answersDuel[4],
+                                style: const TextStyle(fontSize: 22),
+                              )
+                            ]),
+                          ),
+                          Column(children: [
+                            Text('${post["player"]!["Q5"]}',
+                                style: const TextStyle(
+                                    fontSize: 22, fontStyle: FontStyle.italic))
+                          ]),
+                          Column(children: [
+                            Text(
+                              '${post["adversaire"]!["Q5"]}',
+                              style: const TextStyle(
+                                  fontSize: 22, fontStyle: FontStyle.italic),
+                            )
+                          ]),
+                        ]),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             )));
   }
 }
-/*
-            body: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-
-                children: [
-                  Card(
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
-                    child: Row(
-
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const CircleAvatar(
-                          backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                          radius: 30,
-                          child: Padding(
-                            padding: EdgeInsets.all(10),
-                            child: FittedBox(
-                              child: Text(
-                                'Q 1',
-                                //answersDuel[index],
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            //width: queryData.size.width,
-                            margin: const EdgeInsets.fromLTRB(5, 20, 0, 20),
-                            child: Text(
-                              questions[0]['questionText'] as String,
-
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold),
-                            ))
-                      ],
-                    ),
-                    //subtitle: Text(''),
-                  ),
-                  Card(
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
-                    child: Row(
-                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const CircleAvatar(
-                          backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                          radius: 30,
-                          child: Padding(
-                            padding: EdgeInsets.all(10),
-                            child: FittedBox(
-                              child: Text(
-                                'Q 2',
-                                //answersDuel[index],
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            //width: queryData.size.width,
-                            margin: const EdgeInsets.fromLTRB(5, 20, 0, 20),
-                            child: Text(
-                              questions[1]['questionText'] as String,
-
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold),
-                            ))
-                      ],
-                    ),
-                    //subtitle: Text(''),
-                  ),
-                  Card(
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
-                    child: Row(
-                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const CircleAvatar(
-                          backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                          radius: 30,
-                          child: Padding(
-                            padding: EdgeInsets.all(10),
-                            child: FittedBox(
-                              child: Text(
-                                'Q 3',
-                                //answersDuel[index],
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            //width: queryData.size.width,
-                            margin: const EdgeInsets.fromLTRB(5, 20, 0, 20),
-                            child: Text(
-                              questions[2]['questionText'] as String,
-
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold),
-                            ))
-                      ],
-                    ),
-                    //subtitle: Text(''),
-                  ),
-                  Card(
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
-                    child: Row(
-                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const CircleAvatar(
-                          backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                          radius: 30,
-                          child: Padding(
-                            padding: EdgeInsets.all(10),
-                            child: FittedBox(
-                              child: Text(
-                                'Q 4',
-                                //answersDuel[index],
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            //width: queryData.size.width,
-                            margin: const EdgeInsets.fromLTRB(5, 20, 0, 20),
-                            child: Text(
-                              questions[3]['questionText'] as String,
-
-                              style: const TextStyle(
-                                   fontWeight: FontWeight.bold),
-                            ))
-                      ],
-                    ),
-                    //subtitle: Text(''),
-                  ),
-                  Card(
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 10),
-                    child: Row(
-                      //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        const CircleAvatar(
-                          backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                          radius: 30,
-                          child: Padding(
-                            padding: EdgeInsets.all(10),
-                            child: FittedBox(
-                              child: Text(
-                                'Q 5',
-                                //answersDuel[index],
-                                style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Container(
-                            //width: queryData.size.width,
-                            margin: const EdgeInsets.fromLTRB(5, 20, 0, 20),
-                            child: Text(
-                              questions[4]['questionText'] as String,
-                              style: const TextStyle(
-                                   fontWeight: FontWeight.bold),
-                            ))
-                      ],
-                    ),
-                    //subtitle: Text(''),
-                  ),
-                  Row(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.all(20),
-                        child: Text('Résultats attendus',style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          fontStyle: FontStyle.italic,
-                          fontSize: 22,
-                        ),),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('Mes réponses',style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          fontStyle: FontStyle.italic,
-                          fontSize: 22,
-                        ),),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text('Réponses de ''${post["adversaire"]!["firstName"]}',style: const TextStyle(
-                          decoration: TextDecoration.underline,
-                          fontStyle: FontStyle.italic,
-                          fontSize: 22,
-                        ),),
-                      ),
-                  ],),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Text('${post["player"]!["Q1"]}',style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle.italic,
-                          fontSize: 22,
-                        ),),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Text('${post["player"]!["Q1"]}',style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle.italic,
-                          fontSize: 22,
-                        ),),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: Text('${post["adversaire"]!["Q1"]}',style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontStyle: FontStyle.italic,
-                          fontSize: 22,
-                        ),),
-                      ),
-                    ],)
-                ],
-              )
-            ]))
-        */
-
-/*
-return Card(
-margin:
-const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-child: ListTile(
-tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-leading: CircleAvatar(
-backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
-radius: 30,
-child: Padding(
-padding: const EdgeInsets.all(15),
-child: FittedBox(
-child: Text(
-"$index_2",
-style: const TextStyle(
-fontSize: 18,
-fontWeight: FontWeight.bold,
-color: Colors.white),
-),
-),
-),
-),
-title: Text(
-"${post["firstName"]}",
-style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-),
-subtitle: Text('Date : ' +
-post["date"].toString().substring(8, 10) +
-post["date"].toString().substring(4, 8) +
-post["date"].toString().substring(0, 4)),
-trailing: Wrap(
-spacing: 0, // space between two icons
-children: <Widget>[
-IconButton(
-icon: const Icon(
-Icons.delete,
-size: 32,
-),
-color: Theme.of(context).errorColor,
-onPressed: () => {
-deleteDuel(post["idDuel"]),
-//deleteReply(post["id"])
-},
-),
-IconButton(
-icon: const Icon(
-Icons.check,
-size: 32,
-),
-color: Colors.green,
-onPressed: () {
-//  deleteReply(post["id"]);
-Navigator.push(
-context,
-MaterialPageRoute(
-builder: (context) => FirstButton(
-idQuestion: post["idQuestion"],
-idDuel: post["idDuel"],
-)),
-);
-}),
-],
-),
-),
-);
-
- */
