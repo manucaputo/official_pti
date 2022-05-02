@@ -47,7 +47,7 @@ class _MyAppState extends State<ResultatButton> {
       "Q5": "x=5",
       "DuelId": 2,
       "UserId": 4,
-      "idQuestion": 1,
+      "idQuestion": 2,
     },
     "adversaire": {
       "id": 2,
@@ -59,7 +59,7 @@ class _MyAppState extends State<ResultatButton> {
       "Q5": "x=5",
       "DuelId": 2,
       "UserId": 1,
-      "idQuestion": 1,
+      "idQuestion": 2,
       "firstName": "Adrien"
     }
   };
@@ -95,16 +95,32 @@ class _MyAppState extends State<ResultatButton> {
     final post = _postsJson2;
 
     if (_postsJson2["player"]!["idQuestion"] == 1) {
-      answersDuel = ["x=1", "2", "3", "4", "5"];
+      answersDuel = [
+        "x = - 8/5",
+        "Aucune des propositions",
+        "x = 8",
+        "-24x + 33 = -3x + 68",
+        "x = ∅"
+      ];
     }
 
     if (_postsJson2["player"]!["idQuestion"] == 2) {
-      answersDuel = ["6", "7", "8", "9", "10"];
+      answersDuel = [
+        "x = 14",
+        "12t + 8 = 3t + 10",
+        "x = 4",
+        "x = -1/2",
+        "x = ℝ"
+      ];
     }
+
+    /*
 
     if (_postsJson2["player"]!["idQuestion"] == 3) {
       answersDuel = ["11", "12", "13", "14", "15"];
     }
+
+     */
 
     if (_postsJson2["player"]!["idQuestion"] == 1) {
       questions = const [
@@ -147,10 +163,10 @@ class _MyAppState extends State<ResultatButton> {
         },
         {
           'questionText':
-          'Quelle proposition est correctement développée ?\n8(4 − 3x) + 1 = 53 − 3(x − 5)',
+              'Quelle proposition est correctement développée ?\n8(4 − 3x) + 1 = 53 − 3(x − 5)',
           'answers': [
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
-            {'text': '-21x = 35', 'score': 1},
+            {'text': '-21x = -35', 'score': 0},
             {'text': '-24x + 33 = -3x + 68', 'score': 1},
             {'text': '24x -33 = 3x + 68', 'score': 0},
             {'text': '-24x + 33 = - 3x - 68', 'score': 0},
@@ -160,7 +176,7 @@ class _MyAppState extends State<ResultatButton> {
 
         {
           'questionText':
-          '3 (x + 1) – (x – 9) + (x + 3) \n= (x + 4) + (x + 2) – (11 – x) ?',
+              '3 (x + 1) – (x – 9) + (x + 3) \n= (x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -174,6 +190,72 @@ class _MyAppState extends State<ResultatButton> {
     }
 
     if (_postsJson2["adversaire"]!["idQuestion"] == 2) {
+      questions = [
+        // creation of a MAP (key : value)
+        {
+          'questionText': "2x / 7 = 4 ?",
+          'answers': [
+            {'text': 'x = -14', 'score': 0},
+            {'text': 'x = - 7', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'x = 14', 'score': 1},
+            {'text': 'x = 12', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
+          ]
+          // first element list = pos 0
+        },
+
+        {
+          'questionText':
+              'Parmis les différentes propositions, sélectionne l\'équation du premier degré ayant pour solution \n\nt = -2 ?',
+          'answers': [
+            {'text': '25t - 12 = -60', 'score': 0},
+            {'text': '3t = -2', 'score': 0},
+            {'text': '100t = 10t - 180', 'score': 1},
+            {'text': '6t - 4 = 8', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
+            {'text': '12t + 8 = 3t + 10', 'score': 1},
+          ]
+        },
+
+        {
+          'questionText': '3x - 4 = 8 ?',
+          'answers': [
+            {'text': 'x = 4', 'score': 1},
+            {'text': 'x = -2', 'score': 0},
+            {'text': 'x = 2', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'x = -4', 'score': 0},
+            {'text': 'x = ℝ', 'score': 0},
+          ]
+        },
+        {
+          'questionText': '5(x − 1) + 3(2 − x) = 0 ?',
+          'answers': [
+            {'text': 'x = 2', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
+            {'text': 'x = -2', 'score': 0},
+            {'text': 'x = 4', 'score': 0},
+            {'text': 'x = -4', 'score': 0},
+            {'text': 'x = -1/2', 'score': 1},
+          ]
+        },
+
+        {
+          'questionText': '3(2x + 4) − 2x \n= 14 − 2(1 − 2x) ?',
+          'answers': [
+            {'text': 'x = 0', 'score': 0},
+            {'text': 'x = ℝ', 'score': 1},
+            {'text': 'x = -5', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': '5', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
+          ]
+        },
+      ];
+    }
+
+    if (_postsJson2["adversaire"]!["idQuestion"] == 3) {
       questions = const [
         // creation of a MAP (key : value)
         {
@@ -228,73 +310,6 @@ class _MyAppState extends State<ResultatButton> {
         {
           'questionText':
               '3 (x + 1) – (x – 9) + (x + 3) \n= (x + 4) + (x + 2) – (11 – x) ?',
-          'answers': [
-            {'text': 'x = ∅', 'score': 1},
-            {'text': 'x = 5', 'score': 0},
-            {'text': 'x = -5', 'score': 0},
-            {'text': 'x = ℝ', 'score': 0},
-            {'text': '18', 'score': 0},
-            {'text': 'Aucune des propositions', 'score': 0},
-          ]
-        },
-      ];
-    }
-
-    if (_postsJson2["adversaire"]!["idQuestion"] == 3) {
-      questions = const [
-        // creation of a MAP (key : value)
-        {
-          'questionText': '5x + 8 = 0 ?',
-          'answers': [
-            {'text': 'x = 5/8', 'score': 0},
-            {'text': 'x = - 8/5', 'score': 1},
-            {'text': 'x = - 5/8', 'score': 0},
-            {'text': 'x = 8/5', 'score': 0},
-            {'text': 'x = ∅', 'score': 0},
-            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
-          ]
-          // first element list = pos 0
-        },
-
-        {
-          'questionText': '(x + 3)(x + 5) = (x + 1)(x + 9) ?',
-          'answers': [
-            {'text': 'x = ∅', 'score': 0},
-            {'text': 'x = 4', 'score': 0},
-            {'text': 'x = 6', 'score': 0},
-            {'text': 'x = ℝ', 'score': 0},
-            {'text': 'Aucune des propositions', 'score': 1},
-            {'text': 'x = - 3', 'score': 0},
-          ]
-        },
-
-        {
-          'questionText': '2x + 3 = 3x − 5 ?',
-          'answers': [
-            {'text': 'x = 4', 'score': 0},
-            {'text': 'x = ∅', 'score': 0},
-            {'text': 'x = - 4', 'score': 0},
-            {'text': 'x = 2', 'score': 0},
-            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
-            {'text': 'x = 8', 'score': 1},
-          ]
-        },
-        {
-          'questionText':
-          'Quelle proposition est correctement développée ?\n8(4 − 3x) + 1 = 53 − 3(x − 5)',
-          'answers': [
-            {'text': '32 - 24x = 48 - 3x', 'score': 0},
-            {'text': '-21x = 35', 'score': 1},
-            {'text': '-24x + 33 = -3x + 68', 'score': 1},
-            {'text': '24x -33 = 3x + 68', 'score': 0},
-            {'text': '-24x + 33 = - 3x - 68', 'score': 0},
-            {'text': 'Aucune des propositions', 'score': 0},
-          ]
-        },
-
-        {
-          'questionText':
-          '3 (x + 1) – (x – 9) + (x + 3) \n= (x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -485,8 +500,9 @@ class _MyAppState extends State<ResultatButton> {
                             child: Column(children: const [
                               Text('Réponses correctes',
                                   style: TextStyle(
-                                      fontSize: 20.0,
-                                      fontWeight: FontWeight.bold),
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                   textAlign: TextAlign.center)
                             ]),
                           ),
@@ -518,7 +534,8 @@ class _MyAppState extends State<ResultatButton> {
                             child: Column(children: [
                               Text(
                                 answersDuel[0],
-                                style: const TextStyle(fontSize: 22),
+                                style: const TextStyle(fontSize: 18),
+                                textAlign: TextAlign.center,
                               )
                             ]),
                           ),
@@ -527,7 +544,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["player"]!["Q1"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.green),
                               )
@@ -535,7 +552,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["player"]!["Q1"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.red),
                               )
@@ -545,7 +562,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["adversaire"]!["Q1"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.green),
                               )
@@ -553,7 +570,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["adversaire"]!["Q1"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.red),
                               )
@@ -565,7 +582,8 @@ class _MyAppState extends State<ResultatButton> {
                             child: Column(children: [
                               Text(
                                 answersDuel[1],
-                                style: const TextStyle(fontSize: 22),
+                                style: const TextStyle(fontSize: 18),
+                                textAlign: TextAlign.center,
                               )
                             ]),
                           ),
@@ -574,7 +592,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["player"]!["Q2"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.green),
                               )
@@ -582,7 +600,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["player"]!["Q2"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.red),
                               ),
@@ -592,7 +610,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["adversaire"]!["Q2"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.green),
                               )
@@ -600,7 +618,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["adversaire"]!["Q2"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.red),
                               )
@@ -612,7 +630,8 @@ class _MyAppState extends State<ResultatButton> {
                             child: Column(children: [
                               Text(
                                 answersDuel[2],
-                                style: const TextStyle(fontSize: 22),
+                                style: const TextStyle(fontSize: 18),
+                                textAlign: TextAlign.center,
                               )
                             ]),
                           ),
@@ -620,13 +639,13 @@ class _MyAppState extends State<ResultatButton> {
                             if (answersDuel[2] == post["player"]!["Q3"])
                               Text('${post["player"]!["Q3"]}',
                                   style: const TextStyle(
-                                      fontSize: 22,
+                                      fontSize: 18,
                                       fontStyle: FontStyle.italic,
                                       color: Colors.green))
                             else
                               Text('${post["player"]!["Q3"]}',
                                   style: const TextStyle(
-                                      fontSize: 22,
+                                      fontSize: 18,
                                       fontStyle: FontStyle.italic,
                                       color: Colors.red))
                           ]),
@@ -635,7 +654,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["adversaire"]!["Q3"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.green),
                               )
@@ -643,7 +662,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["adversaire"]!["Q3"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.red),
                               )
@@ -655,7 +674,8 @@ class _MyAppState extends State<ResultatButton> {
                             child: Column(children: [
                               Text(
                                 answersDuel[3],
-                                style: const TextStyle(fontSize: 22),
+                                style: const TextStyle(fontSize: 18),
+                                textAlign: TextAlign.center,
                               )
                             ]),
                           ),
@@ -663,13 +683,13 @@ class _MyAppState extends State<ResultatButton> {
                             if (answersDuel[3] == post["player"]!["Q4"])
                               Text('${post["player"]!["Q4"]}',
                                   style: const TextStyle(
-                                      fontSize: 22,
+                                      fontSize: 18,
                                       fontStyle: FontStyle.italic,
                                       color: Colors.green))
                             else
                               Text('${post["player"]!["Q4"]}',
                                   style: const TextStyle(
-                                      fontSize: 22,
+                                      fontSize: 18,
                                       fontStyle: FontStyle.italic,
                                       color: Colors.red))
                           ]),
@@ -678,7 +698,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["adversaire"]!["Q4"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.green),
                               )
@@ -686,7 +706,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["adversaire"]!["Q4"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.red),
                               )
@@ -698,7 +718,8 @@ class _MyAppState extends State<ResultatButton> {
                             child: Column(children: [
                               Text(
                                 answersDuel[4],
-                                style: const TextStyle(fontSize: 22),
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(fontSize: 18),
                               )
                             ]),
                           ),
@@ -706,13 +727,13 @@ class _MyAppState extends State<ResultatButton> {
                             if (answersDuel[4] == post["player"]!["Q5"])
                               Text('${post["player"]!["Q5"]}',
                                   style: const TextStyle(
-                                      fontSize: 22,
+                                      fontSize: 18,
                                       fontStyle: FontStyle.italic,
                                       color: Colors.green))
                             else
                               Text('${post["player"]!["Q5"]}',
                                   style: const TextStyle(
-                                      fontSize: 22,
+                                      fontSize: 18,
                                       fontStyle: FontStyle.italic,
                                       color: Colors.red))
                           ]),
@@ -721,7 +742,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["adversaire"]!["Q5"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.green),
                               )
@@ -729,7 +750,7 @@ class _MyAppState extends State<ResultatButton> {
                               Text(
                                 '${post["adversaire"]!["Q5"]}',
                                 style: const TextStyle(
-                                    fontSize: 22,
+                                    fontSize: 18,
                                     fontStyle: FontStyle.italic,
                                     color: Colors.red),
                               )

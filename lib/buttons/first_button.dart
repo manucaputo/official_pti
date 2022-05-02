@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fraction/fraction.dart';
 import '../quizz/quiz.dart';
 import '../quizz/result.dart';
 import 'package:http/http.dart' as http;
@@ -76,7 +77,7 @@ class _MyAppState extends State<FirstButton> {
     if (idQuestion == 0) {
       Random rnd;
       int min = 1;
-      int max = 4;
+      int max = 3;
       rnd = new Random();
       idQuestion = min + rnd.nextInt(max - min);
       print("idquestion" + "$idQuestion");
@@ -93,7 +94,7 @@ class _MyAppState extends State<FirstButton> {
             {'text': 'x = - 5/8', 'score': 0},
             {'text': 'x = 8/5', 'score': 0},
             {'text': 'x = ∅', 'score': 0},
-            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
           ]
           // first element list = pos 0
         },
@@ -117,16 +118,16 @@ class _MyAppState extends State<FirstButton> {
             {'text': 'x = ∅', 'score': 0},
             {'text': 'x = - 4', 'score': 0},
             {'text': 'x = 2', 'score': 0},
-            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
             {'text': 'x = 8', 'score': 1},
           ]
         },
         {
           'questionText':
-          '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+              '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
           'answers': [
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
-            {'text': '-21x = 35', 'score': 1},
+            {'text': '-21x = -35', 'score': 0},
             {'text': '-24x + 33 = -3x + 68', 'score': 1},
             {'text': '24x -33 = 3x + 68', 'score': 0},
             {'text': '-24x + 33 = - 3x - 68', 'score': 0},
@@ -136,7 +137,7 @@ class _MyAppState extends State<FirstButton> {
 
         {
           'questionText':
-          '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
+              '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -150,71 +151,72 @@ class _MyAppState extends State<FirstButton> {
     }
 
     if (idQuestion == 2) {
-      _questions = const [
+      _questions = [
         // creation of a MAP (key : value)
         {
-          'questionText': '5x + 8 = 0 ?',
+          'questionText': "2x / 7 = 4 ?",
           'answers': [
-            {'text': 'x = 5/8', 'score': 0},
-            {'text': 'x = - 8/5', 'score': 1},
-            {'text': 'x = - 5/8', 'score': 0},
-            {'text': 'x = 8/5', 'score': 0},
+            {'text': 'x = -14', 'score': 0},
+            {'text': 'x = - 7', 'score': 0},
             {'text': 'x = ∅', 'score': 0},
-            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
+            {'text': 'x = 14', 'score': 1},
+            {'text': 'x = 12', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
           ]
           // first element list = pos 0
         },
 
         {
-          'questionText': '(x + 3)(x + 5) \n=\n(x + 1)(x + 9) ?',
-          'answers': [
-            {'text': 'x = ∅', 'score': 0},
-            {'text': 'x = 4', 'score': 0},
-            {'text': 'x = 6', 'score': 0},
-            {'text': 'x = ℝ', 'score': 0},
-            {'text': 'Aucune des propositions', 'score': 1},
-            {'text': 'x = - 3', 'score': 0},
-          ]
-        },
-
-        {
-          'questionText': '2x + 3 = 3x − 5 ?',
-          'answers': [
-            {'text': 'x = 4', 'score': 0},
-            {'text': 'x = ∅', 'score': 0},
-            {'text': 'x = - 4', 'score': 0},
-            {'text': 'x = 2', 'score': 0},
-            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
-            {'text': 'x = 8', 'score': 1},
-          ]
-        },
-        {
           'questionText':
-          '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+              'Parmis les différentes propositions, sélectionne l\'équation du premier degré ayant pour solution \n\nt = -2 ?',
           'answers': [
-            {'text': '32 - 24x = 48 - 3x', 'score': 0},
-            {'text': '-21x = 35', 'score': 1},
-            {'text': '-24x + 33 = -3x + 68', 'score': 1},
-            {'text': '24x -33 = 3x + 68', 'score': 0},
-            {'text': '-24x + 33 = - 3x - 68', 'score': 0},
+            {'text': '25t - 12 = -60', 'score': 0},
+            {'text': '3t = -2', 'score': 0},
+            {'text': '100t = 10t - 180', 'score': 1},
+            {'text': '6t - 4 = 8', 'score': 0},
             {'text': 'Aucune des propositions', 'score': 0},
+            {'text': '12t + 8 = 3t + 10', 'score': 1},
           ]
         },
 
         {
-          'questionText':
-          '3 (x + 1) – (x – 9) + (x + 3) \n=\n(x + 4) + (x + 2) – (11 – x) ?',
+          'questionText': '3x - 4 = 8 ?',
           'answers': [
-            {'text': 'x = ∅', 'score': 1},
-            {'text': 'x = 5', 'score': 0},
-            {'text': 'x = -5', 'score': 0},
+            {'text': 'x = 4', 'score': 1},
+            {'text': 'x = -2', 'score': 0},
+            {'text': 'x = 2', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': 'x = -4', 'score': 0},
             {'text': 'x = ℝ', 'score': 0},
-            {'text': '18', 'score': 0},
+          ]
+        },
+        {
+          'questionText': '5(x − 1) + 3(2 − x) = 0 ?',
+          'answers': [
+            {'text': 'x = 2', 'score': 0},
+            {'text': 'Aucune des propositions', 'score': 0},
+            {'text': 'x = -2', 'score': 0},
+            {'text': 'x = 4', 'score': 0},
+            {'text': 'x = -4', 'score': 0},
+            {'text': 'x = -1/2', 'score': 1},
+          ]
+        },
+
+        {
+          'questionText': '3(2x + 4) − 2x \n= \n14 − 2(1 − 2x) ?',
+          'answers': [
+            {'text': 'x = 0', 'score': 0},
+            {'text': 'x = ℝ', 'score': 1},
+            {'text': 'x = -5', 'score': 0},
+            {'text': 'x = ∅', 'score': 0},
+            {'text': '5', 'score': 0},
             {'text': 'Aucune des propositions', 'score': 0},
           ]
         },
       ];
     }
+
+/*
 
     if (idQuestion == 3) {
       _questions = const [
@@ -282,6 +284,8 @@ class _MyAppState extends State<FirstButton> {
         },
       ];
     }
+
+ */
 
     if (idDuel == 0) {
       postDuel();
@@ -353,10 +357,10 @@ class _MyAppState extends State<FirstButton> {
           child: Container(
             child: _questionIndex < _questions.length //if
                 ? Quiz(
-                answerQuestion: _answerQuestion,
-                questionIndex: _questionIndex,
-                questions: _questions)
-                : Result(_totalScore, _resetQuiz,_response, idDuel),
+                    answerQuestion: _answerQuestion,
+                    questionIndex: _questionIndex,
+                    questions: _questions)
+                : Result(_totalScore, _resetQuiz, _response, idDuel),
           ),
         ),
       ),
