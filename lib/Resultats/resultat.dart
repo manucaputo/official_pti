@@ -47,7 +47,7 @@ class _MyAppState extends State<ResultatButton> {
       "Q5": "x=5",
       "DuelId": 2,
       "UserId": 4,
-      "idQuestion": 2,
+      "idQuestion": 1,
     },
     "adversaire": {
       "id": 2,
@@ -59,7 +59,7 @@ class _MyAppState extends State<ResultatButton> {
       "Q5": "x=5",
       "DuelId": 2,
       "UserId": 1,
-      "idQuestion": 2,
+      "idQuestion": 1,
       "firstName": "Adrien"
     }
   };
@@ -95,7 +95,7 @@ class _MyAppState extends State<ResultatButton> {
     final post = _postsJson2;
 
     if (_postsJson2["player"]!["idQuestion"] == 1) {
-      answersDuel = ["1", "2", "3", "4", "5"];
+      answersDuel = ["x=1", "2", "3", "4", "5"];
     }
 
     if (_postsJson2["player"]!["idQuestion"] == 2) {
@@ -123,7 +123,7 @@ class _MyAppState extends State<ResultatButton> {
         },
 
         {
-          'questionText': '(x + 3)(x + 5) \n=\n(x + 1)(x + 9) ?',
+          'questionText': '(x + 3)(x + 5) = (x + 1)(x + 9) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 0},
             {'text': 'x = 4', 'score': 0},
@@ -147,7 +147,7 @@ class _MyAppState extends State<ResultatButton> {
         },
         {
           'questionText':
-              '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+          'Quelle proposition est correctement développée ?\n8(4 − 3x) + 1 = 53 − 3(x − 5)',
           'answers': [
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
@@ -160,7 +160,7 @@ class _MyAppState extends State<ResultatButton> {
 
         {
           'questionText':
-              '3 (x + 1) – (x – 9) + (x + 3) \n=(x + 4) + (x + 2) – (11 – x) ?',
+          '3 (x + 1) – (x – 9) + (x + 3) \n= (x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -257,7 +257,7 @@ class _MyAppState extends State<ResultatButton> {
         },
 
         {
-          'questionText': '(x + 3)(x + 5) \n=\n(x + 1)(x + 9) ?',
+          'questionText': '(x + 3)(x + 5) = (x + 1)(x + 9) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 0},
             {'text': 'x = 4', 'score': 0},
@@ -281,7 +281,7 @@ class _MyAppState extends State<ResultatButton> {
         },
         {
           'questionText':
-              '8(4 − 3x) + 1 \n=\n53 − 3(x − 5)\n\nQuelle proposition est correctement développée ?',
+          'Quelle proposition est correctement développée ?\n8(4 − 3x) + 1 = 53 − 3(x − 5)',
           'answers': [
             {'text': '32 - 24x = 48 - 3x', 'score': 0},
             {'text': '-21x = 35', 'score': 1},
@@ -294,7 +294,7 @@ class _MyAppState extends State<ResultatButton> {
 
         {
           'questionText':
-              '3 (x + 1) – (x – 9) + (x + 3) =\n(x + 4) + (x + 2) – (11 – x) ?',
+          '3 (x + 1) – (x – 9) + (x + 3) \n= (x + 4) + (x + 2) – (11 – x) ?',
           'answers': [
             {'text': 'x = ∅', 'score': 1},
             {'text': 'x = 5', 'score': 0},
@@ -523,18 +523,40 @@ class _MyAppState extends State<ResultatButton> {
                             ]),
                           ),
                           Column(children: [
-                            Text(
-                              '${post["player"]!["Q1"]}',
-                              style: const TextStyle(
-                                  fontSize: 22, fontStyle: FontStyle.italic),
-                            )
+                            if (answersDuel[0] == post["player"]!["Q1"])
+                              Text(
+                                '${post["player"]!["Q1"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.green),
+                              )
+                            else
+                              Text(
+                                '${post["player"]!["Q1"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red),
+                              )
                           ]),
                           Column(children: [
-                            Text(
-                              '${post["adversaire"]!["Q1"]}',
-                              style: const TextStyle(
-                                  fontSize: 22, fontStyle: FontStyle.italic),
-                            )
+                            if (answersDuel[0] == post["adversaire"]!["Q1"])
+                              Text(
+                                '${post["adversaire"]!["Q1"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.green),
+                              )
+                            else
+                              Text(
+                                '${post["adversaire"]!["Q1"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red),
+                              )
                           ]),
                         ]),
                         TableRow(children: [
@@ -548,18 +570,40 @@ class _MyAppState extends State<ResultatButton> {
                             ]),
                           ),
                           Column(children: [
-                            Text(
-                              '${post["player"]!["Q2"]}',
-                              style: const TextStyle(
-                                  fontSize: 22, fontStyle: FontStyle.italic),
-                            ),
+                            if (answersDuel[1] == post["player"]!["Q2"])
+                              Text(
+                                '${post["player"]!["Q2"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.green),
+                              )
+                            else
+                              Text(
+                                '${post["player"]!["Q2"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red),
+                              ),
                           ]),
                           Column(children: [
-                            Text(
-                              '${post["adversaire"]!["Q2"]}',
-                              style: const TextStyle(
-                                  fontSize: 22, fontStyle: FontStyle.italic),
-                            )
+                            if (answersDuel[1] == post["adversaire"]!["Q2"])
+                              Text(
+                                '${post["adversaire"]!["Q2"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.green),
+                              )
+                            else
+                              Text(
+                                '${post["adversaire"]!["Q2"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red),
+                              )
                           ]),
                         ]),
                         TableRow(children: [
@@ -573,16 +617,36 @@ class _MyAppState extends State<ResultatButton> {
                             ]),
                           ),
                           Column(children: [
-                            Text('${post["player"]!["Q3"]}',
-                                style: const TextStyle(
-                                    fontSize: 22, fontStyle: FontStyle.italic))
+                            if (answersDuel[2] == post["player"]!["Q3"])
+                              Text('${post["player"]!["Q3"]}',
+                                  style: const TextStyle(
+                                      fontSize: 22,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.green))
+                            else
+                              Text('${post["player"]!["Q3"]}',
+                                  style: const TextStyle(
+                                      fontSize: 22,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.red))
                           ]),
                           Column(children: [
-                            Text(
-                              '${post["adversaire"]!["Q3"]}',
-                              style: const TextStyle(
-                                  fontSize: 22, fontStyle: FontStyle.italic),
-                            )
+                            if (answersDuel[2] == post["adversaire"]!["Q3"])
+                              Text(
+                                '${post["adversaire"]!["Q3"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.green),
+                              )
+                            else
+                              Text(
+                                '${post["adversaire"]!["Q3"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red),
+                              )
                           ]),
                         ]),
                         TableRow(children: [
@@ -596,16 +660,36 @@ class _MyAppState extends State<ResultatButton> {
                             ]),
                           ),
                           Column(children: [
-                            Text('${post["player"]!["Q4"]}',
-                                style: const TextStyle(
-                                    fontSize: 22, fontStyle: FontStyle.italic))
+                            if (answersDuel[3] == post["player"]!["Q4"])
+                              Text('${post["player"]!["Q4"]}',
+                                  style: const TextStyle(
+                                      fontSize: 22,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.green))
+                            else
+                              Text('${post["player"]!["Q4"]}',
+                                  style: const TextStyle(
+                                      fontSize: 22,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.red))
                           ]),
                           Column(children: [
-                            Text(
-                              '${post["adversaire"]!["Q4"]}',
-                              style: const TextStyle(
-                                  fontSize: 22, fontStyle: FontStyle.italic),
-                            )
+                            if (answersDuel[3] == post["adversaire"]!["Q4"])
+                              Text(
+                                '${post["adversaire"]!["Q4"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.green),
+                              )
+                            else
+                              Text(
+                                '${post["adversaire"]!["Q4"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red),
+                              )
                           ]),
                         ]),
                         TableRow(children: [
@@ -619,16 +703,36 @@ class _MyAppState extends State<ResultatButton> {
                             ]),
                           ),
                           Column(children: [
-                            Text('${post["player"]!["Q5"]}',
-                                style: const TextStyle(
-                                    fontSize: 22, fontStyle: FontStyle.italic))
+                            if (answersDuel[4] == post["player"]!["Q5"])
+                              Text('${post["player"]!["Q5"]}',
+                                  style: const TextStyle(
+                                      fontSize: 22,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.green))
+                            else
+                              Text('${post["player"]!["Q5"]}',
+                                  style: const TextStyle(
+                                      fontSize: 22,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.red))
                           ]),
                           Column(children: [
-                            Text(
-                              '${post["adversaire"]!["Q5"]}',
-                              style: const TextStyle(
-                                  fontSize: 22, fontStyle: FontStyle.italic),
-                            )
+                            if (answersDuel[4] == post["adversaire"]!["Q5"])
+                              Text(
+                                '${post["adversaire"]!["Q5"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.green),
+                              )
+                            else
+                              Text(
+                                '${post["adversaire"]!["Q5"]}',
+                                style: const TextStyle(
+                                    fontSize: 22,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red),
+                              )
                           ]),
                         ]),
                       ],
