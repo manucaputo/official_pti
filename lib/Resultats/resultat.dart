@@ -36,11 +36,12 @@ class _MyAppState extends State<ResultatButton> {
   var answersDuel = [];
   //late MediaQueryData queryData;
   List<Map<String, Object>> questions = [];
+
   final _postsJson2 = {
     "player": {
       "id": 4,
       "score": 4,
-      "Q1": "x=1",
+      "Q1": "x = 14",
       "Q2": "x=2",
       "Q3": "x=3",
       "Q4": "x=4",
@@ -92,9 +93,9 @@ class _MyAppState extends State<ResultatButton> {
 
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
-    final post = _postsJson2;
+    final post = resultat;
 
-    if (_postsJson2["player"]!["idQuestion"] == 1) {
+    if (resultat["player"]!["idQuestion"] == 1) {
       answersDuel = [
         "x = - 8/5",
         "Aucune des propositions",
@@ -104,7 +105,7 @@ class _MyAppState extends State<ResultatButton> {
       ];
     }
 
-    if (_postsJson2["player"]!["idQuestion"] == 2) {
+    if (resultat["player"]!["idQuestion"] == 2) {
       answersDuel = [
         "x = 14",
         "12t + 8 = 3t + 10",
@@ -122,7 +123,7 @@ class _MyAppState extends State<ResultatButton> {
 
      */
 
-    if (_postsJson2["player"]!["idQuestion"] == 1) {
+    if (resultat["player"]!["idQuestion"] == 1) {
       questions = const [
         // creation of a MAP (key : value)
         {
@@ -189,7 +190,7 @@ class _MyAppState extends State<ResultatButton> {
       ];
     }
 
-    if (_postsJson2["adversaire"]!["idQuestion"] == 2) {
+    if (resultat["adversaire"]!["idQuestion"] == 2) {
       questions = [
         // creation of a MAP (key : value)
         {
@@ -255,7 +256,7 @@ class _MyAppState extends State<ResultatButton> {
       ];
     }
 
-    if (_postsJson2["adversaire"]!["idQuestion"] == 3) {
+    if (resultat["adversaire"]!["idQuestion"] == 3) {
       questions = const [
         // creation of a MAP (key : value)
         {

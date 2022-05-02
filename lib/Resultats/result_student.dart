@@ -68,9 +68,9 @@ class _MyAppState extends State<ResultStudent> {
 
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
-    final post = _postsJson2;
+    final post = resultat;
 
-    if (_postsJson2["player"]!["idQuestion"] == 1) {
+    if (resultat["player"]!["idQuestion"] == 1) {
       answersDuel = [
         "x = - 8/5",
         "Aucune des propositions",
@@ -80,7 +80,7 @@ class _MyAppState extends State<ResultStudent> {
       ];
     }
 
-    if (_postsJson2["player"]!["idQuestion"] == 2) {
+    if (resultat["player"]!["idQuestion"] == 2) {
       answersDuel = [
         "x = 14",
         "12t + 8 = 3t + 10",
@@ -98,7 +98,7 @@ class _MyAppState extends State<ResultStudent> {
 
      */
 
-    if (_postsJson2["player"]!["idQuestion"] == 1) {
+    if (resultat["player"]!["idQuestion"] == 1) {
       questions = const [
         // creation of a MAP (key : value)
         {
@@ -165,7 +165,7 @@ class _MyAppState extends State<ResultStudent> {
       ];
     }
 
-    if (_postsJson2["adversaire"]!["idQuestion"] == 2) {
+    if (resultat["adversaire"]!["idQuestion"] == 2) {
       questions = [
         // creation of a MAP (key : value)
         {
@@ -231,7 +231,7 @@ class _MyAppState extends State<ResultStudent> {
       ];
     }
 
-    if (_postsJson2["adversaire"]!["idQuestion"] == 3) {
+    if (resultat["adversaire"]!["idQuestion"] == 3) {
       questions = const [
         // creation of a MAP (key : value)
         {
