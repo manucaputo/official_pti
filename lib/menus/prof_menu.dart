@@ -25,24 +25,20 @@ class _MyAppState extends State<ProfMenu> {
   Map<String, String> headers = {
     "Content-type": "application/json",
     "Authorization":
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3ODM2NDMsImV4cCI6MTY4NTc4MzY0M30.68QnFxq2lKjGwa5hW16KBTmADSPJuGKRn_omnoTGn04"
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlzQWRtaW4iOmZhbHNlLCJpYXQiOjE2NDk3ODM2NDMsImV4cCI6MTY4NTc4MzY0M30.68QnFxq2lKjGwa5hW16KBTmADSPJuGKRn_omnoTGn04"
   };
 
   var items = [
     'Equation',
     'Intégrale',
     'Dérivée',
-
   ];
 
   var dropdownValue = 'Equation';
 
-
-
   @override
   void initState() {
     super.initState();
-
   }
 
   @override
@@ -52,22 +48,16 @@ class _MyAppState extends State<ProfMenu> {
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
     return Scaffold(
-      appBar: appBar,
-      backgroundColor: Colors.white,
-
+        appBar: appBar,
+        backgroundColor: Colors.white,
         body: Center(
           child: SingleChildScrollView(
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
-
                 children: [
-
-                  Image.asset('assets/images/Accueil_TITRE.png',
-                      scale: 2),
-
+                  Image.asset('assets/images/Accueil_TITRE.png', scale: 2),
                   Container(
-
                     margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
                     child: ElevatedButton(
                       child: const Text('Mes classes',
@@ -92,7 +82,6 @@ class _MyAppState extends State<ProfMenu> {
                           context,
                           MaterialPageRoute(builder: (context) => ListClass()),
                         );
-
                       },
                     ),
                   ),
@@ -120,14 +109,11 @@ class _MyAppState extends State<ProfMenu> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  CreateClass()),
+                              builder: (context) => CreateClass()),
                         );
-
                       },
                     ),
                   ),
-
                   Container(
                     margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 0),
                     child: ElevatedButton(
@@ -151,7 +137,8 @@ class _MyAppState extends State<ProfMenu> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const MyApp()),
+                          MaterialPageRoute(
+                              builder: (context) => const MyApp()),
                         );
                       },
                     ),
@@ -159,7 +146,7 @@ class _MyAppState extends State<ProfMenu> {
                 ]),
           ),
         ));
-      /*
+    /*
             DropdownButton(
               value: dropdownValue,
               icon: Icon(Icons.keyboard_arrow_down),

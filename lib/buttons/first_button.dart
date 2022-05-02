@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fraction/fraction.dart';
 import '../quizz/quiz.dart';
 import '../quizz/result.dart';
 import 'package:http/http.dart' as http;

@@ -6,8 +6,7 @@ import '../connexion/token.dart';
 
 // from scratch
 
-void main() =>
-    runApp(ListClass()); // for functions who had only one argument
+void main() => runApp(ListClass()); // for functions who had only one argument
 
 class ListClass extends StatefulWidget {
   @override
@@ -51,10 +50,9 @@ class _MyAppState extends State<ListClass> {
     'Equation',
     'Intégrale',
     'Dérivée',
-
   ];
 
-  var dropdownValue =  [
+  var dropdownValue = [
     'Equation',
     'Intégrale',
     'Dérivée',
@@ -67,12 +65,12 @@ class _MyAppState extends State<ListClass> {
     'Equation',
     'Intégrale',
     'Dérivée',
-
   ];
 
   getClass() async {
     try {
-      final response = await http.get(Uri.parse(Token.url+url), headers: headers);
+      final response =
+          await http.get(Uri.parse(Token.url + url), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
 
       setState(() {
@@ -81,12 +79,13 @@ class _MyAppState extends State<ListClass> {
     } catch (err) {}
   }
 
-  deleteClassBackend(var id) async
-  {
-    try{
-      final response = await http.delete(Uri.parse(Token.url+urlDelete+id.toString()));
+  deleteClassBackend(var id) async {
+    try {
+      final response =
+          await http.delete(Uri.parse(Token.url + urlDelete + id.toString()));
+    } catch (err) {
+      print(err);
     }
-    catch(err){print(err);}
   }
 
   void deleteClass(var id) {
@@ -104,27 +103,23 @@ class _MyAppState extends State<ListClass> {
 
   @override
   Widget build(BuildContext context) {
-
-
     final appBar = AppBar(
       title: const Text('Mes classes'),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 
-
     return Scaffold(
         appBar: appBar,
         backgroundColor: Colors.white,
-
         body: ListView.builder(
             itemCount: _postsJson2.length,
             itemBuilder: (BuildContext context, int index) {
               final post = _postsJson2[index];
-              var index_2 = index+1;
+              var index_2 = index + 1;
 
               return Card(
-
-                margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                margin:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                 child: ListTile(
                   tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
                   leading: CircleAvatar(
@@ -135,84 +130,61 @@ class _MyAppState extends State<ListClass> {
                       child: FittedBox(
                         child: Text(
                           "$index_2",
-                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                          style: const TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
                         ),
                       ),
                     ),
                   ),
-                  title: Text(
-                      ("${post["name"]}")
-                  ),
-
+                  title: Text(("${post["name"]}")),
                   trailing: Wrap(
                     spacing: 0, // space between two icons
                     children: <Widget>[
-                      DropdownButton(value: dropdownValue[index],
+                      DropdownButton(
+                        value: dropdownValue[index],
                         icon: Icon(Icons.keyboard_arrow_down),
                         items: items.map((items) {
-                          return DropdownMenuItem(value: items, child: Text(items));
-                        }).toList(), onChanged: (String? value) { setState(() {
-                          dropdownValue[index] = value!;
-                        }); },),
-                      IconButton(
-                          icon: const Icon(Icons.delete, size: 32,),
-
-                          color: Theme.of(context).errorColor,
-                          onPressed: () { deleteClass(post["id"]);
-                          //deleteClassBackend(post["id"]);
-                          }// icon-2
+                          return DropdownMenuItem(
+                              value: items, child: Text(items));
+                        }).toList(),
+                        onChanged: (String? value) {
+                          setState(() {
+                            dropdownValue[index] = value!;
+                          });
+                        },
                       ),
                       IconButton(
-                          icon: const Icon(Icons.person_search_rounded, size: 32,),
-                          color: const Color.fromRGBO(
-                              0, 0, 0, 0.7490196078431373),
-                          onPressed: () {Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    ListStudent(idClass: post["id"])),
-                          );
-
+                          icon: const Icon(
+                            Icons.delete,
+                            size: 32,
+                          ),
+                          color: Theme.of(context).errorColor,
+                          onPressed: () {
+                            deleteClass(post["id"]);
+                            //deleteClassBackend(post["id"]);
+                          } // icon-2
+                          ),
+                      IconButton(
+                          icon: const Icon(
+                            Icons.person_search_rounded,
+                            size: 32,
+                          ),
+                          color:
+                              const Color.fromRGBO(0, 0, 0, 0.7490196078431373),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ListStudent(idClass: post["id"])),
+                            );
                           }),
                     ],
                   ),
                 ),
-
-
-
               );
-
-
-            }
-        ));
-  }// It already exists but we override with our own method --> To make the code more clear
-/*  Widget build(BuildContext context) {
-    
-    return MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('MixMath'),
-          ),
-          body: ListView.builder(
-            itemCount: _postsJson2.length,
-            itemBuilder: (BuildContext context, int index) {
-              final post = _postsJson2[index];
-
-              return Row(children: [
-                Text("${post["name"]}"),
-                RaisedButton(
-                    child: Text("Voir les élèves de la classe"),
-                    onPressed: () {Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              ListStudent(idClass: post["id"])),
-                    );
-
-                    }),
-              ]);
-            },
-          ),
-        ));
-  }*/
+            }));
+  } // It already exists but we override with our own method --> To make the code more clear
 }

@@ -78,12 +78,12 @@ class _MyAppState extends State<ListDuel> {
         "idQuestion": 1
       },
       "adversaire": {
-        "score": "Pas encore joué",
-        "Q1": "Pas de réponse",
-        "Q2": "Pas de réponse",
-        "Q3": "Pas de réponse",
-        "Q4": "Pas de réponse",
-        "Q5": "Pas de réponse",
+        "score": "...",
+        "Q1": "...",
+        "Q2": "...",
+        "Q3": "...",
+        "Q4": "...",
+        "Q5": "...",
         "firstName": "En attente"
       }
     }
@@ -179,7 +179,7 @@ class _MyAppState extends State<ListDuel> {
                             Container(
                               margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                               child: Text(
-                                "Mon score\n\n${post["player"]!["score"]}/5",
+                                "Score de l'élève\n\n${post["player"]!["score"]}/5",
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -207,51 +207,10 @@ class _MyAppState extends State<ListDuel> {
                           ),
                         ),
                       ),
-
-/*
-                          RaisedButton(
-                              child: Text("Voir les réponses "),
-
-                              onPressed: () { Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        ResultatButton(resultat: post)),
-                              );}),
-
- */
                     ]),
               );
             },
           ),
         ));
   }
-/*
-  @override // It already exists but we override with our own method --> To make the code more clear
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text('MixMath'),
-          ),
-          body: ListView.builder(
-            itemCount: _postsJson2.length,
-            itemBuilder: (BuildContext context, int index) {
-              final post = _postsJson2[index];
-              return Row(children: [
-                Text("${post["adversaire"]!["firstName"]} ${post["player"]!["score"]}"),
-                RaisedButton(
-                    child: Text("Voir les réponses "),
-
-                    onPressed: () { Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              ResultStudent(resultat: post)),
-                    );}),
-              ]);
-            },
-          ),
-        ));
-  }*/
 }
