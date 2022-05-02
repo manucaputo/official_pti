@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
         }
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: const Text("Il manque des champs")));
+            const SnackBar(content: Text("Il manque des champs")));
       }
     } catch (err) {
       print(err);
@@ -152,10 +152,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           labelText: "Email",
-                          labelStyle: TextStyle(
+                          labelStyle: const TextStyle(
                               color: Color.fromRGBO(0, 12, 0, 0.6),
                               fontSize: 20),
-                          suffixIcon: Icon(
+                          suffixIcon: const Icon(
                             Icons.email,
                             color: Color.fromRGBO(0, 0, 0, 0.6),),
                           border: OutlineInputBorder(
@@ -163,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color :Color.fromRGBO(13, 78, 5, 0.6),
                           width: 3.5,
 

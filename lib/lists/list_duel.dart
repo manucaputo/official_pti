@@ -149,7 +149,7 @@ class _MyAppState extends State<ListDuel> {
                                         decoration: TextDecoration.underline,
                                         color: Color.fromRGBO(13, 78, 5, 0.6),
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 20,
+                                        fontSize: 16,
                                         fontStyle: FontStyle.italic)),
                                 style: ElevatedButton.styleFrom(
                                   minimumSize: const Size(600, 65),
