@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:official_pti/contexte/first_context.dart';
+import 'package:official_pti/contexte/second_context.dart';
+import 'package:official_pti/contexte/third_context.dart';
 
 void main() => runApp(Contexte());
 
@@ -16,23 +19,127 @@ class _MyAppState extends State<Contexte>{
   @override
   Widget build(BuildContext context) {
 
-    return Container(
+    final appBar = AppBar(
+      title: const Text('Contexte'),
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+    );
 
-        child:  Image.asset('assets/images/fond-OK.jpg'),
-      );
 
-
-    /*
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Center(child: Text("Contexte en cours, je vérifie des trucs !"))
-        ],
-      ),
-    ); */
-  }
+        appBar: appBar,
+        backgroundColor: Colors.white,
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                    child: Image.asset('assets/images/Accueil_TITRE.png',
+                        scale: 2.3),
+                  ),
 
-  
-  
+                  // CONTEXTE 1
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
+                    child: ElevatedButton(
+                      child: const Text('Contexte 1',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 23,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FirstContexte()),
+                        );
+                      },
+                    ),
+                  ),
+
+                  // CONTEXTE 2
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                    child: ElevatedButton(
+                      child: const Text('Contexte 2',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 23,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SecondContexte()),
+                        );
+                      },
+                    ),
+                  ),
+
+                  // CONTEXTE 3
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                    child: ElevatedButton(
+                      child: const Text('Contexte 3',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 23,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ThirdContexte()),
+                        );
+                      },
+                    ),
+                  ),
+
+                  // new contexte
+
+
+                ]),
+          ),
+        ));
+
+
+  }
 }

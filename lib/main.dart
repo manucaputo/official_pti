@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       children: const [
                         Text(
-                          "Bienvenu",
+                          "Bienvenue",
                           style:TextStyle(
                             fontSize: 60,
                             fontWeight: FontWeight.bold
