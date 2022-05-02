@@ -97,16 +97,19 @@ class _MyAppState extends State<ListDuel> {
 
 
   getReply() async {
+    print(Token.url+url+"/"+idUser.toString());
     try {
 
-      final response = await http.get(Uri.parse(Token.url+url+idUser.toString()), headers: headers);
+      final response = await http.get(Uri.parse(Token.url+url+"/"+idUser.toString()), headers: headers);
       final jsonData = jsonDecode(response.body) as List;
-
+      _postsJson = jsonData;
+      print(_postsJson);
       setState(() {
         _postsJson = jsonData;
+        print(_postsJson);
 
       });
-    } catch (err) {}
+    } catch (err) {print(err);}
   }
 
   @override

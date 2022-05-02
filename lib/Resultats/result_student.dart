@@ -27,7 +27,7 @@ class _MyAppState extends State<ResultStudent> {
   var resultat;
   _MyAppState(this.resultat);
   final url = "http://192.168.1.100:3000/api/result/my";
-  var _postsJson = [];
+
   var answersDuel = [];
   //late MediaQueryData queryData;
   List<Map<String, Object>> questions = [];
@@ -63,7 +63,6 @@ class _MyAppState extends State<ResultStudent> {
   void initState() {
     super.initState();
 
-    print(resultat);
   }
 
   @override // It already exists but we override with our own method --> To make the code more clear

@@ -70,23 +70,12 @@ class _MyAppState extends State<ResultatButton> {
     "Authorization": Token.token
   };
 
-  getReply() async {
-    try {
-      final response =
-          await http.get(Uri.parse(Token.url + url), headers: headers);
-      final jsonData = jsonDecode(response.body) as List;
 
-      setState(() {
-        _postsJson = jsonData;
-        print(_postsJson[0]["player"]["id"]);
-      });
-    } catch (err) {}
-  }
 
   @override
   void initState() {
     super.initState();
-    getReply();
+
   }
 
   var a = 2;
