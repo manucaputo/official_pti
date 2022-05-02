@@ -340,7 +340,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           color: Color.fromRGBO(13, 78, 5, 0.75),
                         ),
                       )),*/
-                  RaisedButton(
+                  ElevatedButton(
                     child: const Text(
                       'Menu élèves',
                     ),
@@ -359,7 +359,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ));
                     },
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                       child: const Text(
                         'Menu prof',
                       ),
