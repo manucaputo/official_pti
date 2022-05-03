@@ -63,7 +63,7 @@ class _MyAppState extends State<JoinClass> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: const Text('Menu'),
+      title: const Text('Rejoins ta classe !'),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
     return Scaffold(
@@ -79,7 +79,7 @@ class _MyAppState extends State<JoinClass> {
                 children: [
 
                   Image.asset('assets/images/Accueil_TITRE.png',
-                      scale: 1.5),
+                      scale: 5),
 
                   Container(
 

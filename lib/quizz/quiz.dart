@@ -21,7 +21,7 @@ class Quiz extends StatelessWidget {
           children: [
             Container(
               margin: const EdgeInsets.fromLTRB(0, 20, 0, 10),
-              child: Image.asset('assets/images/Accueil_TITRE.png', scale: 2.5),
+              child: Image.asset('assets/images/Accueil_TITRE.png', scale: 5),
             ),
             SizedBox(
               width: double.infinity,

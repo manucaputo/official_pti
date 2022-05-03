@@ -73,7 +73,7 @@ class _MyAppState extends State<CreateClass> {
   @override
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: const Text('Créer une classe'),
+      title: const Text('Créez une nouvelle classe !'),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
     return Scaffold(
@@ -89,7 +89,7 @@ class _MyAppState extends State<CreateClass> {
                 children: [
 
                   Image.asset('assets/images/Accueil_TITRE.png',
-                      scale: 1.5),
+                      scale: 5),
 
                   Container(
 

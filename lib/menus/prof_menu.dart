@@ -56,7 +56,7 @@ class _MyAppState extends State<ProfMenu> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Image.asset('assets/images/Accueil_TITRE.png', scale: 2),
+                  Image.asset('assets/images/Accueil_TITRE.png', scale: 5),
                   Container(
                     margin: const EdgeInsets.fromLTRB(15.0, 20, 15.0, 0),
                     child: ElevatedButton(

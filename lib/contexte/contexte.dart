@@ -37,7 +37,7 @@ class _MyAppState extends State<Contexte>{
                   Container(
                     margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: Image.asset('assets/images/Accueil_TITRE.png',
-                        scale: 2.3),
+                        scale: 5),
                   ),
 
                   // CONTEXTE 1
