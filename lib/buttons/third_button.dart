@@ -109,9 +109,7 @@ class _MyAppState extends State<ThirdButton> {
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
+   return Scaffold(
           appBar: appBar,
           backgroundColor: Colors.white,
           body: ListView.builder(
@@ -211,6 +209,6 @@ class _MyAppState extends State<ThirdButton> {
               );
             },
           ),
-        ));
+        );
   }
 }

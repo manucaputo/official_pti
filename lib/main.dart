@@ -247,19 +247,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       width: 3,
                       color: Color.fromRGBO(221, 229, 221, 1.0),
                     )),
-                /*shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30.0),
-                            side: const BorderSide(
-                              width: 1.0,
-                              color: Color.fromRGBO(13, 78, 5, 0.6),
-                            )),
-
-
-
-
-                      ),
-
-                        */
                 onPressed: () {
                   postConnexion();
                 },
@@ -286,16 +273,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     side: const BorderSide(
                       width: 2.5,
                       color: Color.fromRGBO(221, 229, 221, 1.0),
-                    )
-                    /*shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30.0),
-                            side: const BorderSide(
-                              width: 1.0,
-                              color: Color.fromRGBO(13, 78, 5, 0.6),
-                            )),
-
-                         */
-                    ),
+                    )),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -322,87 +300,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 }),
           ],
         ),
-/*
-                    OutlinedButton.icon(
-                        onPressed: () {
-                          postConnexion();
-                        },
-
-                        style: OutlinedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15.0),
-                                side: const BorderSide(
-                                  width: 1.0,
-                                  color: Color.fromRGBO(13, 78, 5, 0.6),
-                                ))
-
-                        ),
-                        icon: const Icon(
-                          Icons.login,
-                          size: 35,
-                          color: Color.fromRGBO(13, 78, 5, 0.75),
-
-                        ),
-                        label: const Text(
-                          "Login",
-                          style: TextStyle(
-                            color: Color.fromRGBO(13, 78, 5, 0.75),
-                          ),
-                        )),
-                    const SizedBox(height: 10),
-                    OutlinedButton.icon(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SignUp()),
-                          );
-                        },
-                        style: OutlinedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(15.0),
-                                side: const BorderSide(
-                                  width: 1.0,
-                                  color: Color.fromRGBO(13, 78, 5, 0.6),
-                                ))
-
-                        ),
-                        icon: const Icon(Icons.login,
-                            size: 35,
-                            color: Color.fromRGBO(13, 78, 5, 0.75)),
-                        label: const Text(
-                          "Sign Up",
-                          style: TextStyle(
-                            color: Color.fromRGBO(13, 78, 5, 0.75),
-                          ),
-
-                        )),*/
-
-        //   Navigator.of(context).pushReplacement(CustomRoute(
-        //    builder: (ctx) => StudentMenu(),
-        //   ));
-        //  },
-        // ),
-        // ElevatedButton(
-        //  child: const Text(
-        //   'Menu prof',
-        // ),
-        //onPressed: () {
-        /*
-
-
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => ProfMenu()),
-                          );
-
-                           */
-
-        /* Navigator.of(context).pushReplacement(CustomRoute(
-                      builder: (ctx) => ProfMenu(),
-                    ));
-                  })
-
-                    */
       )),
     );
   }
