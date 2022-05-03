@@ -304,6 +304,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
             ),
+            ElevatedButton(
+                child: const Text(
+                  'Menu élèves',
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => StudentMenu()));
+                }),
+            ElevatedButton(
+                child: const Text(
+                  'Menu prof',
+                ),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ProfMenu()));
+                }),
           ],
         ),
 /*
@@ -360,20 +376,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
 
                         )),*/
-
-        //ElevatedButton(
-        //  child: const Text(
-        //  'Menu élèves',
-        // ),
-        // onPressed: () {
-        /*
-
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => StudentMenu()),
-                        );
-
-                         */
 
         //   Navigator.of(context).pushReplacement(CustomRoute(
         //    builder: (ctx) => StudentMenu(),
