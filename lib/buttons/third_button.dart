@@ -134,7 +134,7 @@ class _MyAppState extends State<ThirdButton> {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     decoration: TextDecoration.underline,
-                                    color: Color.fromRGBO(13, 78, 5, 0.6),
+                                    color: Color.fromRGBO(13, 78, 5, 0.8),
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16,
                                     fontStyle: FontStyle.italic)),

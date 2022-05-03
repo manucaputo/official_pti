@@ -54,7 +54,7 @@ class _MyAppState extends State<StudentMenu> {
                     child: ElevatedButton(
                       child: const Text('Lancer un duel',
                           style: TextStyle(
-                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              color: Color.fromRGBO(13, 78, 5, 0.8),
                               fontWeight: FontWeight.bold,
                               fontSize: 23,
                               fontStyle: FontStyle.italic)),
@@ -82,7 +82,7 @@ class _MyAppState extends State<StudentMenu> {
                     child: ElevatedButton(
                       child: const Text('Mes duels',
                           style: TextStyle(
-                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              color:  Color.fromRGBO(13, 78, 5, 0.8),
                               fontWeight: FontWeight.bold,
                               fontSize: 23,
                               fontStyle: FontStyle.italic)),
@@ -111,7 +111,7 @@ class _MyAppState extends State<StudentMenu> {
                     child: ElevatedButton(
                       child: const Text('Mes résultats',
                           style: TextStyle(
-                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              color:  Color.fromRGBO(13, 78, 5, 0.8),
                               fontWeight: FontWeight.bold,
                               fontSize: 23,
                               fontStyle: FontStyle.italic)),
@@ -140,7 +140,7 @@ class _MyAppState extends State<StudentMenu> {
                     child: ElevatedButton(
                       child: const Text('Changer de classe',
                           style: TextStyle(
-                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              color:  Color.fromRGBO(13, 78, 5, 0.8),
                               fontWeight: FontWeight.bold,
                               fontSize: 23,
                               fontStyle: FontStyle.italic)),
@@ -168,7 +168,7 @@ class _MyAppState extends State<StudentMenu> {
                     child: ElevatedButton(
                       child: const Text('Contexte',
                           style: TextStyle(
-                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              color:  Color.fromRGBO(13, 78, 5, 0.8),
                               fontWeight: FontWeight.bold,
                               fontSize: 23,
                               fontStyle: FontStyle.italic)),
@@ -197,7 +197,7 @@ class _MyAppState extends State<StudentMenu> {
                     child: ElevatedButton(
                       child: const Text('Déconnexion',
                           style: TextStyle(
-                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              color:  Color.fromRGBO(13, 78, 5, 0.8),
                               fontWeight: FontWeight.bold,
                               fontSize: 23,
                               fontStyle: FontStyle.italic)),

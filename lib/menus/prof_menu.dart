@@ -62,7 +62,7 @@ class _MyAppState extends State<ProfMenu> {
                     child: ElevatedButton(
                       child: const Text('Mes classes',
                           style: TextStyle(
-                              color: Color.fromRGBO(0, 0, 0, 0.6),
+                              color: Color.fromRGBO(13, 78, 5, 0.8),
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                               fontStyle: FontStyle.italic)),
@@ -90,7 +90,7 @@ class _MyAppState extends State<ProfMenu> {
                     child: ElevatedButton(
                       child: const Text('Créer une classe',
                           style: TextStyle(
-                              color: Color.fromRGBO(0, 0, 0, 0.6),
+                              color: Color.fromRGBO(13, 78, 5, 0.8),
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                               fontStyle: FontStyle.italic)),
@@ -119,7 +119,7 @@ class _MyAppState extends State<ProfMenu> {
                     child: ElevatedButton(
                       child: const Text('Déconnexion',
                           style: TextStyle(
-                              color: Color.fromRGBO(0, 0, 0, 0.6),
+                              color: Color.fromRGBO(13, 78, 5, 0.8),
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                               fontStyle: FontStyle.italic)),

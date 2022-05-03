@@ -18,7 +18,7 @@ class Answer extends StatelessWidget {
                 //maxLines: 1,
                 textAlign: TextAlign.center,
                 style: const TextStyle(
-                    color: Color.fromRGBO(13, 78, 5, 0.6),
+                    color: Color.fromRGBO(13, 78, 5, 0.8),
                     fontWeight: FontWeight.bold,
                     fontSize: 23,
                     fontStyle: FontStyle.italic)),
