@@ -288,8 +288,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                             builder: (context) => SignUp()),
                                       );
                                     },
-
-                             ))),
+                                  ))),
                           /*
                           ElevatedButton(
                               child: const Text(
