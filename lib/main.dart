@@ -133,14 +133,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               Image.asset('assets/images/logo.png', scale: 6)),
                       const SizedBox(height: 20.0),
                       TextLiquidFill(
-                        text: 'MixMath',
+                        text: 'Bienvenue !',
                         waveColor: const Color.fromRGBO(13, 78, 5, 0.6),
                         boxBackgroundColor: Colors.white,
                         textStyle: const TextStyle(
-                          fontSize: 50.0,
+                          fontSize: 40.0,
                           fontWeight: FontWeight.bold,
                         ),
-                        boxHeight: 75,
+                        boxHeight: 70,
                         loadDuration: const Duration(seconds: 8),
                       ),
                       const SizedBox(height: 10.0),
@@ -288,27 +288,31 @@ class _MyHomePageState extends State<MyHomePage> {
                                             builder: (context) => SignUp()),
                                       );
                                     },
-                                  ))),
-                          /*
 
+                             ))),
+                          /*
                           ElevatedButton(
                               child: const Text(
                                 'Menu élèves',
                               ),
                               onPressed: () {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) => StudentMenu()));
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => StudentMenu()));
                               }),
                           ElevatedButton(
                               child: const Text(
                                 'Menu prof',
                               ),
                               onPressed: () {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) => ProfMenu()));
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ProfMenu()));
                               }),
 
-                           */
+                            */
                         ],
                       ),
                     ],
