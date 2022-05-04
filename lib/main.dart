@@ -131,8 +131,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: [
                     CircleAvatar(
                         backgroundColor:
-                            const Color.fromRGBO(238, 252, 238, 1.0),
-                        radius: 80,
+                            const Color.fromRGBO(228, 238, 228, 0.75),
+                        radius: 85,
                         child: Image.asset('assets/images/logo.png', scale: 6)),
                     const SizedBox(height: 20.0),
                     TextLiquidFill(
