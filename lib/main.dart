@@ -109,6 +109,121 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    const kLabelStyle = TextStyle(
+      color: Colors.black,
+      fontFamily: 'OpenSans',
+    );
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: [
+          SizedBox(
+            height: double.infinity,
+            child: SingleChildScrollView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 40.0,
+                  vertical: 120.0,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                        backgroundColor:
+                            const Color.fromRGBO(238, 252, 238, 1.0),
+                        radius: 80,
+                        child: Image.asset('assets/images/logo.png', scale: 6)),
+                    const SizedBox(height: 20.0),
+                    TextLiquidFill(
+                      text: 'MixMath',
+                      waveColor: const Color.fromRGBO(13, 78, 5, 0.6),
+                      boxBackgroundColor: Colors.white,
+                      textStyle: const TextStyle(
+                        fontSize: 50.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      boxHeight: 75,
+                      loadDuration: const Duration(seconds: 10),
+                    ),
+                    const SizedBox(height: 10.0),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TextFormField(
+                          controller: emailController,
+                          keyboardType: TextInputType.emailAddress,
+                          decoration: InputDecoration(
+                            suffixIcon: const Icon(
+                              Icons.email,
+                              color: Color.fromRGBO(0, 0, 0, 0.6),
+                            ),
+                            labelText: "Email...",
+                            labelStyle: const TextStyle(
+                                fontWeight: FontWeight.w300,
+                                fontStyle: FontStyle.italic,
+                                color: Color.fromRGBO(0, 12, 0, 0.6),
+                                fontSize: 14),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30)),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                borderSide: const BorderSide(
+                                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                                  width: 3.5,
+                                )),
+                            enabledBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(30),
+                                borderSide: const BorderSide(
+                                  width: 1,
+                                )),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        TextFormField(
+                            controller: passController,
+                            obscureText: true,
+                            decoration: InputDecoration(
+                              labelText: "Mot de passe...",
+                              labelStyle: const TextStyle(
+                                  fontStyle: FontStyle.italic,
+                                  fontWeight: FontWeight.w300,
+                                  color: Color.fromRGBO(0, 12, 0, 0.6),
+                                  fontSize: 14),
+                              suffixIcon: const Icon(
+                                Icons.lock,
+                                color: Color.fromRGBO(0, 0, 0, 0.6),
+                              ),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                  borderSide: const BorderSide(
+                                    color: Color.fromRGBO(13, 78, 5, 0.6),
+                                    width: 3.5,
+                                  )),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(30),
+                                  borderSide: const BorderSide(
+                                    width: 1,
+                                  )),
+                            )),
+                      ],
+                    )
+                  ],
+                )),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+/*
+  @override
+  Widget build(BuildContext context) {
     final appBar = AppBar(
       title: DefaultTextStyle(
         style: const TextStyle(
@@ -304,3 +419,5 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+   */
