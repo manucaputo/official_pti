@@ -109,93 +109,58 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    const kLabelStyle = TextStyle(
-      color: Colors.black,
-      fontFamily: 'OpenSans',
-    );
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
         children: [
           SizedBox(
-            height: double.infinity,
-            child: SingleChildScrollView(
-                physics: const AlwaysScrollableScrollPhysics(),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 40.0,
-                  vertical: 120.0,
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                        backgroundColor:
-                            const Color.fromRGBO(228, 238, 228, 0.75),
-                        radius: 85,
-                        child: Image.asset('assets/images/logo.png', scale: 6)),
-                    const SizedBox(height: 20.0),
-                    TextLiquidFill(
-                      text: 'MixMath',
-                      waveColor: const Color.fromRGBO(13, 78, 5, 0.6),
-                      boxBackgroundColor: Colors.white,
-                      textStyle: const TextStyle(
-                        fontSize: 50.0,
-                        fontWeight: FontWeight.bold,
+              height: double.infinity,
+              child: SingleChildScrollView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40.0,
+                    vertical: 110.0,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                          backgroundColor:
+                              const Color.fromRGBO(221, 229, 221, 1.0),
+                          radius: 85,
+                          child:
+                              Image.asset('assets/images/logo.png', scale: 6)),
+                      const SizedBox(height: 20.0),
+                      TextLiquidFill(
+                        text: 'MixMath',
+                        waveColor: const Color.fromRGBO(13, 78, 5, 0.6),
+                        boxBackgroundColor: Colors.white,
+                        textStyle: const TextStyle(
+                          fontSize: 50.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        boxHeight: 75,
+                        loadDuration: const Duration(seconds: 8),
                       ),
-                      boxHeight: 75,
-                      loadDuration: const Duration(seconds: 10),
-                    ),
-                    const SizedBox(height: 10.0),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        TextFormField(
-                          controller: emailController,
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            suffixIcon: const Icon(
-                              Icons.email,
-                              color: Color.fromRGBO(0, 0, 0, 0.6),
-                            ),
-                            labelText: "Email...",
-                            labelStyle: const TextStyle(
-                                fontWeight: FontWeight.w300,
-                                fontStyle: FontStyle.italic,
-                                color: Color.fromRGBO(0, 12, 0, 0.6),
-                                fontSize: 14),
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30)),
-                            focusedBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                borderSide: const BorderSide(
-                                  color: Color.fromRGBO(13, 78, 5, 0.6),
-                                  width: 3.5,
-                                )),
-                            enabledBorder: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                borderSide: const BorderSide(
-                                  width: 1,
-                                )),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        TextFormField(
-                            controller: passController,
-                            obscureText: true,
+                      const SizedBox(height: 10.0),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TextFormField(
+                            controller: emailController,
+                            keyboardType: TextInputType.emailAddress,
                             decoration: InputDecoration(
-                              labelText: "Mot de passe...",
-                              labelStyle: const TextStyle(
-                                  fontStyle: FontStyle.italic,
-                                  fontWeight: FontWeight.w300,
-                                  color: Color.fromRGBO(0, 12, 0, 0.6),
-                                  fontSize: 14),
                               suffixIcon: const Icon(
-                                Icons.lock,
+                                Icons.email,
                                 color: Color.fromRGBO(0, 0, 0, 0.6),
                               ),
+                              labelText: "Email...",
+                              labelStyle: const TextStyle(
+                                  fontWeight: FontWeight.w300,
+                                  fontStyle: FontStyle.italic,
+                                  color: Color.fromRGBO(0, 12, 0, 0.6),
+                                  fontSize: 14),
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30)),
                               focusedBorder: OutlineInputBorder(
@@ -209,215 +174,147 @@ class _MyHomePageState extends State<MyHomePage> {
                                   borderSide: const BorderSide(
                                     width: 1,
                                   )),
-                            )),
-                      ],
-                    )
-                  ],
-                )),
-          )
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          TextFormField(
+                              controller: passController,
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                labelText: "Mot de passe...",
+                                labelStyle: const TextStyle(
+                                    fontStyle: FontStyle.italic,
+                                    fontWeight: FontWeight.w300,
+                                    color: Color.fromRGBO(0, 12, 0, 0.6),
+                                    fontSize: 14),
+                                suffixIcon: const Icon(
+                                  Icons.lock,
+                                  color: Color.fromRGBO(0, 0, 0, 0.6),
+                                ),
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30)),
+                                focusedBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                    borderSide: const BorderSide(
+                                      color: Color.fromRGBO(13, 78, 5, 0.6),
+                                      width: 3.5,
+                                    )),
+                                enabledBorder: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                    borderSide: const BorderSide(
+                                      width: 1,
+                                    )),
+                              )),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          Align(
+                            alignment: Alignment.center,
+                            child: Container(
+                                height: 50,
+                                padding:
+                                    const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                child: ElevatedButton.icon(
+                                  icon: const Icon(
+                                    Icons.login,
+                                    size: 30,
+                                    color: Colors.white,
+                                  ),
+                                  label: const Text(
+                                    'Connexion',
+                                    style: TextStyle(
+                                        decoration: TextDecoration.underline,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                        fontFamily: 'OpenSans',
+                                        fontStyle: FontStyle.italic),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                      minimumSize: const Size(175, 55),
+                                      maximumSize: const Size(175, 55),
+                                      primary:
+                                          const Color.fromRGBO(13, 78, 5, 0.7),
+                                      side: const BorderSide(
+                                        width: 3,
+                                        color: Color.fromRGBO(13, 78, 5, 0.1),
+                                      )),
+                                  onPressed: () {
+                                    postConnexion();
+                                  },
+                                )),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Align(
+                              alignment: Alignment.center,
+                              child: Container(
+                                  height: 50,
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                                  child: ElevatedButton.icon(
+                                    icon: const Icon(
+                                      Icons.app_registration,
+                                      size: 30,
+                                      color: Color.fromRGBO(13, 78, 5, 0.7),
+                                    ),
+                                    label: const Text(
+                                      'Inscription',
+                                      style: TextStyle(
+                                          decoration: TextDecoration.underline,
+                                          color: Color.fromRGBO(13, 78, 5, 0.7),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                          fontFamily: 'OpenSans',
+                                          fontStyle: FontStyle.italic),
+                                      textAlign: TextAlign.center,
+                                    ),
+                                    style: ElevatedButton.styleFrom(
+                                        minimumSize: const Size(175, 55),
+                                        maximumSize: const Size(175, 55),
+                                        primary: Colors.white,
+                                        side: const BorderSide(
+                                          width: 3,
+                                          color: Colors.white,
+                                        )),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => SignUp()),
+                                      );
+                                    },
+                                  ))),
+                          /*
+
+                          ElevatedButton(
+                              child: const Text(
+                                'Menu élèves',
+                              ),
+                              onPressed: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => StudentMenu()));
+                              }),
+                          ElevatedButton(
+                              child: const Text(
+                                'Menu prof',
+                              ),
+                              onPressed: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) => ProfMenu()));
+                              }),
+
+                           */
+                        ],
+                      ),
+                    ],
+                  ))),
         ],
       ),
     );
   }
 }
-
-/*
-  @override
-  Widget build(BuildContext context) {
-    final appBar = AppBar(
-      title: DefaultTextStyle(
-        style: const TextStyle(
-            fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),
-        child: AnimatedTextKit(
-          animatedTexts: [
-            FadeAnimatedText(
-              'Bienvenue sur MixMath !',
-              textAlign: TextAlign.center,
-              duration: const Duration(
-                seconds: 2,
-              ),
-            ),
-            FadeAnimatedText(
-              'Défie les élèves de ta classe...',
-              textAlign: TextAlign.center,
-              duration: const Duration(seconds: 3),
-            ),
-            FadeAnimatedText(
-              'Tout en testant tes connaissances sur les chapitres !',
-              textAlign: TextAlign.center,
-              duration: const Duration(seconds: 3),
-            ),
-            FadeAnimatedText(
-              'Aide tes camarades quand tu peux après chaque partie...',
-              textAlign: TextAlign.center,
-              duration: const Duration(seconds: 3),
-            ),
-            FadeAnimatedText(
-              'Et écoute leurs explications pour évoluer un max !',
-              textAlign: TextAlign.center,
-              duration: const Duration(seconds: 3),
-            ),
-          ],
-          repeatForever: true,
-        ),
-      ),
-      centerTitle: true,
-      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
-    );
-
-    return Scaffold(
-      appBar: appBar,
-      body: Center(
-          child: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(
-                backgroundColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                radius: 80,
-                child: Image.asset('assets/images/logo.png', scale: 6)),
-            Container(
-              margin: const EdgeInsets.fromLTRB(25.0, 10, 25.0, 0),
-              child: TextFormField(
-                controller: emailController,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  labelText: "Email...",
-                  labelStyle: const TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontStyle: FontStyle.italic,
-                      color: Color.fromRGBO(0, 12, 0, 0.6),
-                      fontSize: 14),
-                  suffixIcon: const Icon(
-                    Icons.email,
-                    color: Color.fromRGBO(0, 0, 0, 0.6),
-                  ),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30)),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: const BorderSide(
-                        color: Color.fromRGBO(13, 78, 5, 0.6),
-                        width: 3.5,
-                      )),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(30),
-                      borderSide: const BorderSide(
-                        width: 0.5,
-                      )),
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(25.0, 10, 25.0, 0),
-              child: TextFormField(
-                  controller: passController,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    labelText: "Mot de passe...",
-                    labelStyle: const TextStyle(
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.w300,
-                        color: Color.fromRGBO(0, 12, 0, 0.6),
-                        fontSize: 14),
-                    suffixIcon: const Icon(
-                      Icons.lock,
-                      color: Color.fromRGBO(0, 0, 0, 0.6),
-                    ),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30)),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(
-                          color: Color.fromRGBO(13, 78, 5, 0.6),
-                          width: 3.5,
-                        )),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        borderSide: const BorderSide(
-                          width: 0.5,
-                        )),
-                  )),
-            ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(105, 20, 105, 0),
-              child: ElevatedButton.icon(
-                icon: const Icon(
-                  Icons.login,
-                  size: 30,
-                  color: Colors.white,
-                ),
-                label: const Text('Connexion',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        fontStyle: FontStyle.italic)),
-                style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(400, 55),
-                    maximumSize: const Size(400, 55),
-                    primary: const Color.fromRGBO(13, 78, 5, 0.7),
-                    side: const BorderSide(
-                      width: 3,
-                      color: Color.fromRGBO(221, 229, 221, 1.0),
-                    )),
-                onPressed: () {
-                  postConnexion();
-                },
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.fromLTRB(85, 150, 85, 0),
-              child: ElevatedButton.icon(
-                icon: const Icon(
-                  Icons.app_registration,
-                  size: 30,
-                  color: Colors.black,
-                ),
-                label: const Text('Nouveau membre',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        fontStyle: FontStyle.italic)),
-                style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(800, 45),
-                    maximumSize: const Size(800, 45),
-                    primary: const Color.fromRGBO(221, 229, 221, 1.0),
-                    side: const BorderSide(
-                      width: 2.5,
-                      color: Color.fromRGBO(221, 229, 221, 1.0),
-                    )),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => SignUp()),
-                  );
-                },
-              ),
-            ),
-            ElevatedButton(
-                child: const Text(
-                  'Menu élèves',
-                ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => StudentMenu()));
-                }),
-            ElevatedButton(
-                child: const Text(
-                  'Menu prof',
-                ),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ProfMenu()));
-                }),
-          ],
-        ),
-      )),
-    );
-  }
-}
-
-   */
