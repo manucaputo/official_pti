@@ -119,20 +119,20 @@ class _MyHomePageState extends State<MyHomePage> {
               'Défie les élèves de ta classe...',
               textAlign: TextAlign.center,
               duration: const Duration(
-                seconds: 3,
+                seconds: 2,
               ),
             ),
             FadeAnimatedText(
               'A l\'aide des duels MixMath !',
-              duration: const Duration(seconds: 3),
+              duration: const Duration(seconds: 2),
             ),
             FadeAnimatedText(
               'Tente de les aider après chaque partie...',
-              duration: const Duration(seconds: 3),
+              duration: const Duration(seconds: 2),
             ),
             FadeAnimatedText(
               'Et écoute leurs explications pour progresser !',
-              duration: const Duration(seconds: 3),
+              duration: const Duration(seconds: 2),
             ),
           ],
           repeatForever: true,
@@ -146,6 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.white,
       appBar: appBar,
       body: Stack(
+        alignment: Alignment.center,
         children: [
           SizedBox(
               height: double.infinity,
