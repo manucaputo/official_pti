@@ -109,8 +109,42 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final appBar = AppBar(
+      title: DefaultTextStyle(
+        style: const TextStyle(
+            fontSize: 20.0, color: Colors.white, fontWeight: FontWeight.bold),
+        child: AnimatedTextKit(
+          animatedTexts: [
+            FadeAnimatedText(
+              'Défie les élèves de ta classe...',
+              textAlign: TextAlign.center,
+              duration: const Duration(
+                seconds: 3,
+              ),
+            ),
+            FadeAnimatedText(
+              'A l\'aide des duels MixMath !',
+              duration: const Duration(seconds: 3),
+            ),
+            FadeAnimatedText(
+              'Tente de les aider après chaque partie...',
+              duration: const Duration(seconds: 3),
+            ),
+            FadeAnimatedText(
+              'Et écoute leurs explications pour progresser !',
+              duration: const Duration(seconds: 3),
+            ),
+          ],
+          repeatForever: true,
+        ),
+      ),
+      centerTitle: true,
+      backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
+      appBar: appBar,
       body: Stack(
         children: [
           SizedBox(
@@ -128,9 +162,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       CircleAvatar(
                           backgroundColor:
                               const Color.fromRGBO(221, 229, 221, 1.0),
-                          radius: 85,
+                          radius: 70,
                           child:
-                              Image.asset('assets/images/logo.png', scale: 6)),
+                              Image.asset('assets/images/logo.png', scale: 7)),
                       const SizedBox(height: 20.0),
                       TextLiquidFill(
                         text: 'Bienvenue !',
@@ -141,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           fontWeight: FontWeight.bold,
                         ),
                         boxHeight: 70,
-                        loadDuration: const Duration(seconds: 8),
+                        loadDuration: const Duration(seconds: 4),
                       ),
                       const SizedBox(height: 10.0),
                       Column(
