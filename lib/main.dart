@@ -124,14 +124,17 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             FadeAnimatedText(
               'A l\'aide des duels MixMath !',
+              textAlign: TextAlign.center,
               duration: const Duration(seconds: 2),
             ),
             FadeAnimatedText(
               'Tente de les aider après chaque partie...',
+              textAlign: TextAlign.center,
               duration: const Duration(seconds: 2),
             ),
             FadeAnimatedText(
               'Et écoute leurs explications pour progresser !',
+              textAlign: TextAlign.center,
               duration: const Duration(seconds: 2),
             ),
           ],
@@ -154,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 40.0,
-                    vertical: 110.0,
+                    vertical: 70.0,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -324,6 +327,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       );
                                     },
                                   ))),
+
                           /*
                           ElevatedButton(
                               child: const Text(
@@ -346,7 +350,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                         builder: (context) => ProfMenu()));
                               }),
 
-                            */
+                           */
                         ],
                       ),
                     ],
