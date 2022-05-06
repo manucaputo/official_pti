@@ -151,13 +151,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Stack(
         alignment: Alignment.center,
         children: [
-          SizedBox(
+          Container(
+              alignment: Alignment.center,
               height: double.infinity,
               child: SingleChildScrollView(
                   physics: const AlwaysScrollableScrollPhysics(),
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 40.0,
-                    vertical: 70.0,
+                    horizontal: 30.0,
+                    //vertical: 75.0,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -169,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           radius: 70,
                           child:
                               Image.asset('assets/images/logo.png', scale: 7)),
-                      const SizedBox(height: 20.0),
+                      const SizedBox(height: 10.0),
                       TextLiquidFill(
                         text: 'Bienvenue !',
                         waveColor: const Color.fromRGBO(13, 78, 5, 0.6),
@@ -329,28 +330,28 @@ class _MyHomePageState extends State<MyHomePage> {
                                   ))),
 
                           /*
-                          ElevatedButton(
-                              child: const Text(
-                                'Menu élèves',
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => StudentMenu()));
-                              }),
-                          ElevatedButton(
-                              child: const Text(
-                                'Menu prof',
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => ProfMenu()));
-                              }),
+                            ElevatedButton(
+                                child: const Text(
+                                  'Menu élèves',
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => StudentMenu()));
+                                }),
+                            ElevatedButton(
+                                child: const Text(
+                                  'Menu prof',
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => ProfMenu()));
+                                }),
 
-                           */
+                             */
                         ],
                       ),
                     ],
