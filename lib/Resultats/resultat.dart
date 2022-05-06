@@ -524,6 +524,7 @@ class _MyAppState extends State<ResultatButton> {
                         if (answersDuel[0] == post["player"]!["Q1"])
                           Text(
                             '${post["player"]!["Q1"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -532,6 +533,7 @@ class _MyAppState extends State<ResultatButton> {
                         else
                           Text(
                             '${post["player"]!["Q1"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -542,6 +544,7 @@ class _MyAppState extends State<ResultatButton> {
                         if (answersDuel[0] == post["adversaire"]!["Q1"])
                           Text(
                             '${post["adversaire"]!["Q1"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -550,6 +553,7 @@ class _MyAppState extends State<ResultatButton> {
                         else
                           Text(
                             '${post["adversaire"]!["Q1"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -572,6 +576,7 @@ class _MyAppState extends State<ResultatButton> {
                         if (answersDuel[1] == post["player"]!["Q2"])
                           Text(
                             '${post["player"]!["Q2"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -580,6 +585,7 @@ class _MyAppState extends State<ResultatButton> {
                         else
                           Text(
                             '${post["player"]!["Q2"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -590,6 +596,7 @@ class _MyAppState extends State<ResultatButton> {
                         if (answersDuel[1] == post["adversaire"]!["Q2"])
                           Text(
                             '${post["adversaire"]!["Q2"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -598,6 +605,7 @@ class _MyAppState extends State<ResultatButton> {
                         else
                           Text(
                             '${post["adversaire"]!["Q2"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -619,12 +627,14 @@ class _MyAppState extends State<ResultatButton> {
                       Column(children: [
                         if (answersDuel[2] == post["player"]!["Q3"])
                           Text('${post["player"]!["Q3"]}',
+                              textAlign: TextAlign.center,
                               style: const TextStyle(
                                   fontSize: 18,
                                   fontStyle: FontStyle.italic,
                                   color: Colors.green))
                         else
                           Text('${post["player"]!["Q3"]}',
+                              textAlign: TextAlign.center,
                               style: const TextStyle(
                                   fontSize: 18,
                                   fontStyle: FontStyle.italic,
@@ -634,6 +644,7 @@ class _MyAppState extends State<ResultatButton> {
                         if (answersDuel[2] == post["adversaire"]!["Q3"])
                           Text(
                             '${post["adversaire"]!["Q3"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -642,6 +653,7 @@ class _MyAppState extends State<ResultatButton> {
                         else
                           Text(
                             '${post["adversaire"]!["Q3"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -663,12 +675,14 @@ class _MyAppState extends State<ResultatButton> {
                       Column(children: [
                         if (answersDuel[3] == post["player"]!["Q4"])
                           Text('${post["player"]!["Q4"]}',
+                              textAlign: TextAlign.center,
                               style: const TextStyle(
                                   fontSize: 18,
                                   fontStyle: FontStyle.italic,
                                   color: Colors.green))
                         else
                           Text('${post["player"]!["Q4"]}',
+                              textAlign: TextAlign.center,
                               style: const TextStyle(
                                   fontSize: 18,
                                   fontStyle: FontStyle.italic,
@@ -678,6 +692,7 @@ class _MyAppState extends State<ResultatButton> {
                         if (answersDuel[3] == post["adversaire"]!["Q4"])
                           Text(
                             '${post["adversaire"]!["Q4"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -686,6 +701,7 @@ class _MyAppState extends State<ResultatButton> {
                         else
                           Text(
                             '${post["adversaire"]!["Q4"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -707,12 +723,14 @@ class _MyAppState extends State<ResultatButton> {
                       Column(children: [
                         if (answersDuel[4] == post["player"]!["Q5"])
                           Text('${post["player"]!["Q5"]}',
+                              textAlign: TextAlign.center,
                               style: const TextStyle(
                                   fontSize: 18,
                                   fontStyle: FontStyle.italic,
                                   color: Colors.green))
                         else
                           Text('${post["player"]!["Q5"]}',
+                              textAlign: TextAlign.center,
                               style: const TextStyle(
                                   fontSize: 18,
                                   fontStyle: FontStyle.italic,
@@ -722,6 +740,7 @@ class _MyAppState extends State<ResultatButton> {
                         if (answersDuel[4] == post["adversaire"]!["Q5"])
                           Text(
                             '${post["adversaire"]!["Q5"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,
@@ -730,6 +749,7 @@ class _MyAppState extends State<ResultatButton> {
                         else
                           Text(
                             '${post["adversaire"]!["Q5"]}',
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 18,
                                 fontStyle: FontStyle.italic,

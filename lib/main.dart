@@ -328,30 +328,26 @@ class _MyHomePageState extends State<MyHomePage> {
                                       );
                                     },
                                   ))),
-
-                          /*
-                            ElevatedButton(
-                                child: const Text(
-                                  'Menu élèves',
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => StudentMenu()));
-                                }),
-                            ElevatedButton(
-                                child: const Text(
-                                  'Menu prof',
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => ProfMenu()));
-                                }),
-
-                             */
+                          ElevatedButton(
+                              child: const Text(
+                                'Menu élèves',
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => StudentMenu()));
+                              }),
+                          ElevatedButton(
+                              child: const Text(
+                                'Menu prof',
+                              ),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ProfMenu()));
+                              }),
                         ],
                       ),
                     ],
