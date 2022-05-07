@@ -3,6 +3,8 @@ import 'package:official_pti/contexte/first_context.dart';
 import 'package:official_pti/contexte/second_context.dart';
 import 'package:official_pti/contexte/third_context.dart';
 
+import 'Fourth_context.dart';
+
 void main() => runApp(Contexte());
 
 class Contexte extends StatefulWidget {
@@ -133,7 +135,39 @@ class _MyAppState extends State<Contexte>{
                     ),
                   ),
 
-                  // new contexte
+                  // Contexte 4
+
+                  Container(
+                    margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                    child: ElevatedButton(
+                      child: const Text('Contexte 4',
+                          style: TextStyle(
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 23,
+                              fontStyle: FontStyle.italic)),
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(800, 65),
+                        maximumSize: const Size(800, 65),
+                        primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                            side: const BorderSide(
+                              width: 5.0,
+                              color: Color.fromRGBO(13, 78, 5, 0.6),
+                            )),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FourthContexte()),
+                        );
+                      },
+                    ),
+                  ),
+
+                  //  NEW Contexte
 
 
                 ]),
