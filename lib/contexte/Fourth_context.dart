@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class _MyAppState extends State<FourthContexte>{
   Widget build(BuildContext context) {
 
     final appBar = AppBar(
-      title: const Text('Contexte 4'),
+      title: const Text('Résoudre un problème'),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 
@@ -42,7 +43,7 @@ class _MyAppState extends State<FourthContexte>{
             )),
       ),
 
-      child: Text((isReadMore?'Cacher la réponse':'Montrer la réponse'),
+      child: Text((isReadMore?'Cacher la réponse':'Voir la réponse'),
           style: const TextStyle(
               color: Color.fromRGBO(13, 78, 5, 0.6),
               fontWeight: FontWeight.bold,
@@ -85,7 +86,7 @@ class _MyAppState extends State<FourthContexte>{
               color: Color.fromRGBO(13, 78, 5, 0.6),
             )),
       ),
-      child: Text((isReadMore2?'Cacher la réponse':'Montrer la réponse'),
+      child: Text((isReadMore2?'Cacher la réponse':'Voir la réponse'),
           style: const TextStyle(
               color: Color.fromRGBO(13, 78, 5, 0.6),
               fontWeight: FontWeight.bold,
@@ -129,7 +130,7 @@ class _MyAppState extends State<FourthContexte>{
               color: Color.fromRGBO(13, 78, 5, 0.6),
             )),
       ),
-      child: Text((isReadMore3?'Cacher la réponse':'Montrer la réponse'),
+      child: Text((isReadMore3?'Cacher la réponse':'Voir la réponse'),
           style: const TextStyle(
               color: Color.fromRGBO(13, 78, 5, 0.6),
               fontWeight: FontWeight.bold,
@@ -172,7 +173,7 @@ class _MyAppState extends State<FourthContexte>{
               color: Color.fromRGBO(13, 78, 5, 0.6),
             )),
       ),
-      child: Text((isReadMore4?'Cacher la réponse':'Montrer la réponse'),
+      child: Text((isReadMore4?'Cacher la réponse':'Voir la réponse'),
           style: const TextStyle(
               color: Color.fromRGBO(13, 78, 5, 0.6),
               fontWeight: FontWeight.bold,
@@ -216,7 +217,7 @@ class _MyAppState extends State<FourthContexte>{
               color: Color.fromRGBO(13, 78, 5, 0.6),
             )),
       ),
-      child: Text((isReadMore5?'Cacher la réponse':'Montrer la réponse'),
+      child: Text((isReadMore5?'Cacher la réponse':'Voir la réponse'),
           style: const TextStyle(
               color: Color.fromRGBO(13, 78, 5, 0.6),
               fontWeight: FontWeight.bold,
@@ -253,14 +254,23 @@ class _MyAppState extends State<FourthContexte>{
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            const SizedBox(height: 5.0),
 
-            const Center(child: Text("Problème à caractère algébrique",
-                style: TextStyle(
-                    color: Color.fromRGBO(13, 78, 5, 0.6),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    fontStyle: FontStyle.italic)),),
+            TextLiquidFill(
+              text: 'Problème à caractère algébrique',
+              textAlign: TextAlign.center,
+              waveColor: const Color.fromRGBO(13, 78, 5, 0.6),
+              boxBackgroundColor: Colors.white,
+              textStyle: const TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold,
+              ),
+              boxHeight: 85,
+              boxWidth: 1000,
+              loadDuration: const Duration(seconds: 2),
+            ),
 
             Container(
                 margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
