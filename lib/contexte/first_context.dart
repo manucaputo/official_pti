@@ -252,9 +252,14 @@ class _MyAppState extends State<FirstContexte>{
         backgroundColor: Colors.white,
 
         body: SingleChildScrollView(
+
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              const SizedBox(
+                height: 30,
+              ),
 
               const Center(child: Text("Problème à caractère algébrique",
                         style: TextStyle(
