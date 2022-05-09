@@ -36,6 +36,7 @@ class _MyAppState extends State<StudentMenu> {
     );
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: appBar,
           backgroundColor: Colors.white,
@@ -83,7 +84,7 @@ class _MyAppState extends State<StudentMenu> {
                       child: ElevatedButton(
                         child: const Text('Mes duels',
                             style: TextStyle(
-                                color:  Color.fromRGBO(13, 78, 5, 0.8),
+                                color: Color.fromRGBO(13, 78, 5, 0.8),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 23,
                                 fontStyle: FontStyle.italic)),
@@ -112,7 +113,7 @@ class _MyAppState extends State<StudentMenu> {
                       child: ElevatedButton(
                         child: const Text('Mes résultats',
                             style: TextStyle(
-                                color:  Color.fromRGBO(13, 78, 5, 0.8),
+                                color: Color.fromRGBO(13, 78, 5, 0.8),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 23,
                                 fontStyle: FontStyle.italic)),
@@ -141,35 +142,7 @@ class _MyAppState extends State<StudentMenu> {
                       child: ElevatedButton(
                         child: const Text('Changer de classe',
                             style: TextStyle(
-                                color:  Color.fromRGBO(13, 78, 5, 0.8),
-                                fontWeight: FontWeight.bold,
-                                fontSize: 23,
-                                fontStyle: FontStyle.italic)),
-                        style: ElevatedButton.styleFrom(
-                          minimumSize: const Size(800, 65),
-                          maximumSize: const Size(800, 65),
-                          primary: const Color.fromRGBO(221, 229, 221, 1.0),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                              side: const BorderSide(
-                                width: 5.0,
-                                color: Color.fromRGBO(13, 78, 5, 0.6),
-                              )),
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => JoinClass()),
-                          );
-                        },
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 0),
-                      child: ElevatedButton(
-                        child: const Text('Contexte',
-                            style: TextStyle(
-                                color:  Color.fromRGBO(13, 78, 5, 0.8),
+                                color: Color.fromRGBO(13, 78, 5, 0.8),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 23,
                                 fontStyle: FontStyle.italic)),
@@ -188,7 +161,35 @@ class _MyAppState extends State<StudentMenu> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Contexte()),
+                                builder: (context) => JoinClass()),
+                          );
+                        },
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 0),
+                      child: ElevatedButton(
+                        child: const Text('Contexte',
+                            style: TextStyle(
+                                color: Color.fromRGBO(13, 78, 5, 0.8),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 23,
+                                fontStyle: FontStyle.italic)),
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(800, 65),
+                          maximumSize: const Size(800, 65),
+                          primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                              side: const BorderSide(
+                                width: 5.0,
+                                color: Color.fromRGBO(13, 78, 5, 0.6),
+                              )),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Contexte()),
                           );
                         },
                       ),
@@ -198,7 +199,7 @@ class _MyAppState extends State<StudentMenu> {
                       child: ElevatedButton(
                         child: const Text('Déconnexion',
                             style: TextStyle(
-                                color:  Color.fromRGBO(13, 78, 5, 0.8),
+                                color: Color.fromRGBO(13, 78, 5, 0.8),
                                 fontWeight: FontWeight.bold,
                                 fontSize: 23,
                                 fontStyle: FontStyle.italic)),
