@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +11,7 @@ class FirstContexte extends StatefulWidget {
 
 }
 
-class _MyAppState extends State<FirstContexte>{
-
+class _MyAppState extends State<FirstContexte> {
   _MyAppState();
   bool isReadMore = false;
   bool isReadMore2 = false;
@@ -21,286 +21,282 @@ class _MyAppState extends State<FirstContexte>{
 
   @override
   Widget build(BuildContext context) {
-
     final appBar = AppBar(
-      title: const Text('Contexte 1'),
+      title: const Text('Résoudre un problème'),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 
-
-   // ETAPE 1
+    // ETAPE 1
     Widget buildbutton() => ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-          textStyle: const TextStyle(fontSize: 20),
-          primary: const Color.fromRGBO(221, 229, 221, 1.0),
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
-              side: const BorderSide(
-                width: 5.0,
-                color: Color.fromRGBO(13, 78, 5, 0.6),
-              )),
-        ),
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+            textStyle: const TextStyle(fontSize: 20),
+            primary: const Color.fromRGBO(221, 229, 221, 1.0),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                side: const BorderSide(
+                  width: 5.0,
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                )),
+          ),
+          child: Text((isReadMore ? 'Cacher la réponse' : 'Montrer la réponse'),
+              style: const TextStyle(
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 23,
+                  fontStyle: FontStyle.italic)),
+          onPressed: () {
+            setState(() {
+              // toggle the bool variable true or false
+              isReadMore = !isReadMore;
+            });
+          },
+        );
 
-      child: Text((isReadMore?'Cacher la réponse':'Montrer la réponse'),
-          style: const TextStyle(
-              color: Color.fromRGBO(13, 78, 5, 0.6),
-              fontWeight: FontWeight.bold,
-              fontSize: 23,
-              fontStyle: FontStyle.italic)),
-      onPressed: () {
-        setState(() {
-          // toggle the bool variable true or false
-          isReadMore = !isReadMore;
-        });
-      } ,
-    );
-
-    Widget buildText(String text){
+    Widget buildText(String text) {
       final lines = isReadMore ? null : 1;
-      return Text(
-          text,
+      return Text(text,
           maxLines: lines,
-          overflow: isReadMore ? TextOverflow.visible: TextOverflow.ellipsis,
+          overflow: isReadMore ? TextOverflow.visible : TextOverflow.ellipsis,
           textAlign: TextAlign.center,
           style: const TextStyle(
             color: Colors.black54,
             fontWeight: FontWeight.bold,
             fontSize: 23,
-          )
-      );
-    };
+          ));
+    }
+
+    ;
 
     // ETAPE 2
 
     Widget buildbutton2() => ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-        textStyle: const TextStyle(fontSize: 20),
-        primary: const Color.fromRGBO(221, 229, 221, 1.0),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            side: const BorderSide(
-              width: 5.0,
-              color: Color.fromRGBO(13, 78, 5, 0.6),
-            )),
-      ),
-      child: Text((isReadMore2?'Cacher la réponse':'Montrer la réponse'),
-          style: const TextStyle(
-              color: Color.fromRGBO(13, 78, 5, 0.6),
-              fontWeight: FontWeight.bold,
-              fontSize: 23,
-              fontStyle: FontStyle.italic)),
-      onPressed: () {
-        setState(() {
-          // toggle the bool variable true or false
-          isReadMore2 = !isReadMore2;
-        });
-      } ,
-    );
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+            textStyle: const TextStyle(fontSize: 20),
+            primary: const Color.fromRGBO(221, 229, 221, 1.0),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                side: const BorderSide(
+                  width: 5.0,
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                )),
+          ),
+          child: Text(
+              (isReadMore2 ? 'Cacher la réponse' : 'Montrer la réponse'),
+              style: const TextStyle(
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 23,
+                  fontStyle: FontStyle.italic)),
+          onPressed: () {
+            setState(() {
+              // toggle the bool variable true or false
+              isReadMore2 = !isReadMore2;
+            });
+          },
+        );
 
-    Widget buildText2(String text){
+    Widget buildText2(String text) {
       final lines = isReadMore2 ? null : 1;
-      return Text(
-          text,
+      return Text(text,
           maxLines: lines,
-          overflow: isReadMore2 ? TextOverflow.visible: TextOverflow.ellipsis,
+          overflow: isReadMore2 ? TextOverflow.visible : TextOverflow.ellipsis,
           textAlign: TextAlign.center,
           style: const TextStyle(
             color: Colors.black54,
             fontWeight: FontWeight.bold,
             fontSize: 23,
+          ));
+    }
 
-          )
-      );
-    };
+    ;
 
     // ETAPE 3
 
     Widget buildbutton3() => ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-        textStyle: const TextStyle(fontSize: 20),
-        primary: const Color.fromRGBO(221, 229, 221, 1.0),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            side: const BorderSide(
-              width: 5.0,
-              color: Color.fromRGBO(13, 78, 5, 0.6),
-            )),
-      ),
-      child: Text((isReadMore3?'Cacher la réponse':'Montrer la réponse'),
-          style: const TextStyle(
-              color: Color.fromRGBO(13, 78, 5, 0.6),
-              fontWeight: FontWeight.bold,
-              fontSize: 23,
-              fontStyle: FontStyle.italic)),
-      onPressed: () {
-        setState(() {
-          // toggle the bool variable true or false
-          isReadMore3 = !isReadMore3;
-        });
-      } ,
-    );
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+            textStyle: const TextStyle(fontSize: 20),
+            primary: const Color.fromRGBO(221, 229, 221, 1.0),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                side: const BorderSide(
+                  width: 5.0,
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                )),
+          ),
+          child: Text(
+              (isReadMore3 ? 'Cacher la réponse' : 'Montrer la réponse'),
+              style: const TextStyle(
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 23,
+                  fontStyle: FontStyle.italic)),
+          onPressed: () {
+            setState(() {
+              // toggle the bool variable true or false
+              isReadMore3 = !isReadMore3;
+            });
+          },
+        );
 
-    Widget buildText3(String text){
+    Widget buildText3(String text) {
       final lines = isReadMore3 ? null : 1;
-      return Text(
-          text,
+      return Text(text,
           maxLines: lines,
-          overflow: isReadMore3 ? TextOverflow.visible: TextOverflow.ellipsis,
+          overflow: isReadMore3 ? TextOverflow.visible : TextOverflow.ellipsis,
           textAlign: TextAlign.center,
           style: const TextStyle(
             color: Colors.black54,
             fontWeight: FontWeight.bold,
             fontSize: 23,
+          ));
+    }
 
-          )
-      );
-    };
+    ;
     // ETAPE 4
 
     Widget buildbutton4() => ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-        textStyle: const TextStyle(fontSize: 20),
-        primary: const Color.fromRGBO(221, 229, 221, 1.0),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            side: const BorderSide(
-              width: 5.0,
-              color: Color.fromRGBO(13, 78, 5, 0.6),
-            )),
-      ),
-      child: Text((isReadMore4?'Cacher la réponse':'Montrer la réponse'),
-          style: const TextStyle(
-              color: Color.fromRGBO(13, 78, 5, 0.6),
-              fontWeight: FontWeight.bold,
-              fontSize: 23,
-              fontStyle: FontStyle.italic)),
-      onPressed: () {
-        setState(() {
-          // toggle the bool variable true or false
-          isReadMore4 = !isReadMore4;
-        });
-      } ,
-    );
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+            textStyle: const TextStyle(fontSize: 20),
+            primary: const Color.fromRGBO(221, 229, 221, 1.0),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                side: const BorderSide(
+                  width: 5.0,
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                )),
+          ),
+          child: Text(
+              (isReadMore4 ? 'Cacher la réponse' : 'Montrer la réponse'),
+              style: const TextStyle(
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 23,
+                  fontStyle: FontStyle.italic)),
+          onPressed: () {
+            setState(() {
+              // toggle the bool variable true or false
+              isReadMore4 = !isReadMore4;
+            });
+          },
+        );
 
-    Widget buildText4(String text){
+    Widget buildText4(String text) {
       final lines = isReadMore4 ? null : 1;
-      return Text(
-          text,
+      return Text(text,
           maxLines: lines,
-          overflow: isReadMore4 ? TextOverflow.visible: TextOverflow.ellipsis,
+          overflow: isReadMore4 ? TextOverflow.visible : TextOverflow.ellipsis,
           textAlign: TextAlign.center,
           style: const TextStyle(
             color: Colors.black54,
             fontWeight: FontWeight.bold,
             fontSize: 23,
+          ));
+    }
 
-          )
-      );
-    };
+    ;
 
     // ETAPE 5
 
     Widget buildbutton5() => ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-        textStyle: const TextStyle(fontSize: 20),
-        primary: const Color.fromRGBO(221, 229, 221, 1.0),
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(15.0),
-            side: const BorderSide(
-              width: 5.0,
-              color: Color.fromRGBO(13, 78, 5, 0.6),
-            )),
-      ),
-      child: Text((isReadMore5?'Cacher la réponse':'Montrer la réponse'),
-          style: const TextStyle(
-              color: Color.fromRGBO(13, 78, 5, 0.6),
-              fontWeight: FontWeight.bold,
-              fontSize: 23,
-              fontStyle: FontStyle.italic)),
-      onPressed: () {
-        setState(() {
-          // toggle the bool variable true or false
-          isReadMore5 = !isReadMore5;
-        });
-      } ,
-    );
+          style: ElevatedButton.styleFrom(
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+            textStyle: const TextStyle(fontSize: 20),
+            primary: const Color.fromRGBO(221, 229, 221, 1.0),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+                side: const BorderSide(
+                  width: 5.0,
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                )),
+          ),
+          child: Text(
+              (isReadMore5 ? 'Cacher la réponse' : 'Montrer la réponse'),
+              style: const TextStyle(
+                  color: Color.fromRGBO(13, 78, 5, 0.6),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 23,
+                  fontStyle: FontStyle.italic)),
+          onPressed: () {
+            setState(() {
+              // toggle the bool variable true or false
+              isReadMore5 = !isReadMore5;
+            });
+          },
+        );
 
-    Widget buildText5(String text){
+    Widget buildText5(String text) {
       final lines = isReadMore5 ? null : 1;
-      return Text(
-          text,
+      return Text(text,
           maxLines: lines,
-          overflow: isReadMore5 ? TextOverflow.visible: TextOverflow.ellipsis,
+          overflow: isReadMore5 ? TextOverflow.visible : TextOverflow.ellipsis,
           textAlign: TextAlign.center,
           style: const TextStyle(
             color: Colors.black54,
             fontWeight: FontWeight.bold,
             fontSize: 23,
+          ));
+    }
 
-          )
-      );
-    };
-
+    ;
 
     return Scaffold(
-        appBar: appBar,
-        backgroundColor: Colors.white,
-
-        body: SingleChildScrollView(
-
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              const SizedBox(
-                height: 30,
+      appBar: appBar,
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            const SizedBox(height: 5.0),
+            TextLiquidFill(
+              text: 'Problème à caractère algébrique',
+              textAlign: TextAlign.center,
+              waveColor: const Color.fromRGBO(13, 78, 5, 0.6),
+              boxBackgroundColor: Colors.white,
+              textStyle: const TextStyle(
+                fontSize: 30.0,
+                fontWeight: FontWeight.bold,
               ),
-
-              const Center(child: Text("Problème à caractère algébrique",
-                        style: TextStyle(
-                             color: Color.fromRGBO(13, 78, 5, 0.6),
-                             fontWeight: FontWeight.bold,
-                             fontSize: 30,
-                             fontStyle: FontStyle.italic)),),
-
-              Container(
-                  margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
-                  child: const Text('Un groupe scolaire constitué d\'un enseignant, de deux parents accompagnateurs, et de trente enfants se rendent au théâtre pour voir une représentation de L\'Avare de Molière. Les enfants bénéficient d\'un tarif réduit soit 7 euros de moins que le tarif adulte.',
-                  style: TextStyle(
+              boxHeight: 85,
+              boxWidth: 1000,
+              loadDuration: const Duration(seconds: 2),
+            ),
+            Container(
+                margin: const EdgeInsets.fromLTRB(30, 10, 30.0, 2.0),
+                child: const Text(
+                    'Un groupe scolaire constitué d\'un enseignant, de deux parents accompagnateurs, et de trente enfants se rendent au théâtre pour voir une représentation de L\'Avare de Molière. Les enfants bénéficient d\'un tarif réduit soit 7 euros de moins que le tarif adulte.',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
                       color: Colors.grey,
                       fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ))),
+            Container(
+                margin: const EdgeInsets.fromLTRB(30, 10, 30, 2.0),
+                child: const Text(
+                    'Sachant qu\'au total le prix de la sortie théâtre est de 615 euros, à combien s\'élève le tarif pour un adulte ?',
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ))),
+            const SizedBox(height: 20.0),
+            Container(
+                margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                child: const Text('Etape 1: Choix de l\'inconnue.',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
                       fontSize: 23,
-                      ))),
-
-              Container(
-                  margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
-                  child: const Text('Sachant qu\'au total le prix de la sortie théâtre est de 615 euros, à combien s\'élève le tarif pour un adulte ?',
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                      ))
-              ),
-
-              Container(
-                  margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
-                  child: const Text('Etape 1: Choix de l\'inconnue.',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                      ))
-              ),
-
-              Container(alignment: Alignment.center, child: buildbutton()),
-
-              buildText('\n Soit x le tarif pour un adulte.'),
-              /*
+                    ))),
+            Container(alignment: Alignment.center, child: buildbutton()),
+            buildText('\n Soit x, le tarif pour un adulte.'),
+            /*
 
               Container(
                   margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
@@ -312,19 +308,18 @@ class _MyAppState extends State<FirstContexte>{
                       ))
               ), */
 
-              Container(
-                  margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
-                  child: const Text('Etape 2 : Mise en équation.',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                      ))
-              ),
-
-              Container(alignment: Alignment.center, child: buildbutton2()),
-              buildText2('\n Le prix pour un enfant est x-7 \n Il y a trois adultes et 30 enfants , on doit donc résoudre l\'équation: \n 3x+30(x-7)=615.'),
-             /*
+            Container(
+                margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                child: const Text('Etape 2 : Mise en équation.',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
+                    ))),
+            Container(alignment: Alignment.center, child: buildbutton2()),
+            buildText2(
+                '\n Le prix pour un enfant est x-7 \n Il y a trois adultes et 30 enfants, on doit donc résoudre l\'équation: \n 3x + 30(x - 7) = 615.'),
+            /*
               Container(
                   margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
                   child: const Text('Le prix pour un enfant est x-7.',
@@ -345,20 +340,19 @@ class _MyAppState extends State<FirstContexte>{
                       ))
               ), */
 
-              Container(
-                  margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
-                  child: const Text('Etape 3 : Résolution de l\'équation',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                      ))
-              ),
+            Container(
+                margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                child: const Text('Etape 3 : Résolution de l\'équation',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
+                    ))),
+            Container(alignment: Alignment.center, child: buildbutton3()),
+            buildText3(
+                '\n 3x + 30x - 210 = 615 \n Soit : 33x = 615 + 210 \n Ce qui donne : x = 825/33 \n Et donc : x = 25 '),
 
-              Container(alignment: Alignment.center, child: buildbutton3()),
-              buildText3('\n 3x+30x-210=615 \n soit 33x=615+210 \n soit encore x=825/33 \n ce qui donne x=25 '),
-
-              /*
+            /*
 
               Container(
                   margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
@@ -400,20 +394,18 @@ class _MyAppState extends State<FirstContexte>{
                       ))
               ),
  */
-              Container(
-                  margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
-                  child: const Text('Etape 4 : Conclusion.',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                      ))
-              ),
+            Container(
+                margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                child: const Text('Etape 4 : Conclusion.',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
+                    ))),
+            Container(alignment: Alignment.center, child: buildbutton4()),
+            buildText4('\n Le tarif pour un adulte est de 25 €.'),
 
-              Container(alignment: Alignment.center, child: buildbutton4()),
-              buildText4('\n Le tarif pour un adulte est de 25 €.'),
-
-              /*
+            /*
               Container(
                   margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
                   child: const Text('Le tarif pour un adulte est de 25 €.',
@@ -424,19 +416,18 @@ class _MyAppState extends State<FirstContexte>{
                       ))
               ),
 */
-              Container(
-                  margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
-                  child: const Text('Etape 5 : Vérification',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 23,
-                      ))
-              ),
-
-              Container(alignment: Alignment.center, child: buildbutton5()),
-              buildText5('\n Tarif adulte 25€ ; tarif enfant 25-7=18€ \n Prix payé par le groupe 3x25+30x18 = 615€'),
-           /*
+            Container(
+                margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
+                child: const Text('Etape 5 : Vérification',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 23,
+                    ))),
+            Container(alignment: Alignment.center, child: buildbutton5()),
+            buildText5(
+                '\n Tarif adulte 25€ ; tarif enfant 25 - 7 = 18€ \nPrix payé par le groupe 3.25 + 30.18 = 615€'),
+            /*
 
               Container(
                   margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
@@ -456,19 +447,10 @@ class _MyAppState extends State<FirstContexte>{
                         fontSize: 23,
                       ))
               ),*/
-
-
-            ],
-          ),
+            const SizedBox(height: 10.0),
+          ],
         ),
-
-
-
-        );
-
-
+      ),
+    );
   }
-
-
-
 }
