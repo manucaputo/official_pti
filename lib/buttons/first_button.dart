@@ -174,7 +174,7 @@ class _MyAppState extends State<FirstButton> {
             {'text': '100t = 10t - 180', 'score': 1},
             {'text': '6t - 4 = 8', 'score': 0},
             {'text': 'Aucune des propositions', 'score': 0},
-            {'text': '12t + 8 = 3t + 10', 'score': 1},
+            {'text': '13t + 8 = 3t + 10', 'score': 0},
           ]
         },
 

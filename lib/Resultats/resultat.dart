@@ -95,7 +95,7 @@ class _MyAppState extends State<ResultatButton> {
     if (resultat["player"]!["idQuestion"] == 2) {
       answersDuel = [
         "x = 14",
-        "12t + 8 = 3t + 10",
+        "100t = 10t - 180",
         "x = 4",
         "x = -1/2",
         "x = ℝ"
@@ -177,7 +177,8 @@ class _MyAppState extends State<ResultatButton> {
       ];
     }
 
-    if (resultat["adversaire"]!["idQuestion"] == 2) {
+    if (resultat["player"]!["idQuestion"] == 2) {
+      print("ok");
       questions = [
         // creation of a MAP (key : value)
         {
@@ -202,7 +203,7 @@ class _MyAppState extends State<ResultatButton> {
             {'text': '100t = 10t - 180', 'score': 1},
             {'text': '6t - 4 = 8', 'score': 0},
             {'text': 'Aucune des propositions', 'score': 0},
-            {'text': '12t + 8 = 3t + 10', 'score': 1},
+            {'text': '12t + 8 = 3t + 10', 'score': 0},
           ]
         },
 
@@ -243,72 +244,7 @@ class _MyAppState extends State<ResultatButton> {
       ];
     }
 
-    if (resultat["adversaire"]!["idQuestion"] == 3) {
-      questions = const [
-        // creation of a MAP (key : value)
-        {
-          'questionText': '5x + 8 = 0 ?',
-          'answers': [
-            {'text': 'x = 5/8', 'score': 0},
-            {'text': 'x = - 8/5', 'score': 1},
-            {'text': 'x = - 5/8', 'score': 0},
-            {'text': 'x = 8/5', 'score': 0},
-            {'text': 'x = ∅', 'score': 0},
-            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
-          ]
-          // first element list = pos 0
-        },
 
-        {
-          'questionText': '(x + 3)(x + 5) = (x + 1)(x + 9) ?',
-          'answers': [
-            {'text': 'x = ∅', 'score': 0},
-            {'text': 'x = 4', 'score': 0},
-            {'text': 'x = 6', 'score': 0},
-            {'text': 'x = ℝ', 'score': 0},
-            {'text': 'Aucune des propositions', 'score': 1},
-            {'text': 'x = - 3', 'score': 0},
-          ]
-        },
-
-        {
-          'questionText': '2x + 3 = 3x − 5 ?',
-          'answers': [
-            {'text': 'x = 4', 'score': 0},
-            {'text': 'x = ∅', 'score': 0},
-            {'text': 'x = - 4', 'score': 0},
-            {'text': 'x = 2', 'score': 0},
-            {'text': 'Aucune des propositions n\'est correcte', 'score': 0},
-            {'text': 'x = 8', 'score': 1},
-          ]
-        },
-        {
-          'questionText':
-              'Quelle proposition est correctement développée ?\n8(4 − 3x) + 1 = 53 − 3(x − 5)',
-          'answers': [
-            {'text': '32 - 24x = 48 - 3x', 'score': 0},
-            {'text': '-21x = 35', 'score': 1},
-            {'text': '-24x + 33 = -3x + 68', 'score': 1},
-            {'text': '24x -33 = 3x + 68', 'score': 0},
-            {'text': '-24x + 33 = - 3x - 68', 'score': 0},
-            {'text': 'Aucune des propositions', 'score': 0},
-          ]
-        },
-
-        {
-          'questionText':
-              '3 (x + 1) – (x – 9) + (x + 3) \n= (x + 4) + (x + 2) – (11 – x) ?',
-          'answers': [
-            {'text': 'x = ∅', 'score': 1},
-            {'text': 'x = 5', 'score': 0},
-            {'text': 'x = -5', 'score': 0},
-            {'text': 'x = ℝ', 'score': 0},
-            {'text': '18', 'score': 0},
-            {'text': 'Aucune des propositions', 'score': 0},
-          ]
-        },
-      ];
-    }
 
     //queryData = MediaQuery.of(context);
 
@@ -337,7 +273,7 @@ class _MyAppState extends State<ResultatButton> {
                     fontSize: 30.0,
                     fontWeight: FontWeight.bold,
                   ),
-                  boxHeight: 90,
+                  boxHeight: 100,
                   loadDuration: const Duration(seconds: 2),
                 ),
                 const Padding(padding: EdgeInsets.fromLTRB(0, 5, 0, 0)),
