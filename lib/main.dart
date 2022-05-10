@@ -328,6 +328,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       );
                                     },
                                   ))),
+                          /*
                           ElevatedButton(
                               child: const Text(
                                 'Menu élèves',
@@ -348,6 +349,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                     MaterialPageRoute(
                                         builder: (context) => ProfMenu()));
                               }),
+
+                           */
                         ],
                       ),
                     ],

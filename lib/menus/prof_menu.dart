@@ -48,6 +48,7 @@ class _MyAppState extends State<ProfMenu> {
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: appBar,
           backgroundColor: Colors.white,
