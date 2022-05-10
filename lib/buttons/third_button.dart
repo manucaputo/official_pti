@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:official_pti/Resultats/resultat.dart';
 import 'package:official_pti/connexion/token.dart';
 import 'dart:convert';
+import '../helpers/custom_routes.dart';
 import '../quizz/result.dart';
 
 // from scratch
@@ -105,93 +106,92 @@ class _MyAppState extends State<ThirdButton> {
   @override // It already exists but we override with our own method --> To make the code more clear
   Widget build(BuildContext context) {
     final appBar = AppBar(
-      title: const Text('Mes duels'),
+      title: const Text('Mes résultats'),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
 
-   return Scaffold(
-          appBar: appBar,
-          backgroundColor: Colors.white,
-          body: ListView.builder(
-            itemCount: _postsJson2.length,
-            itemBuilder: (BuildContext context, int index) {
-              final post = _postsJson2[index];
+    return Scaffold(
+      appBar: appBar,
+      backgroundColor: Colors.white,
+      body: ListView.builder(
+        itemCount: _postsJson2.length,
+        itemBuilder: (BuildContext context, int index) {
+          final post = _postsJson2[index];
 
-              return Card(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Expanded(
-                          child: Column(children: [
+          return Card(
+            margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                      child: Column(children: [
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(15, 20, 15, 10),
+                      child: ElevatedButton(
+                        child: const Text("Détails",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: Color.fromRGBO(13, 78, 5, 0.8),
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                fontStyle: FontStyle.italic)),
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: const Size(600, 65),
+                          maximumSize: const Size(600, 65),
+                          primary: const Color.fromRGBO(221, 229, 221, 1.0),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0),
+                              side: const BorderSide(
+                                width: 5.0,
+                                color: Color.fromRGBO(13, 78, 5, 0.6),
+                              )),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            CustomRoute(
+                                builder: (context) =>
+                                    ResultatButton(resultat: post)),
+                          );
+                        },
+                      ),
+                    )
+                  ])),
+                  Expanded(
+                    child: Column(
+                      children: [
                         Container(
-                          margin: const EdgeInsets.fromLTRB(15, 20, 15, 10),
-                          child: ElevatedButton(
-                            child: const Text("Détails",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    decoration: TextDecoration.underline,
-                                    color: Color.fromRGBO(13, 78, 5, 0.8),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                    fontStyle: FontStyle.italic)),
-                            style: ElevatedButton.styleFrom(
-                              minimumSize: const Size(600, 65),
-                              maximumSize: const Size(600, 65),
-                              primary: const Color.fromRGBO(221, 229, 221, 1.0),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15.0),
-                                  side: const BorderSide(
-                                    width: 5.0,
-                                    color: Color.fromRGBO(13, 78, 5, 0.6),
-                                  )),
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        ResultatButton(resultat: post)),
-                              );
-                            },
-                          ),
-                        )
-                      ])),
-                      Expanded(
-                        child: Column(
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                              child: Text(
-                                "Mon score\n\n${post["player"]!["score"]}/5",
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
                           margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Score de ${post["adversaire"]!["firstName"]}\n\n${post["adversaire"]!["score"]}/5",
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ],
+                          child: Text(
+                            "Mon score\n\n${post["player"]!["score"]}/5",
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
                           ),
                         ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Score de ${post["adversaire"]!["firstName"]}\n\n${post["adversaire"]!["score"]}/5",
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
                       ),
+                    ),
+                  ),
 
 /*
                           RaisedButton(
@@ -205,10 +205,10 @@ class _MyAppState extends State<ThirdButton> {
                               );}),
 
  */
-                    ]),
-              );
-            },
-          ),
-        );
+                ]),
+          );
+        },
+      ),
+    );
   }
 }

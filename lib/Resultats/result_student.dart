@@ -229,7 +229,6 @@ class _MyAppState extends State<ResultStudent> {
       ];
     }
 
-
     //queryData = MediaQuery.of(context);
 
     final appBar = AppBar(
@@ -240,431 +239,435 @@ class _MyAppState extends State<ResultStudent> {
     return Scaffold(
         appBar: appBar,
         backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              const Padding(padding: EdgeInsets.fromLTRB(0, 15.0, 0, 0)),
-              Card(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                child: ListTile(
-                  tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                  leading: const CircleAvatar(
-                    backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                    radius: 26,
-                    child: Padding(
-                      padding: EdgeInsets.all(10),
-                      child: FittedBox(
-                        child: Text(
-                          "Q1",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                  title: Text(
-                    questions[0]['questionText'] as String,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-              ),
-              Card(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                child: ListTile(
-                  tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                  leading: const CircleAvatar(
-                    backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                    radius: 26,
-                    child: Padding(
-                      padding: EdgeInsets.all(10),
-                      child: FittedBox(
-                        child: Text(
-                          "Q2",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                  title: Text(
-                    questions[1]['questionText'] as String,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-              ),
-              Card(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                child: ListTile(
-                  tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                  leading: const CircleAvatar(
-                    backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                    radius: 26,
-                    child: Padding(
-                      padding: EdgeInsets.all(10),
-                      child: FittedBox(
-                        child: Text(
-                          "Q3",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                  title: Text(
-                    questions[2]['questionText'] as String,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-              ),
-              Card(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                child: ListTile(
-                  tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                  leading: const CircleAvatar(
-                    backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                    radius: 26,
-                    child: Padding(
-                      padding: EdgeInsets.all(10),
-                      child: FittedBox(
-                        child: Text(
-                          "Q4",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                  title: Text(
-                    questions[3]['questionText'] as String,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-              ),
-              Card(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                child: ListTile(
-                  tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
-                  leading: const CircleAvatar(
-                    backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
-                    radius: 26,
-                    child: Padding(
-                      padding: EdgeInsets.all(10),
-                      child: FittedBox(
-                        child: Text(
-                          "Q5",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                  title: Text(
-                    questions[4]['questionText'] as String,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 18),
-                  ),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(10),
-                child: Table(
-                  defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                  //defaultColumnWidth: FixedColumnWidth(120.0),
-                  border: TableBorder.all(
-                      color: Colors.black, style: BorderStyle.solid, width: 3),
-                  children: [
-                    TableRow(children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(children: const [
-                          Text('Réponses correctes',
-                              style: TextStyle(
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              textAlign: TextAlign.center)
-                        ]),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(children: const [
-                          Text(
-                            'Les réponses de l\'élève',
+        body: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const Padding(padding: EdgeInsets.fromLTRB(0, 15.0, 0, 0)),
+                Card(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: ListTile(
+                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                    leading: const CircleAvatar(
+                      backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
+                      radius: 26,
+                      child: Padding(
+                        padding: EdgeInsets.all(10),
+                        child: FittedBox(
+                          child: Text(
+                            "Q1",
                             style: TextStyle(
-                                fontSize: 20.0, fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.center,
-                          )
-                        ]),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(children: [
-                          Text(
-                            'Réponses de '
-                            '${post["adversaire"]!["firstName"]}',
-                            style: const TextStyle(
-                                fontSize: 20.0, fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.center,
-                          )
-                        ]),
-                      ),
-                    ]),
-                    TableRow(children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Column(children: [
-                          Text(
-                            answersDuel[0],
-                            style: const TextStyle(fontSize: 18),
-                            textAlign: TextAlign.center,
-                          )
-                        ]),
-                      ),
-                      Column(children: [
-                        if (answersDuel[0] == post["player"]!["Q1"])
-                          Text(
-                            '${post["player"]!["Q1"]}',
-                            style: const TextStyle(
                                 fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.green),
-                          )
-                        else
-                          Text(
-                            '${post["player"]!["Q1"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.red),
-                          )
-                      ]),
-                      Column(children: [
-                        if (answersDuel[0] == post["adversaire"]!["Q1"])
-                          Text(
-                            '${post["adversaire"]!["Q1"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.green),
-                          )
-                        else
-                          Text(
-                            '${post["adversaire"]!["Q1"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.red),
-                          )
-                      ]),
-                    ]),
-                    TableRow(children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Column(children: [
-                          Text(
-                            answersDuel[1],
-                            style: const TextStyle(fontSize: 18),
-                            textAlign: TextAlign.center,
-                          )
-                        ]),
-                      ),
-                      Column(children: [
-                        if (answersDuel[1] == post["player"]!["Q2"])
-                          Text(
-                            '${post["player"]!["Q2"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.green),
-                          )
-                        else
-                          Text(
-                            '${post["player"]!["Q2"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.red),
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
                           ),
-                      ]),
-                      Column(children: [
-                        if (answersDuel[1] == post["adversaire"]!["Q2"])
-                          Text(
-                            '${post["adversaire"]!["Q2"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.green),
-                          )
-                        else
-                          Text(
-                            '${post["adversaire"]!["Q2"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.red),
-                          )
-                      ]),
-                    ]),
-                    TableRow(children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Column(children: [
-                          Text(
-                            answersDuel[2],
-                            style: const TextStyle(fontSize: 18),
-                            textAlign: TextAlign.center,
-                          )
-                        ]),
+                        ),
                       ),
-                      Column(children: [
-                        if (answersDuel[2] == post["player"]!["Q3"])
-                          Text('${post["player"]!["Q3"]}',
-                              style: const TextStyle(
-                                  fontSize: 18,
-                                  fontStyle: FontStyle.italic,
-                                  color: Colors.green))
-                        else
-                          Text('${post["player"]!["Q3"]}',
-                              style: const TextStyle(
-                                  fontSize: 18,
-                                  fontStyle: FontStyle.italic,
-                                  color: Colors.red))
-                      ]),
-                      Column(children: [
-                        if (answersDuel[2] == post["adversaire"]!["Q3"])
-                          Text(
-                            '${post["adversaire"]!["Q3"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.green),
-                          )
-                        else
-                          Text(
-                            '${post["adversaire"]!["Q3"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.red),
-                          )
-                      ]),
-                    ]),
-                    TableRow(children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Column(children: [
-                          Text(
-                            answersDuel[3],
-                            style: const TextStyle(fontSize: 18),
-                            textAlign: TextAlign.center,
-                          )
-                        ]),
-                      ),
-                      Column(children: [
-                        if (answersDuel[3] == post["player"]!["Q4"])
-                          Text('${post["player"]!["Q4"]}',
-                              style: const TextStyle(
-                                  fontSize: 18,
-                                  fontStyle: FontStyle.italic,
-                                  color: Colors.green))
-                        else
-                          Text('${post["player"]!["Q4"]}',
-                              style: const TextStyle(
-                                  fontSize: 18,
-                                  fontStyle: FontStyle.italic,
-                                  color: Colors.red))
-                      ]),
-                      Column(children: [
-                        if (answersDuel[3] == post["adversaire"]!["Q4"])
-                          Text(
-                            '${post["adversaire"]!["Q4"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.green),
-                          )
-                        else
-                          Text(
-                            '${post["adversaire"]!["Q4"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.red),
-                          )
-                      ]),
-                    ]),
-                    TableRow(children: [
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Column(children: [
-                          Text(
-                            answersDuel[4],
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(fontSize: 18),
-                          )
-                        ]),
-                      ),
-                      Column(children: [
-                        if (answersDuel[4] == post["player"]!["Q5"])
-                          Text('${post["player"]!["Q5"]}',
-                              style: const TextStyle(
-                                  fontSize: 18,
-                                  fontStyle: FontStyle.italic,
-                                  color: Colors.green))
-                        else
-                          Text('${post["player"]!["Q5"]}',
-                              style: const TextStyle(
-                                  fontSize: 18,
-                                  fontStyle: FontStyle.italic,
-                                  color: Colors.red))
-                      ]),
-                      Column(children: [
-                        if (answersDuel[4] == post["adversaire"]!["Q5"])
-                          Text(
-                            '${post["adversaire"]!["Q5"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.green),
-                          )
-                        else
-                          Text(
-                            '${post["adversaire"]!["Q5"]}',
-                            style: const TextStyle(
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                color: Colors.red),
-                          )
-                      ]),
-                    ]),
-                  ],
+                    ),
+                    title: Text(
+                      questions[0]['questionText'] as String,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
                 ),
-              ),
-            ],
+                Card(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: ListTile(
+                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                    leading: const CircleAvatar(
+                      backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
+                      radius: 26,
+                      child: Padding(
+                        padding: EdgeInsets.all(10),
+                        child: FittedBox(
+                          child: Text(
+                            "Q2",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: Text(
+                      questions[1]['questionText'] as String,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
+                ),
+                Card(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: ListTile(
+                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                    leading: const CircleAvatar(
+                      backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
+                      radius: 26,
+                      child: Padding(
+                        padding: EdgeInsets.all(10),
+                        child: FittedBox(
+                          child: Text(
+                            "Q3",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: Text(
+                      questions[2]['questionText'] as String,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
+                ),
+                Card(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: ListTile(
+                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                    leading: const CircleAvatar(
+                      backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
+                      radius: 26,
+                      child: Padding(
+                        padding: EdgeInsets.all(10),
+                        child: FittedBox(
+                          child: Text(
+                            "Q4",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: Text(
+                      questions[3]['questionText'] as String,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
+                ),
+                Card(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  child: ListTile(
+                    tileColor: const Color.fromRGBO(221, 229, 221, 1.0),
+                    leading: const CircleAvatar(
+                      backgroundColor: Color.fromRGBO(13, 78, 5, 0.75),
+                      radius: 26,
+                      child: Padding(
+                        padding: EdgeInsets.all(10),
+                        child: FittedBox(
+                          child: Text(
+                            "Q5",
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    title: Text(
+                      questions[4]['questionText'] as String,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(10),
+                  child: Table(
+                    defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                    //defaultColumnWidth: FixedColumnWidth(120.0),
+                    border: TableBorder.all(
+                        color: Colors.black,
+                        style: BorderStyle.solid,
+                        width: 3),
+                    children: [
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(children: const [
+                            Text('Réponses correctes',
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center)
+                          ]),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(children: const [
+                            Text(
+                              'Les réponses de l\'élève',
+                              style: TextStyle(
+                                  fontSize: 20.0, fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            )
+                          ]),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(children: [
+                            Text(
+                              'Réponses de '
+                              '${post["adversaire"]!["firstName"]}',
+                              style: const TextStyle(
+                                  fontSize: 20.0, fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
+                            )
+                          ]),
+                        ),
+                      ]),
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(children: [
+                            Text(
+                              answersDuel[0],
+                              style: const TextStyle(fontSize: 18),
+                              textAlign: TextAlign.center,
+                            )
+                          ]),
+                        ),
+                        Column(children: [
+                          if (answersDuel[0] == post["player"]!["Q1"])
+                            Text(
+                              '${post["player"]!["Q1"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.green),
+                            )
+                          else
+                            Text(
+                              '${post["player"]!["Q1"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.red),
+                            )
+                        ]),
+                        Column(children: [
+                          if (answersDuel[0] == post["adversaire"]!["Q1"])
+                            Text(
+                              '${post["adversaire"]!["Q1"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.green),
+                            )
+                          else
+                            Text(
+                              '${post["adversaire"]!["Q1"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.red),
+                            )
+                        ]),
+                      ]),
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(children: [
+                            Text(
+                              answersDuel[1],
+                              style: const TextStyle(fontSize: 18),
+                              textAlign: TextAlign.center,
+                            )
+                          ]),
+                        ),
+                        Column(children: [
+                          if (answersDuel[1] == post["player"]!["Q2"])
+                            Text(
+                              '${post["player"]!["Q2"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.green),
+                            )
+                          else
+                            Text(
+                              '${post["player"]!["Q2"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.red),
+                            ),
+                        ]),
+                        Column(children: [
+                          if (answersDuel[1] == post["adversaire"]!["Q2"])
+                            Text(
+                              '${post["adversaire"]!["Q2"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.green),
+                            )
+                          else
+                            Text(
+                              '${post["adversaire"]!["Q2"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.red),
+                            )
+                        ]),
+                      ]),
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(children: [
+                            Text(
+                              answersDuel[2],
+                              style: const TextStyle(fontSize: 18),
+                              textAlign: TextAlign.center,
+                            )
+                          ]),
+                        ),
+                        Column(children: [
+                          if (answersDuel[2] == post["player"]!["Q3"])
+                            Text('${post["player"]!["Q3"]}',
+                                style: const TextStyle(
+                                    fontSize: 18,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.green))
+                          else
+                            Text('${post["player"]!["Q3"]}',
+                                style: const TextStyle(
+                                    fontSize: 18,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red))
+                        ]),
+                        Column(children: [
+                          if (answersDuel[2] == post["adversaire"]!["Q3"])
+                            Text(
+                              '${post["adversaire"]!["Q3"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.green),
+                            )
+                          else
+                            Text(
+                              '${post["adversaire"]!["Q3"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.red),
+                            )
+                        ]),
+                      ]),
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(children: [
+                            Text(
+                              answersDuel[3],
+                              style: const TextStyle(fontSize: 18),
+                              textAlign: TextAlign.center,
+                            )
+                          ]),
+                        ),
+                        Column(children: [
+                          if (answersDuel[3] == post["player"]!["Q4"])
+                            Text('${post["player"]!["Q4"]}',
+                                style: const TextStyle(
+                                    fontSize: 18,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.green))
+                          else
+                            Text('${post["player"]!["Q4"]}',
+                                style: const TextStyle(
+                                    fontSize: 18,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red))
+                        ]),
+                        Column(children: [
+                          if (answersDuel[3] == post["adversaire"]!["Q4"])
+                            Text(
+                              '${post["adversaire"]!["Q4"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.green),
+                            )
+                          else
+                            Text(
+                              '${post["adversaire"]!["Q4"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.red),
+                            )
+                        ]),
+                      ]),
+                      TableRow(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Column(children: [
+                            Text(
+                              answersDuel[4],
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(fontSize: 18),
+                            )
+                          ]),
+                        ),
+                        Column(children: [
+                          if (answersDuel[4] == post["player"]!["Q5"])
+                            Text('${post["player"]!["Q5"]}',
+                                style: const TextStyle(
+                                    fontSize: 18,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.green))
+                          else
+                            Text('${post["player"]!["Q5"]}',
+                                style: const TextStyle(
+                                    fontSize: 18,
+                                    fontStyle: FontStyle.italic,
+                                    color: Colors.red))
+                        ]),
+                        Column(children: [
+                          if (answersDuel[4] == post["adversaire"]!["Q5"])
+                            Text(
+                              '${post["adversaire"]!["Q5"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.green),
+                            )
+                          else
+                            Text(
+                              '${post["adversaire"]!["Q5"]}',
+                              style: const TextStyle(
+                                  fontSize: 18,
+                                  fontStyle: FontStyle.italic,
+                                  color: Colors.red),
+                            )
+                        ]),
+                      ]),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ));
   }

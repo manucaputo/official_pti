@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../connexion/token.dart';
+import '../helpers/custom_routes.dart';
 import 'first_button.dart';
 
 // from scratch
@@ -84,7 +85,7 @@ class _MyAppState extends State<SecondButton> {
       "id": 23,
       "idDuel": 33,
       "idAdversaire": 4,
-      "idQuestion": 2,
+      "idQuestion": 3,
       "date": "2022-04-12T14:07:41.000Z"
     },
     {
@@ -149,7 +150,7 @@ class _MyAppState extends State<SecondButton> {
 
   void deleteDuel(var idDuel) {
     setState(() {
-      _postsJson.removeWhere((element) => element["idDuel"] == idDuel);
+      _postsJson2.removeWhere((element) => element["idDuel"] == idDuel);
       //_postsJson.removeWhere((element) => element["idDuel"] == idDuel);
     });
   }
@@ -216,7 +217,7 @@ class _MyAppState extends State<SecondButton> {
                         color: Theme.of(context).errorColor,
                         onPressed: () => {
                           deleteDuel(post["idDuel"]),
-                          deleteReply(post["id"])
+                          //deleteReply(post["id"])
                         },
                       ),
                       IconButton(
@@ -226,10 +227,10 @@ class _MyAppState extends State<SecondButton> {
                           ),
                           color: Colors.green,
                           onPressed: () {
-                            deleteReply(post["id"]);
+                            //  deleteReply(post["id"]);
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
+                              CustomRoute(
                                   builder: (context) => FirstButton(
                                         idQuestion: post["idQuestion"],
                                         idDuel: post["idDuel"],

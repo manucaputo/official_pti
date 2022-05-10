@@ -244,8 +244,6 @@ class _MyAppState extends State<ResultatButton> {
       ];
     }
 
-
-
     //queryData = MediaQuery.of(context);
 
     final appBar = AppBar(

@@ -82,7 +82,7 @@ class _MyAppState extends State<StudentMenu> {
                     Container(
                       margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
                       child: ElevatedButton(
-                        child: const Text('Mes duels',
+                        child: const Text('Répondre aux duels',
                             style: TextStyle(
                                 color: Color.fromRGBO(13, 78, 5, 0.8),
                                 fontWeight: FontWeight.bold,
@@ -102,8 +102,7 @@ class _MyAppState extends State<StudentMenu> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => SecondButton()),
+                            CustomRoute(builder: (context) => SecondButton()),
                           );
                         },
                       ),
@@ -131,8 +130,7 @@ class _MyAppState extends State<StudentMenu> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => ThirdButton()),
+                            CustomRoute(builder: (context) => ThirdButton()),
                           );
                         },
                       ),
@@ -160,8 +158,7 @@ class _MyAppState extends State<StudentMenu> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => JoinClass()),
+                            CustomRoute(builder: (context) => JoinClass()),
                           );
                         },
                       ),
@@ -189,7 +186,7 @@ class _MyAppState extends State<StudentMenu> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Contexte()),
+                            CustomRoute(builder: (context) => Contexte()),
                           );
                         },
                       ),
@@ -217,8 +214,7 @@ class _MyAppState extends State<StudentMenu> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => const MyApp()),
+                            CustomRoute(builder: (context) => const MyApp()),
                           );
                         },
                       ),

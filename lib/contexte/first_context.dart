@@ -82,8 +82,7 @@ class _MyAppState extends State<FirstContexte> {
                   color: Color.fromRGBO(13, 78, 5, 0.6),
                 )),
           ),
-          child: Text(
-              (isReadMore2 ? 'Cacher la réponse' : 'Voir la réponse'),
+          child: Text((isReadMore2 ? 'Cacher la réponse' : 'Voir la réponse'),
               style: const TextStyle(
                   color: Color.fromRGBO(13, 78, 5, 0.6),
                   fontWeight: FontWeight.bold,
@@ -126,8 +125,7 @@ class _MyAppState extends State<FirstContexte> {
                   color: Color.fromRGBO(13, 78, 5, 0.6),
                 )),
           ),
-          child: Text(
-              (isReadMore3 ? 'Cacher la réponse' : 'Voir la réponse'),
+          child: Text((isReadMore3 ? 'Cacher la réponse' : 'Voir la réponse'),
               style: const TextStyle(
                   color: Color.fromRGBO(13, 78, 5, 0.6),
                   fontWeight: FontWeight.bold,
@@ -169,8 +167,7 @@ class _MyAppState extends State<FirstContexte> {
                   color: Color.fromRGBO(13, 78, 5, 0.6),
                 )),
           ),
-          child: Text(
-              (isReadMore4 ? 'Cacher la réponse' : 'Voir la réponse'),
+          child: Text((isReadMore4 ? 'Cacher la réponse' : 'Voir la réponse'),
               style: const TextStyle(
                   color: Color.fromRGBO(13, 78, 5, 0.6),
                   fontWeight: FontWeight.bold,
@@ -213,8 +210,7 @@ class _MyAppState extends State<FirstContexte> {
                   color: Color.fromRGBO(13, 78, 5, 0.6),
                 )),
           ),
-          child: Text(
-              (isReadMore5 ? 'Cacher la réponse' : 'Voir la réponse'),
+          child: Text((isReadMore5 ? 'Cacher la réponse' : 'Voir la réponse'),
               style: const TextStyle(
                   color: Color.fromRGBO(13, 78, 5, 0.6),
                   fontWeight: FontWeight.bold,

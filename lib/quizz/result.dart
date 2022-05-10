@@ -33,30 +33,26 @@ class Result extends StatelessWidget {
     "Authorization": Token.token
   };
   @override
-
-
   postPlayer() async {
     try {
-
-      Map<String,String> json = {
+      Map<String, String> json = {
         "score": resultScore.toString(),
-        "Q1":response[0].toString(),
-        "Q2":response[1].toString(),
-        "Q3":response[2].toString(),
-        "Q4":response[3].toString(),
-        "Q5":response[4].toString(),
-        "duelId" : idDuel.toString()};
+        "Q1": response[0].toString(),
+        "Q2": response[1].toString(),
+        "Q3": response[2].toString(),
+        "Q4": response[3].toString(),
+        "Q5": response[4].toString(),
+        "duelId": idDuel.toString()
+      };
       String json2 = jsonEncode(json);
       print(json2);
 
       final response2 = await http.post(Uri.parse(Token.url + url),
           body: json2, headers: headers);
       final jsonData = jsonDecode(response.body);
-
     } catch (err) {
       print(err);
     }
-
   }
 
   @override

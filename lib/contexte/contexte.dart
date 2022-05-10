@@ -3,6 +3,7 @@ import 'package:official_pti/contexte/first_context.dart';
 import 'package:official_pti/contexte/second_context.dart';
 import 'package:official_pti/contexte/third_context.dart';
 
+import '../helpers/custom_routes.dart';
 import 'Fourth_context.dart';
 
 void main() => runApp(Contexte());
@@ -14,18 +15,15 @@ class Contexte extends StatefulWidget {
 
 }
 
-class _MyAppState extends State<Contexte>{
-
+class _MyAppState extends State<Contexte> {
   _MyAppState();
 
   @override
   Widget build(BuildContext context) {
-
     final appBar = AppBar(
       title: const Text('Contexte'),
       backgroundColor: const Color.fromRGBO(13, 78, 5, 0.75),
     );
-
 
     return Scaffold(
         appBar: appBar,
@@ -66,14 +64,14 @@ class _MyAppState extends State<Contexte>{
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => FirstContexte()),
+                          CustomRoute(builder: (context) => FirstContexte()),
                         );
                       },
                     ),
                   ),
 
                   // CONTEXTE 2
+                  /*
                   Container(
                     margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
                     child: ElevatedButton(
@@ -103,6 +101,8 @@ class _MyAppState extends State<Contexte>{
                       },
                     ),
                   ),
+
+
 
                   // CONTEXTE 3
                   Container(
@@ -135,12 +135,14 @@ class _MyAppState extends State<Contexte>{
                     ),
                   ),
 
+                   */
+
                   // Contexte 4
 
                   Container(
                     margin: const EdgeInsets.fromLTRB(15.0, 10, 15.0, 2.0),
                     child: ElevatedButton(
-                      child: const Text('Contexte 4',
+                      child: const Text('Contexte 2',
                           style: TextStyle(
                               color: Color.fromRGBO(13, 78, 5, 0.6),
                               fontWeight: FontWeight.bold,
@@ -160,20 +162,15 @@ class _MyAppState extends State<Contexte>{
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => FourthContexte()),
+                          CustomRoute(builder: (context) => FourthContexte()),
                         );
                       },
                     ),
                   ),
 
                   //  NEW Contexte
-
-
                 ]),
           ),
         ));
-
-
   }
 }
